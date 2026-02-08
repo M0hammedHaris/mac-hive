@@ -7,17 +7,18 @@
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  
+  --font-sans: var(--font-antic);
+  --font-display: var(--font-alfa);
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  
+
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  
+
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  
+
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
 
@@ -37,9 +38,9 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-  
+
   /* Custom Mac-Hive colors */
-  --color-mh-primary: #427cf0;
+  --color-mh-primary: #1c4b82;
   --color-mh-secondary: #e2f9f3;
   --color-mh-accent: #e8f0fe;
   --color-mh-bg-light: #f6f6f8;
@@ -52,6 +53,7 @@
   correct.
 */
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -63,7 +65,10 @@
 
 :root {
   --background: #f6f6f8;
-  --foreground: #0f172a; /* slate-900 */
+  --foreground: #0f172a;
+  /* slate-900 */
+  --font-antic: var(--font-antic);
+  --font-alfa: var(--font-alfa);
 
   --card: #ffffff;
   --card-foreground: #0f172a;
@@ -71,14 +76,15 @@
   --popover: #ffffff;
   --popover-foreground: #0f172a;
 
-  --primary: #427cf0;
+  --primary: #1c4b82;
   --primary-foreground: #ffffff;
 
   --secondary: #e2f9f3;
-  --secondary-foreground: #10b981; /* emerald-500 equivalent approx */
+  --secondary-foreground: #10b981;
+  /* emerald-500 equivalent approx */
 
   --accent: #e8f0fe;
-  --accent-foreground: #427cf0;
+  --accent-foreground: #1c4b82;
 
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
@@ -88,14 +94,15 @@
 
   --border: #e2e8f0;
   --input: #e2e8f0;
-  --ring: #427cf0;
+  --ring: #1c4b82;
 
   --radius: 0.5rem;
 }
 
 .dark {
   --background: #101622;
-  --foreground: #f8fafc; /* slate-50 */
+  --foreground: #f8fafc;
+  /* slate-50 */
 
   --card: #0f172a;
   --card-foreground: #f8fafc;
@@ -106,8 +113,10 @@
   --primary: #427cf0;
   --primary-foreground: #ffffff;
 
-  --secondary: #064e3b; /* emerald-900 */
-  --secondary-foreground: #34d399; /* emerald-400 */
+  --secondary: #064e3b;
+  /* emerald-900 */
+  --secondary-foreground: #34d399;
+  /* emerald-400 */
 
   --accent: #1e293b;
   --accent-foreground: #f8fafc;
@@ -127,19 +136,21 @@
   .glass-card {
     @apply bg-white/40 backdrop-blur-md border border-white/30;
   }
+
   .dark .glass-card {
     @apply bg-slate-900/40 border-white/10;
   }
-  
+
   .glass-nav {
     @apply bg-white/70 backdrop-blur-md border-b border-white/20;
   }
+
   .dark .glass-nav {
-      @apply bg-[#101622]/70 border-white/5;
+    @apply bg-[#101622]/70 border-white/5;
   }
 
   .text-gradient {
-      @apply bg-clip-text text-transparent bg-gradient-to-r from-mh-primary to-cyan-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-mh-primary to-cyan-400;
   }
 }
 

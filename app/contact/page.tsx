@@ -1,18 +1,15 @@
-import React from "react";
-import { Mail, Copy, Receipt, MousePointerClick, Rocket } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-    title: "Contact | Mac Hive - Start Your Project",
-    description: "Get in touch with Mac Hive to discuss your next SaaS project. From concept to launch in weeks. Book a consultation today.",
-    openGraph: {
-        title: "Contact | Mac Hive",
-        description: "Let's build your SaaS. Contact us for a consultation.",
-    },
-};
+import React from "react";
+import { Rocket } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function ContactPage() {
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        alert("Thank you for your inquiry! This is a demo submission. In a production environment, this would be sent to your email or a database.");
+    };
+
     return (
         <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
@@ -23,7 +20,7 @@ export default function ContactPage() {
                         <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">Let&apos;s Build Your SaaS.</h1>
                         <p className="text-lg text-slate-600 dark:text-slate-400">From concept to launch in weeks, not months. Tell us about your project and we&apos;ll get back to you within 24 hours.</p>
                     </div>
-                    <form className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="flex flex-col gap-2">
                                 <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Full Name</label>
@@ -57,51 +54,13 @@ export default function ContactPage() {
                             <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Project Details</label>
                             <textarea className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg p-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none" placeholder="Tell us about your product idea, target audience, and key features..." rows={5}></textarea>
                         </div>
-                        <Button className="w-full md:w-auto bg-accent-coral hover:bg-[#ff7a6a] text-white px-8 py-4 rounded-xl font-bold text-lg transition-transform active:scale-95 shadow-lg shadow-accent-coral/20" type="submit">
+                        <Button className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold text-lg transition-transform active:scale-95 shadow-lg shadow-primary/20" type="submit">
                             Submit Project Inquiry
                         </Button>
                     </form>
                 </div>
 
-                {/* Right Side: Product Support */}
                 <div className="lg:col-span-5 flex flex-col gap-8">
-                    <div className="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                        <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Product Support</h2>
-                        <p className="text-slate-600 dark:text-slate-400 mb-8">Need help with our tools? Check our documentation or reach out to our team directly.</p>
-                        <div className="space-y-4">
-                            <a className="group flex items-center gap-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 hover:bg-primary/5 transition-colors border border-transparent hover:border-primary/20" href="#">
-                                <div className="size-12 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center text-primary shadow-sm">
-                                    <Receipt size={24} />
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="font-bold text-slate-900 dark:text-white">BillHive Documentation</h3>
-                                    <p className="text-sm text-slate-500">Invoicing &amp; Billing Docs</p>
-                                </div>
-                            </a>
-                            <a className="group flex items-center gap-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 hover:bg-primary/5 transition-colors border border-transparent hover:border-primary/20" href="#">
-                                <div className="size-12 rounded-lg bg-white dark:bg-slate-800 flex items-center justify-center text-primary shadow-sm">
-                                    <MousePointerClick size={24} />
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="font-bold text-slate-900 dark:text-white">AdHive Documentation</h3>
-                                    <p className="text-sm text-slate-500">Ad Management &amp; Analytics</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800">
-                            <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">Direct Support</p>
-                            <div className="flex items-center justify-between p-4 rounded-lg border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900/50">
-                                <div className="flex items-center gap-3">
-                                    <Mail className="text-primary" size={24} />
-                                    <span className="font-medium text-slate-700 dark:text-slate-200">support@machive.co</span>
-                                </div>
-                                <button className="text-primary hover:text-primary/80 font-semibold text-sm flex items-center gap-1">
-                                    <Copy size={16} />
-                                    Copy
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                     <div className="relative overflow-hidden rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary/20 p-8">
                         <div className="relative z-10">
                             <h4 className="text-lg font-bold text-primary mb-2">Fast SaaS Delivery</h4>
