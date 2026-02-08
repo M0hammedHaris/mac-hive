@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mac Hive | Building SaaS at Agentic Speed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#427cf0",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "mint": "#e2f9f3",
+                        "soft-blue": "#e8f0fe",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-card {
+            background: rgba(16, 22, 34, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Navigation -->
+<header class="fixed top-0 z-50 w-full border-b border-white/20 dark:border-white/5 bg-white/70 dark:bg-background-dark/70 backdrop-blur-md px-6 md:px-20 py-4">
+<div class="mx-auto flex max-w-[1440px] items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white">
+<span class="material-symbols-outlined text-2xl">hive</span>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Mac Hive</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="#">Portfolio</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="#">Process</a>
+<button class="rounded-xl bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                        Start Your Build
+                    </button>
+</nav>
+<button class="md:hidden p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="mt-20 flex flex-col items-center">
+<!-- Hero Section -->
+<section class="w-full px-6 py-12 md:py-24 lg:px-20 max-w-[1440px]">
+<div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+<div class="lg:col-span-7 flex flex-col gap-8">
+<div class="inline-flex w-fit items-center rounded-full bg-soft-blue px-4 py-1.5 dark:bg-primary/20">
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Accelerated Delivery</span>
+</div>
+<h1 class="text-5xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white md:text-7xl">
+                            Building the Future of SaaS at <span class="text-primary">Agentic Speed</span>
+</h1>
+<p class="max-w-xl text-lg font-normal leading-relaxed text-slate-600 dark:text-slate-400">
+                            From concept to deployment in weeks, not months. We leverage AI-driven development and autonomous agents to build robust, scalable SaaS solutions.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="flex h-14 items-center justify-center rounded-xl bg-primary px-8 text-base font-bold text-white shadow-xl shadow-primary/25 hover:scale-[1.02] transition-transform">
+                                Book a Demo
+                            </button>
+<button class="flex h-14 items-center justify-center rounded-xl border-2 border-slate-200 dark:border-slate-800 bg-transparent px-8 text-base font-bold text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                View Portfolio
+                            </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative aspect-square w-full rounded-3xl bg-gradient-to-tr from-soft-blue to-mint dark:from-primary/10 dark:to-emerald-500/10 flex items-center justify-center overflow-hidden">
+<!-- Abstract 3D Representation -->
+<div class="absolute inset-0 opacity-40 mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+<div class="relative z-10 h-64 w-64 rounded-2xl bg-white/30 backdrop-blur-3xl shadow-2xl border border-white/50 flex items-center justify-center rotate-12">
+<div class="h-48 w-48 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center -rotate-12">
+<span class="material-symbols-outlined text-7xl text-primary animate-pulse">auto_awesome</span>
+</div>
+</div>
+<!-- Floating decorative elements -->
+<div class="absolute top-10 right-10 h-16 w-16 rounded-full bg-mint/50 blur-xl"></div>
+<div class="absolute bottom-20 left-10 h-24 w-24 rounded-full bg-primary/20 blur-2xl"></div>
+</div>
+<!-- Glass Stat Card -->
+<div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl shadow-xl flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-wider text-slate-500">Deploy Speed</p>
+<p class="text-xl font-black text-slate-900 dark:text-white">14 Days</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Advantage Grid -->
+<section class="w-full bg-white dark:bg-slate-900/50 py-24 px-6 lg:px-20">
+<div class="mx-auto max-w-[1440px]">
+<div class="mb-16 flex flex-col gap-4 text-center items-center">
+<h2 class="text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-4xl">
+                            The Mac Hive Advantage
+                        </h2>
+<p class="max-w-2xl text-slate-600 dark:text-slate-400">
+                            Our core pillars for delivering high-performance SaaS products that outpace the competition.
+                        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="group flex flex-col gap-6 rounded-2xl border border-slate-100 dark:border-slate-800 bg-background-light dark:bg-background-dark p-8 hover:border-primary/50 transition-all duration-300">
+<div class="flex h-14 w-14 items-center justify-center rounded-xl bg-soft-blue text-primary dark:bg-primary/10">
+<span class="material-symbols-outlined text-3xl">lightbulb</span>
+</div>
+<div>
+<h3 class="mb-3 text-xl font-bold text-slate-900 dark:text-white">Rapid Prototyping</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    Visualizing ideas into interactive, high-fidelity MVPs instantly. We focus on validation before massive scaling.
+                                </p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="group flex flex-col gap-6 rounded-2xl border border-slate-100 dark:border-slate-800 bg-background-light dark:bg-background-dark p-8 hover:border-primary/50 transition-all duration-300">
+<div class="flex h-14 w-14 items-center justify-center rounded-xl bg-mint text-emerald-600 dark:bg-emerald-900/10">
+<span class="material-symbols-outlined text-3xl">smart_toy</span>
+</div>
+<div>
+<h3 class="mb-3 text-xl font-bold text-slate-900 dark:text-white">Agentic Coding</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    Harnessing AI agents to write, test, and optimize production-grade code autonomously, reducing human error and dev cycles.
+                                </p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="group flex flex-col gap-6 rounded-2xl border border-slate-100 dark:border-slate-800 bg-background-light dark:bg-background-dark p-8 hover:border-primary/50 transition-all duration-300">
+<div class="flex h-14 w-14 items-center justify-center rounded-xl bg-orange-50 text-orange-500 dark:bg-orange-500/10">
+<span class="material-symbols-outlined text-3xl">rocket_launch</span>
+</div>
+<div>
+<h3 class="mb-3 text-xl font-bold text-slate-900 dark:text-white">Instant Deploy</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    Streamlined CI/CD pipelines paired with serverless architecture for immediate, global market entry.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Carousel (Hive Fleet) -->
+<section class="w-full py-24 px-6 lg:px-20 max-w-[1440px] overflow-hidden">
+<div class="mb-12 flex items-end justify-between">
+<div class="flex flex-col gap-2">
+<span class="text-sm font-bold tracking-widest text-primary uppercase">Our Portfolio</span>
+<h2 class="text-3xl font-black tracking-tight text-slate-900 dark:text-white">The Hive Fleet</h2>
+</div>
+<div class="hidden sm:flex gap-2">
+<button class="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 dark:border-slate-800 hover:bg-white dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full border border-slate-200 dark:border-slate-800 hover:bg-white dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-8 overflow-x-auto pb-8 snap-x no-scrollbar">
+<!-- Product 1 -->
+<div class="min-w-[320px] md:min-w-[480px] snap-center group">
+<div class="relative overflow-hidden rounded-3xl glass-card p-4 transition-transform duration-500 group-hover:scale-[1.01] group-hover:shadow-2xl">
+<div class="aspect-video w-full overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800 mb-6">
+<img alt="BillHive Preview" class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="SaaS dashboard with sleek charts and billing data" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtLYiHCJu4jDrPkX4IOlyR9ack2m7-drP8OIm4GALmootl7a0DI5kK_cyg4xzWa20JoMG_nmgzPAuPKkdWYckDq1tsOp5-32AHTpISQQqJl7n0fRJVSLouFvJv64XZbygce_6h_hpJPslnl6Y5BGHRxeJ0LPybDGt2xJXxM_3Dw5CtqgIW0IReuC7LEN-Q6gstn4-IJnYY_yVPRge3X8FebBd7s8VLvnLzM1LByczAN42IUNR2ArZ4kShDRSkEi-yASa2KCcCgi1x7"/>
+</div>
+<div class="px-2 pb-2">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">BillHive</h3>
+<span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary">Automation</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 mb-6">
+                                    A glassmorphic SaaS product for effortless billing automation and revenue forecasting.
+                                </p>
+<button class="w-full rounded-xl bg-white dark:bg-slate-800 py-3 text-sm font-bold text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                                    Case Study
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="min-w-[320px] md:min-w-[480px] snap-center group">
+<div class="relative overflow-hidden rounded-3xl glass-card p-4 transition-transform duration-500 group-hover:scale-[1.01] group-hover:shadow-2xl">
+<div class="aspect-video w-full overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800 mb-6">
+<img alt="AdHive Preview" class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Digital marketing interface with AI campaign insights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIzKmELBU2Of0S8FalIIkciVAKx7OKmIRBMIT6AOJemGwnNv6EmG4XKHHnw1SyqUjSofnHwYOfmHFIIsJK0AsiEiqaPmMdrORqGQOak8CnmOoXhHuIGB8dvLQqvlnU3hN4_RTx-fQCL7rzVpLSqqEDfeKCDbgxWLp5UFtrHF_YZPraFu3hmKeQHlOrOfTyv3Gk_jAjC8FxfvuX1vFEut8KYef8jLxhzHS0aXfEUd1wnBD1cFvfrMp7d65vuCRdsfnEIGbNW3Tg9Hq4"/>
+</div>
+<div class="px-2 pb-2">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">AdHive</h3>
+<span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-600">AI Managed</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 mb-6">
+                                    Next-gen AI ad management platform optimizing multi-channel spends in real-time.
+                                </p>
+<button class="w-full rounded-xl bg-white dark:bg-slate-800 py-3 text-sm font-bold text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                                    Case Study
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="min-w-[320px] md:min-w-[480px] snap-center group">
+<div class="relative overflow-hidden rounded-3xl glass-card p-4 transition-transform duration-500 group-hover:scale-[1.01] group-hover:shadow-2xl">
+<div class="aspect-video w-full overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800 mb-6">
+<img alt="DevHive Preview" class="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Code editor showing automated AI script generation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgQFyWX96LwcHWFgsIZa_Z39R89xIuA9-XnF4oqZRwHURy448Vossefi_1DRUNKwgqN82xVn7wZ0sDB-4Qqm29IuGUkLEvVy2lYq8BJzqWHi2R7pVx1YMVeZ27AGG6Xg8SjFbji36Dv9SWUMeJQaKSdYrgOE6vKuE8q0KRROiuJIvQjCj98vOjtjVxWfRgxQtrFAqSXGrEKz1MvW1wml7QYcI4eOingqky_6h1_VK8jdcUzOoOj0SoVGOSjUmYu0kDIB5h4S70_rwN"/>
+</div>
+<div class="px-2 pb-2">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">DevHive</h3>
+<span class="rounded-full bg-orange-500/10 px-3 py-1 text-xs font-bold text-orange-600">Infrastructure</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 mb-6">
+                                    Autoscaling serverless framework designed for agentic application workflows.
+                                </p>
+<button class="w-full rounded-xl bg-white dark:bg-slate-800 py-3 text-sm font-bold text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                                    Case Study
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom CTA -->
+<section class="w-full px-6 py-24 lg:px-20 max-w-[1440px]">
+<div class="relative rounded-3xl bg-slate-900 p-12 md:p-20 overflow-hidden">
+<!-- Background Glows -->
+<div class="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-primary/20 blur-[120px]"></div>
+<div class="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-emerald-500/10 blur-[120px]"></div>
+<div class="relative z-10 flex flex-col items-center text-center gap-8">
+<h2 class="text-4xl font-black text-white md:text-5xl">Ready to enter the Hive?</h2>
+<p class="max-w-2xl text-slate-400 text-lg">
+                            We're currently taking on select partners for Q4. Secure your spot in the build queue and experience SaaS development at agentic speed.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center">
+<button class="h-16 px-10 rounded-2xl bg-primary text-white font-bold text-lg shadow-2xl shadow-primary/30 hover:scale-105 transition-transform">
+                                Start Your Project
+                            </button>
+<button class="h-16 px-10 rounded-2xl border border-slate-700 bg-white/5 backdrop-blur text-white font-bold text-lg hover:bg-white/10 transition-colors">
+                                Schedule a Call
+                            </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-background-dark py-12 px-6 md:px-20">
+<div class="mx-auto max-w-[1440px] flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined text-lg">hive</span>
+</div>
+<span class="text-lg font-extrabold text-slate-900 dark:text-white">Mac Hive</span>
+</div>
+<div class="flex gap-8 text-sm font-medium text-slate-500">
+<a class="hover:text-primary" href="#">Twitter</a>
+<a class="hover:text-primary" href="#">LinkedIn</a>
+<a class="hover:text-primary" href="#">GitHub</a>
+<a class="hover:text-primary" href="#">Privacy</a>
+</div>
+<p class="text-sm text-slate-400">
+                    © 2024 Mac Hive Agency. Built with speed.
+                </p>
+</div>
+</footer>
+</div>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>
