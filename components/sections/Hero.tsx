@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { Sparkles, Zap } from "lucide-react";
 
 export function Hero() {
@@ -21,16 +22,20 @@ export function Hero() {
                         SaaS solutions.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <Button size="lg" className="h-14 text-base">
-                            Book a Demo
-                        </Button>
-                        <Button
-                            variant="outline"
-                            size="lg"
-                            className="h-14 text-base bg-transparent border-2 border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800"
-                        >
-                            View Portfolio
-                        </Button>
+                        <Link href="/contact">
+                            <Button size="lg" className="h-14 text-base">
+                                Book a Demo
+                            </Button>
+                        </Link>
+                        <Link href="/portfolio">
+                            <Button
+                                variant="outline"
+                                size="lg"
+                                className="h-14 text-base bg-transparent border-2 border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800"
+                            >
+                                View Portfolio
+                            </Button>
+                        </Link>
                     </div>
                 </div>
                 <div className="lg:col-span-5 relative">

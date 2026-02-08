@@ -1,67 +1,75 @@
-import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { ExternalLink, Globe, Layout, Smartphone, Code, Database, CheckCircle, ArrowRight } from "lucide-react";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import type { Metadata } from "next";
 
-// Data from links.md
+export const metadata: Metadata = {
+    title: "Portfolio | Mac Hive - Our Work",
+    description: "Explore our portfolio of high-performance SaaS applications, websites, and mobile apps. See how we deliver production-ready solutions at agentic speed.",
+    openGraph: {
+        title: "Portfolio | Mac Hive",
+        description: "High-performance applications built with precision and deployed with speed.",
+    },
+};
+
+// Data from components/sections/Portfolio.tsx
 const PORTFOLIO_ITEMS = [
     {
-        title: "Mohammed Haris",
-        description: "Personal portfolio showcasing full-stack development projects and skills.",
-        image: "/portfolio/mh-portfolio.png", // Placeholder path
-        link: "https://mh.machive.in",
-        tags: ["Next.js", "React", "Tailwind CSS"],
-        category: "Personal Portfolio"
+        title: "Snapchat Organizer",
+        tag: "Social Media",
+        tagColor: "text-yellow-600 bg-yellow-500/10",
+        description:
+            "A powerful tool for organizing and managing your Snapchat content efficiently.",
+        url: "https://snapchat-organizer.machive.in",
+        image: "/portfolio/snapchat-organizer.png",
+        alt: "Snapchat Organizer - Social media content management tool",
     },
     {
-        title: "Mac Hive",
-        description: "Corporate website for Mac Hive, a software development agency.",
-        image: "/portfolio/mac-hive.png", // Placeholder path
-        link: "https://machive.in",
-        tags: ["Agency", "Corporate", "SaaS"],
-        category: "Corporate"
+        title: "SalaryMan",
+        tag: "Finance",
+        tagColor: "text-emerald-600 bg-emerald-500/10",
+        description:
+            "Personal finance management app to track income, expenses, and achieve your financial goals.",
+        url: "https://salary-man.machive.in",
+        image: "/portfolio/salaryman.png",
+        alt: "SalaryMan - Personal finance management dashboard",
     },
     {
-        title: "Loom Video Downloader",
-        description: "A tool to download Loom videos directly.",
-        image: "/portfolio/loom-downloader.png", // Placeholder path
-        link: "https://loom-video-downloader-v2.vercel.app",
-        tags: ["Utility", "Tool", "Video"],
-        category: "SaaS Tool"
+        title: "Mud Pottery",
+        tag: "E-commerce",
+        tagColor: "text-orange-600 bg-orange-500/10",
+        description:
+            "Artisan pottery e-commerce platform showcasing handcrafted ceramic pieces.",
+        url: "https://mud-pottery.machive.in",
+        image: "/portfolio/mud-pottery.png",
+        alt: "Mud Pottery - Artisan ceramics e-commerce platform",
     },
     {
-        title: "AdHive",
-        description: "Ad management and analytics platform.",
-        image: "/portfolio/adhive.png", // Placeholder path
-        link: "https://adhive.in",
-        tags: ["AdTech", "Analytics", "SaaS"],
-        category: "SaaS Product"
+        title: "Ad Manager",
+        tag: "Marketing",
+        tagColor: "text-purple-600 bg-purple-500/10",
+        description:
+            "AI-powered ad poster generator for creating stunning marketing visuals instantly.",
+        url: "https://ad.machive.in",
+        image: "/portfolio/ad-manager.png",
+        alt: "Ad Manager - AI-powered marketing poster generator",
     },
     {
         title: "BillHive",
-        description: "Invoicing and billing solution for businesses.",
-        image: "/portfolio/billhive.png", // Placeholder path
-        link: "https://billhive.in",
-        tags: ["FinTech", "Billing", "SaaS"],
-        category: "SaaS Product"
+        tag: "Business",
+        tagColor: "text-primary bg-primary/10",
+        description:
+            "Mobile billing and invoicing application for small businesses and freelancers.",
+        url: "https://bill.machive.in",
+        image: "/portfolio/billhive.png",
+        alt: "BillHive - Mobile billing and invoicing application",
     },
-    {
-        title: "DevHive",
-        description: "Developer tools and resources hub.",
-        image: "/portfolio/devhive.png", // Placeholder path
-        link: "https://devhive.in",
-        tags: ["DevTools", "Resources", "Community"],
-        category: "Developer Tools"
-    }
 ];
 
 export default function PortfolioPage() {
     return (
-        <main className="flex min-h-screen flex-col bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-200">
-            <Navbar />
-
+        <div className="w-full">
             {/* Header */}
             <section className="px-6 lg:px-40 py-20 lg:py-32 bg-white dark:bg-background-dark border-b border-gray-100 dark:border-gray-800">
                 <div className="max-w-[1200px] mx-auto text-center">
@@ -83,18 +91,23 @@ export default function PortfolioPage() {
                 <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {PORTFOLIO_ITEMS.map((item, index) => (
                         <div key={index} className="group relative bg-white dark:bg-gray-900 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
-                            {/* Image Placeholder area since we don't have actual images yet */}
                             <div className="aspect-video bg-gray-100 dark:bg-gray-800 relative overflow-hidden flex items-center justify-center group-hover:bg-gray-200 dark:group-hover:bg-gray-700 transition-colors">
-                                {/* Use a pattern or icon instead of actual image for now to avoid 404s on build/runtime if images missing */}
-                                <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent"></div>
-                                <Layout className="text-gray-300 dark:text-gray-600 size-16 group-hover:scale-110 transition-transform duration-500" />
+                                <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent z-10"></div>
+                                {/* Use next/image with unoptimized for external Google images */}
+                                <Image
+                                    src={item.image}
+                                    alt={item.alt}
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                    unoptimized
+                                />
 
                                 {/* Overlay Link */}
                                 <a
-                                    href={item.link}
+                                    href={item.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/40 transition-opacity backdrop-blur-sm"
+                                    className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/40 transition-opacity backdrop-blur-sm"
                                 >
                                     <div className="bg-white text-slate-900 rounded-full p-3 font-bold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform">
                                         Visit Site <ExternalLink size={16} />
@@ -104,7 +117,7 @@ export default function PortfolioPage() {
 
                             <div className="p-6 flex-1 flex flex-col">
                                 <div className="flex items-center justify-between mb-3">
-                                    <span className="text-xs font-bold uppercase tracking-wider text-primary">{item.category}</span>
+                                    <span className="text-xs font-bold uppercase tracking-wider text-primary">{item.tag}</span>
                                     <div className="flex gap-2">
                                         <div className="size-2 rounded-full bg-red-400"></div>
                                         <div className="size-2 rounded-full bg-yellow-400"></div>
@@ -116,11 +129,9 @@ export default function PortfolioPage() {
                                     {item.description}
                                 </p>
                                 <div className="flex flex-wrap gap-2 mt-auto">
-                                    {item.tags.map((tag, tagIndex) => (
-                                        <span key={tagIndex} className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-[10px] font-bold uppercase rounded-md">
-                                            {tag}
-                                        </span>
-                                    ))}
+                                    <span className={`px-2 py-1 text-[10px] font-bold uppercase rounded-md ${item.tagColor}`}>
+                                        {item.tag}
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -135,13 +146,13 @@ export default function PortfolioPage() {
                     <p className="text-gray-600 dark:text-gray-400 mb-10 text-lg">
                         We transform concepts into production-ready software. Whether you need a simple MVP or a complex enterprise platform, we have the expertise to deliver.
                     </p>
-                    <Button className="h-14 px-8 text-lg rounded-xl shadow-xl shadow-primary/20">
-                        Start Your Project <ArrowRight className="ml-2" size={20} />
-                    </Button>
+                    <Link href="/contact">
+                        <Button className="h-14 px-8 text-lg rounded-xl shadow-xl shadow-primary/20">
+                            Start Your Project <ArrowRight className="ml-2" size={20} />
+                        </Button>
+                    </Link>
                 </div>
             </section>
-
-            <Footer />
-        </main>
+        </div>
     );
 }

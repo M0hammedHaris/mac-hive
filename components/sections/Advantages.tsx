@@ -29,7 +29,7 @@ export function Advantages() {
     ];
 
     return (
-        <section id="process" className="w-full bg-white dark:bg-slate-900/50 py-24 px-6 lg:px-20 border-y border-slate-100 dark:border-slate-800">
+        <section id="services" className="w-full bg-white dark:bg-slate-900/50 py-24 px-6 lg:px-20 border-y border-slate-100 dark:border-slate-800">
             <div className="mx-auto max-w-[1440px]">
                 <div className="mb-16 flex flex-col gap-4 text-center items-center">
                     <h2 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-4xl">

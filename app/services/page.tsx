@@ -1,14 +1,22 @@
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { Terminal, Search, Zap, Gauge, Smartphone, Layers, MonitorSmartphone, Activity, CheckCircle } from "lucide-react";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Services | Mac Hive - Web & Mobile Development",
+    description: "Discover our full-stack development services including Next.js web apps, Flutter mobile apps, and AI-powered SaaS solutions. Ship your product in weeks, not months.",
+    openGraph: {
+        title: "Services | Mac Hive",
+        description: "High-performance web and mobile development services at agentic speed.",
+    },
+};
 
 export default function ServicesPage() {
     return (
-        <main className="flex min-h-screen flex-col bg-background-light dark:bg-background-dark text-slate-900 dark:text-gray-100">
-            <Navbar />
-
+        <div className="flex flex-col text-slate-900 dark:text-gray-100">
             {/* Hero Section */}
             <section className="relative px-6 lg:px-40 py-20 lg:py-32 overflow-hidden">
                 <div className="max-w-[1200px] mx-auto text-center relative z-10">
@@ -27,12 +35,16 @@ export default function ServicesPage() {
                         Mac Hive delivers high-performance web and mobile applications with a focus on speed, quality, and minimalist design.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button className="h-14 px-10 text-lg shadow-xl shadow-primary/30">
-                            View Our Work
-                        </Button>
-                        <Button variant="outline" className="h-14 px-10 text-lg bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
-                            Schedule a Consultation
-                        </Button>
+                        <Link href="/portfolio">
+                            <Button className="h-14 px-10 text-lg shadow-xl shadow-primary/30">
+                                View Our Work
+                            </Button>
+                        </Link>
+                        <Link href="/contact">
+                            <Button variant="outline" className="h-14 px-10 text-lg bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                                Schedule a Consultation
+                            </Button>
+                        </Link>
                     </div>
                 </div>
                 {/* Abstract Background Shapes */}
@@ -99,10 +111,10 @@ export default function ServicesPage() {
                                 <div className="p-8 font-mono text-sm leading-relaxed overflow-x-auto text-gray-300">
                                     <p><span className="text-[#c678dd]">export default function</span> <span className="text-[#61afef]">SaaSApp</span>() {"{"}</p>
                                     <p className="pl-4"><span className="text-[#c678dd]">return</span> (</p>
-                                    <p className="pl-8"><span className="text-gray-500">&lt;</span><span className="text-[#c678dd]">main</span> <span className="text-[#d19a66]">className</span>=<span className="text-[#98c379]">"flex min-h-screen flex-col"</span><span className="text-gray-500">&gt;</span></p>
+                                    <p className="pl-8"><span className="text-gray-500">&lt;</span><span className="text-[#c678dd]">main</span> <span className="text-[#d19a66]">className</span>=<span className="text-[#98c379]">&quot;flex min-h-screen flex-col&quot;</span><span className="text-gray-500">&gt;</span></p>
                                     <p className="pl-12"><span className="text-gray-500">&lt;</span><span className="text-[#61afef]">Navbar</span> <span className="text-[#d19a66]">sticky</span> <span className="text-gray-500">/&gt;</span></p>
                                     <p className="pl-12"><span className="text-gray-500">&lt;</span><span className="text-[#61afef]">Hero</span></p>
-                                    <p className="pl-16"><span className="text-[#d19a66]">title</span>=<span className="text-[#98c379]">"Scale Fast"</span></p>
+                                    <p className="pl-16"><span className="text-[#d19a66]">title</span>=<span className="text-[#98c379]">&quot;Scale Fast&quot;</span></p>
                                     <p className="pl-16"><span className="text-[#d19a66]">onAction</span>={"{"}handleSignup{"}"}</p>
                                     <p className="pl-12"><span className="text-gray-500">/&gt;</span></p>
                                     <p className="pl-12"><span className="text-gray-500">&lt;</span><span className="text-[#61afef]">Features</span> <span className="text-[#d19a66]">data</span>={"{"}webBenefits{"}"} <span className="text-gray-500">/&gt;</span></p>
@@ -132,13 +144,24 @@ export default function ServicesPage() {
             <section className="px-6 lg:px-40 py-24">
                 <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div className="relative flex justify-center items-center h-[500px]">
-                        {/* Floating Mobile Mockups - Placeholder Images used from design */}
-                        {/* Note: Replacing img tags with next/image would be ideal, but using standard img for now as per design html structure or need to configure domains */}
+                        {/* Floating Mobile Mockups */}
                         <div className="absolute z-20 w-56 h-[440px] bg-gray-900 rounded-[2.5rem] border-[6px] border-gray-800 shadow-2xl overflow-hidden transform -translate-x-12 -rotate-6 transition-transform hover:rotate-0 duration-500">
-                            <img className="w-full h-full object-cover" alt="Modern mobile dashboard UI" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJlmk5fRfztW_PugCrpMKJpO01UmJQUIvYDJ6mTtg0uggzePmWyhUATmVwBMnexdrbsqycPlEAOfpZzsUoKgrMWdPRNYonmdRsIaUbyBRWvTrHq00c8-bt77MKO15tVfmAk4AMKr8Yj-8OI_v4d2Ynbrv9P4rtLHW1mk32u9eNJkqqSeS8TFCQ8iRKIsTSe49Avnuy86G19NqkyCznXUxgxWpHPA7w9iUZZAJQpLVhHmSpsob0wjWkIu7dWa4OF7EuivEY3cgEP8es" />
+                            <Image
+                                className="w-full h-full object-cover"
+                                alt="Modern mobile dashboard UI"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJlmk5fRfztW_PugCrpMKJpO01UmJQUIvYDJ6mTtg0uggzePmWyhUATmVwBMnexdrbsqycPlEAOfpZzsUoKgrMWdPRNYonmdRsIaUbyBRWvTrHq00c8-bt77MKO15tVfmAk4AMKr8Yj-8OI_v4d2Ynbrv9P4rtLHW1mk32u9eNJkqqSeS8TFCQ8iRKIsTSe49Avnuy86G19NqkyCznXUxgxWpHPA7w9iUZZAJQpLVhHmSpsob0wjWkIu7dWa4OF7EuivEY3cgEP8es"
+                                fill
+                                sizes="224px"
+                            />
                         </div>
                         <div className="absolute z-10 w-56 h-[440px] bg-gray-900 rounded-[2.5rem] border-[6px] border-gray-800 shadow-2xl overflow-hidden transform translate-x-12 rotate-6 transition-transform hover:rotate-0 duration-500">
-                            <img className="w-full h-full object-cover" alt="Clean mobile profile settings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhbhCRL3ReXjMkwsGo7MB3t2yXGsn92bE3ptZeMAGnCkmcy3gLKIdZrCtVQCD-d62TXsjQJJUil4IuzAH4GxiDCsMAhsw49jx7TE-jUVBL2iE3sEjPoNLIp3X8DSFzUOmuMG9rZKXxckBgVJIa28Th4_8m-q6NNz_K-PqR1k4eqiBUTR_XAkR2ffNqG41zte-kVawsyvOGhKveGCcEmS-qh2zKxVWG0Dq-mcMIdL6DecVXHqeeIGc-b1ZnVWA0VqUSDaLmRwHDJ5e8" />
+                            <Image
+                                className="w-full h-full object-cover"
+                                alt="Clean mobile profile settings"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhbhCRL3ReXjMkwsGo7MB3t2yXGsn92bE3ptZeMAGnCkmcy3gLKIdZrCtVQCD-d62TXsjQJJUil4IuzAH4GxiDCsMAhsw49jx7TE-jUVBL2iE3sEjPoNLIp3X8DSFzUOmuMG9rZKXxckBgVJIa28Th4_8m-q6NNz_K-PqR1k4eqiBUTR_XAkR2ffNqG41zte-kVawsyvOGhKveGCcEmS-qh2zKxVWG0Dq-mcMIdL6DecVXHqeeIGc-b1ZnVWA0VqUSDaLmRwHDJ5e8"
+                                fill
+                                sizes="224px"
+                            />
                         </div>
                         {/* Pastel background circle */}
                         <div className="absolute w-80 h-80 bg-blue-100 dark:bg-blue-900/10 rounded-full"></div>
@@ -158,7 +181,7 @@ export default function ServicesPage() {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-lg">Flutter Powered</h4>
-                                    <p className="text-sm text-gray-500">One codebase for all platforms using Google's UI toolkit, reducing dev costs by 40%.</p>
+                                    <p className="text-sm text-gray-500">One codebase for all platforms using Google&apos;s UI toolkit, reducing dev costs by 40%.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors shadow-sm hover:shadow-md border border-transparent hover:border-gray-100 dark:hover:border-gray-700">
@@ -183,10 +206,6 @@ export default function ServicesPage() {
                     </div>
                 </div>
             </section>
-
-            <Footer />
-        </main>
+        </div>
     );
 }
-
-

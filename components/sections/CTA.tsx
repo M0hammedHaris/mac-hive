@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function CTA() {
     return (
@@ -17,12 +18,16 @@ export function CTA() {
                         the build queue and experience SaaS development at agentic speed.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center">
-                        <Button size="lg" className="h-16 px-10 text-lg font-bold shadow-2xl shadow-primary/30 hover:scale-105 transition-transform">
-                            Start Your Project
-                        </Button>
-                        <Button size="lg" variant="ghost" className="h-16 px-10 border border-slate-700 bg-white/5 backdrop-blur text-white text-lg font-bold hover:bg-white/10 hover:text-white transition-colors">
-                            Schedule a Call
-                        </Button>
+                        <Link href="/contact">
+                            <Button size="lg" className="h-16 px-10 text-lg font-bold shadow-2xl shadow-primary/30 hover:scale-105 transition-transform">
+                                Start Your Project
+                            </Button>
+                        </Link>
+                        <Link href="/contact">
+                            <Button size="lg" variant="ghost" className="h-16 px-10 border border-slate-700 bg-white/5 backdrop-blur text-white text-lg font-bold hover:bg-white/10 hover:text-white transition-colors">
+                                Schedule a Call
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </div>
