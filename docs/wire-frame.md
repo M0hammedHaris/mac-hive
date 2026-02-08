@@ -6,6 +6,8 @@
 **Tool:** Optimized for Google Stitch / AI Design Tools
 **Theme:** Professional, Pastel, Minimalist, Tech-Forward
 
+**stitch project id** : 12732429292619012238
+
 #### **1. Global Design System**
 
 * **Color Palette:**

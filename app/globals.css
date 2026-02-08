@@ -1,26 +1,148 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@plugin "tailwindcss-animate";
 
-@theme inline {
+@custom-variant dark (&:is(.dark *));
+
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  
+  /* Custom Mac-Hive colors */
+  --color-mh-primary: #427cf0;
+  --color-mh-secondary: #e2f9f3;
+  --color-mh-accent: #e8f0fe;
+  --color-mh-bg-light: #f6f6f8;
+  --color-mh-bg-dark: #101622;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to sure everything still looks
+  correct.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+:root {
+  --background: #f6f6f8;
+  --foreground: #0f172a; /* slate-900 */
+
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+
+  --primary: #427cf0;
+  --primary-foreground: #ffffff;
+
+  --secondary: #e2f9f3;
+  --secondary-foreground: #10b981; /* emerald-500 equivalent approx */
+
+  --accent: #e8f0fe;
+  --accent-foreground: #427cf0;
+
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #427cf0;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #101622;
+  --foreground: #f8fafc; /* slate-50 */
+
+  --card: #0f172a;
+  --card-foreground: #f8fafc;
+
+  --popover: #0f172a;
+  --popover-foreground: #f8fafc;
+
+  --primary: #427cf0;
+  --primary-foreground: #ffffff;
+
+  --secondary: #064e3b; /* emerald-900 */
+  --secondary-foreground: #34d399; /* emerald-400 */
+
+  --accent: #1e293b;
+  --accent-foreground: #f8fafc;
+
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+
+  --destructive: #7f1d1d;
+  --destructive-foreground: #f8fafc;
+
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #427cf0;
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-md border border-white/30;
+  }
+  .dark .glass-card {
+    @apply bg-slate-900/40 border-white/10;
+  }
+  
+  .glass-nav {
+    @apply bg-white/70 backdrop-blur-md border-b border-white/20;
+  }
+  .dark .glass-nav {
+      @apply bg-[#101622]/70 border-white/5;
+  }
+
+  .text-gradient {
+      @apply bg-clip-text text-transparent bg-gradient-to-r from-mh-primary to-cyan-400;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-background text-foreground antialiased transition-colors duration-300 font-sans;
 }
