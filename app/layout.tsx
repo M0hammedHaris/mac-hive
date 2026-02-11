@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { OrganizationSchema, WebSiteSchema } from "@/components/seo/JsonLd";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const alfaSlabOne = localFont({
   src: "../public/fonts/AlfaSlabOne-Regular.ttf",
@@ -105,6 +106,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
