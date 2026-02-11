@@ -20,7 +20,7 @@ export async function sendLeadNotification(data: LeadNotificationData) {
 
     try {
         await resend.emails.send({
-            from: 'Mac Hive <onboarding@resend.dev>',
+            from: 'Mac Hive <noreply@marketing.machive.in>',
             to: notificationEmail,
             subject: `🚀 New Lead: ${data.fullName} - ${data.budgetRange}`,
             html: `
