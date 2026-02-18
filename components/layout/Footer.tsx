@@ -23,6 +23,7 @@ export function Footer() {
                     <Link href="#" className="hover:text-primary transition-colors">LinkedIn</Link>
                     <Link href="#" className="hover:text-primary transition-colors">GitHub</Link>
                     <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
+                    <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>
                 </div>
                 <p className="text-sm text-slate-400">
                     © {new Date().getFullYear()} Mac Hive Agency. Built with speed.
