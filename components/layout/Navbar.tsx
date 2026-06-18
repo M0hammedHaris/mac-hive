@@ -11,22 +11,40 @@ export function Navbar() {
                     <div className="relative h-10 w-10 transition-transform group-hover:scale-105">
                         <Image
                             src="/logo.svg"
-                            alt="Mac Hive Logo"
+                            alt="Machive Logo"
                             fill
                             className="object-contain"
                         />
                     </div>
                     <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white font-display">
-                        Mac Hive
+                        Machive
                     </span>
                 </Link>
 
-                <nav className="hidden md:flex items-center gap-10">
+                <nav className="hidden md:flex items-center gap-8">
                     <Link
-                        href="/services"
+                        href="/#services"
                         className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors"
                     >
                         Services
+                    </Link>
+                    <Link
+                        href="/#solutions"
+                        className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors"
+                    >
+                        Solutions
+                    </Link>
+                    <Link
+                        href="/#industries"
+                        className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors"
+                    >
+                        Industries
+                    </Link>
+                    <Link
+                        href="/#about"
+                        className="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors"
+                    >
+                        About
                     </Link>
                     <Link
                         href="/portfolio"
@@ -42,12 +60,12 @@ export function Navbar() {
                     </Link>
                     <Link href="/contact">
                         <Button className="rounded-xl shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
-                            Start Your Build
+                            Book a Consultation
                         </Button>
                     </Link>
                 </nav>
 
-                {/* Mobile navigation - Client Component for interactivity */}
+                {/* Mobile navigation */}
                 <MobileNav />
             </div>
         </header>
