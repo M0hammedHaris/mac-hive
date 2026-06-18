@@ -11,7 +11,7 @@ const steps = [
         number: "02",
         title: "Design",
         description:
-            "Figure out the right solution before building anything. Architecture, user flow, system design -- all of it shaped around how your business actually works.",
+            "Figure out the right solution before building anything. Architecture, user flow, system design: all of it shaped around how your business actually works.",
         color: "text-emerald-600",
         bg: "bg-secondary dark:bg-emerald-900/20",
     },

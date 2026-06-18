@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { OrganizationSchema, WebSiteSchema } from "@/components/seo/JsonLd";
+import { OrganizationSchema, WebSiteSchema, PersonSchema } from "@/components/seo/JsonLd";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const alfaSlabOne = localFont({
@@ -66,22 +66,12 @@ export const metadata: Metadata = {
     title: "Machive | Business Software & Automation That Helps You Grow",
     description:
       "Lead generation, business software, automation, and AI solutions for growing businesses. Built by a senior engineer who owns every project end-to-end.",
-    images: [
-      {
-        url: "/icon.png",
-        width: 512,
-        height: 512,
-        alt: "Machive - Business Software & Automation",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Machive | Business Software & Automation That Helps You Grow",
     description:
       "Lead generation, business software, automation, and AI solutions for growing businesses.",
-    images: ["/icon.png"],
-    creator: "@machive",
   },
   alternates: {
     canonical: siteUrl,
@@ -100,6 +90,7 @@ export default function RootLayout({
       <head>
         <OrganizationSchema />
         <WebSiteSchema />
+        <PersonSchema />
       </head>
       <body className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-sans">
         <Navbar />

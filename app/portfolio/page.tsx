@@ -5,11 +5,14 @@ import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Portfolio | Mac Hive - Our Work",
-    description: "Explore our portfolio of high-performance SaaS applications, websites, and mobile apps. See how we deliver production-ready solutions at agentic speed.",
+    title: "Portfolio | Machive — Business Software & Automation Projects",
+    description: "Explore Machive's portfolio of business websites, custom software, automation systems, and mobile apps built for growing businesses across India.",
+    alternates: {
+        canonical: "https://machive.in/portfolio",
+    },
     openGraph: {
-        title: "Portfolio | Mac Hive",
-        description: "High-performance applications built with precision and deployed with speed.",
+        title: "Portfolio | Machive — Our Work",
+        description: "Business software, lead-generation websites, and automation systems built for growing businesses.",
     },
 };
 
@@ -41,8 +44,8 @@ const PORTFOLIO_ITEMS = [
         tagColor: "text-orange-600 bg-orange-500/10",
         description:
             "Artisan pottery e-commerce platform showcasing handcrafted ceramic pieces.",
-        url: "https://mud-pottery.machive.in",
-        image: "/portfolio/mud-pottery.png",
+        url: "https://mud-potter.machive.in",
+        image: "/portfolio/mud-potter.png",
         alt: "Mud Pottery - Artisan ceramics e-commerce platform",
     },
     {

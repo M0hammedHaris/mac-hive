@@ -4,6 +4,8 @@ export const metadata: Metadata = {
     title: "Privacy Policy | Machive",
     description:
         "How Machive handles your information. Plain language, no legal jargon.",
+    robots: { index: false, follow: false },
+    alternates: { canonical: "https://machive.in/privacy" },
 };
 
 export default function PrivacyPage() {

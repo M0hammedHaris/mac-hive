@@ -6,11 +6,14 @@ import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Services | Mac Hive - Web & Mobile Development",
-    description: "Discover our full-stack development services including Next.js web apps, Flutter mobile apps, and AI-powered SaaS solutions. Ship your product in weeks, not months.",
+    title: "Services | Machive — Lead Generation, Business Software & Automation",
+    description: "Machive builds lead-generation websites, custom business software, automation systems, and AI solutions that help businesses reduce manual work and scale efficiently.",
+    alternates: {
+        canonical: "https://machive.in/services",
+    },
     openGraph: {
-        title: "Services | Mac Hive",
-        description: "High-performance web and mobile development services at agentic speed.",
+        title: "Services | Machive — Business Software & Automation",
+        description: "Lead generation, business software, automation, and AI solutions built for growing businesses. Every project owned end-to-end by a senior engineer.",
     },
 };
 
@@ -28,11 +31,11 @@ export default function ServicesPage() {
                         Now accepting Q4 Projects
                     </div>
                     <h1 className="text-5xl lg:text-7xl font-black tracking-tighter mb-8 leading-[1.1]">
-                        Ship your SaaS in weeks, <br />
-                        <span className="text-primary italic">not months.</span>
+                        More leads. Less manual work. <br />
+                        <span className="text-primary italic">Built to scale.</span>
                     </h1>
                     <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-                        Mac Hive delivers high-performance web and mobile applications with a focus on speed, quality, and minimalist design.
+                        Machive builds lead-generation websites, custom business software, automation systems, and AI-powered solutions — everything owned end-to-end by a senior engineer.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link href="/portfolio">

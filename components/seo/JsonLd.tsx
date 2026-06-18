@@ -1,105 +1,188 @@
-interface OrganizationSchemaProps {
-    name?: string;
-    url?: string;
-    logo?: string;
-    description?: string;
+const SITE_URL = "https://machive.in";
+const BRAND_NAME = "Machive";
+const FOUNDER_NAME = "Mohammed Haris";
+const DESCRIPTION =
+  "Machive builds lead-generation websites, custom business software, automation systems, and AI-powered solutions that help businesses reduce manual work and scale efficiently.";
+
+export function OrganizationSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness"],
+    name: BRAND_NAME,
+    url: SITE_URL,
+    logo: `${SITE_URL}/logo.svg`,
+    description: DESCRIPTION,
+    founder: {
+      "@type": "Person",
+      name: FOUNDER_NAME,
+      url: SITE_URL,
+      sameAs: [
+        "https://linkedin.com/in/mohammed-haris-k",
+        "https://github.com/M0hammedHaris",
+      ],
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      url: `${SITE_URL}/contact`,
+      availableLanguage: ["English"],
+    },
+    sameAs: [
+      "https://linkedin.com/in/mohammed-haris-k",
+      "https://github.com/M0hammedHaris",
+    ],
+    areaServed: ["India", "Worldwide"],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Coimbatore",
+      addressRegion: "Tamil Nadu",
+      addressCountry: "IN",
+    },
+    knowsAbout: [
+      "Business Software Development",
+      "Lead Generation Websites",
+      "Business Process Automation",
+      "WhatsApp Automation",
+      "CRM Integration",
+      "AI-Powered Solutions",
+      "Custom Software India",
+      "Web Development Coimbatore",
+    ],
+    priceRange: "₹₹",
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
 }
 
-export function OrganizationSchema({
-    name = 'Mac Hive',
-    url = 'https://machive.in',
-    logo = 'https://machive.in/icon.png',
-    description = 'Mac Hive is a high-speed web and mobile development agency leveraging AI agentic workflows to build SaaS products.',
-}: OrganizationSchemaProps) {
-    const schema = {
-        '@context': 'https://schema.org',
-        '@type': 'Organization',
-        name,
-        url,
-        logo,
-        description,
-        sameAs: [],
-        contactPoint: {
-            '@type': 'ContactPoint',
-            contactType: 'customer service',
-            availableLanguage: 'English',
-        },
-        areaServed: 'Worldwide',
-        knowsAbout: [
-            'Web Development',
-            'Mobile App Development',
-            'SaaS Development',
-            'AI-Powered Development',
-            'Next.js',
-            'Flutter',
-        ],
-    };
+export function WebSiteSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: BRAND_NAME,
+    url: SITE_URL,
+    description: DESCRIPTION,
+    publisher: {
+      "@type": "Organization",
+      name: BRAND_NAME,
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE_URL}/portfolio?search={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
 
-    return (
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-    );
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
 }
 
-interface WebSiteSchemaProps {
-    name?: string;
-    url?: string;
-}
+export function PersonSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: FOUNDER_NAME,
+    url: SITE_URL,
+    jobTitle: "Senior Full Stack Engineer",
+    worksFor: {
+      "@type": "Organization",
+      name: BRAND_NAME,
+      url: SITE_URL,
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Coimbatore",
+      addressRegion: "Tamil Nadu",
+      addressCountry: "IN",
+    },
+    sameAs: [
+      "https://linkedin.com/in/mohammed-haris-k",
+      "https://github.com/M0hammedHaris",
+    ],
+    knowsAbout: [
+      "Backend Systems",
+      "Automation",
+      "Cloud Infrastructure",
+      "Product Engineering",
+      "Business Software",
+    ],
+  };
 
-export function WebSiteSchema({
-    name = 'Mac Hive',
-    url = 'https://machive.in',
-}: WebSiteSchemaProps) {
-    const schema = {
-        '@context': 'https://schema.org',
-        '@type': 'WebSite',
-        name,
-        url,
-        potentialAction: {
-            '@type': 'SearchAction',
-            target: {
-                '@type': 'EntryPoint',
-                urlTemplate: `${url}/portfolio?search={search_term_string}`,
-            },
-            'query-input': 'required name=search_term_string',
-        },
-    };
-
-    return (
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-    );
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
 }
 
 interface BreadcrumbItem {
-    name: string;
-    url: string;
+  name: string;
+  url: string;
 }
 
 interface BreadcrumbSchemaProps {
-    items: BreadcrumbItem[];
+  items: BreadcrumbItem[];
 }
 
 export function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
-    const schema = {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: items.map((item, index) => ({
-            '@type': 'ListItem',
-            position: index + 1,
-            name: item.name,
-            item: item.url,
-        })),
-    };
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
 
-    return (
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-    );
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQSchemaProps {
+  items: FAQItem[];
+}
+
+export function FAQSchema({ items }: FAQSchemaProps) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
 }

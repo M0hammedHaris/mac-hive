@@ -31,8 +31,8 @@ export function Portfolio() {
             tagColor: "text-orange-600 bg-orange-500/10",
             description:
                 "Artisan pottery e-commerce platform showcasing handcrafted ceramic pieces.",
-            url: "https://mud-pottery.machive.in",
-            image: "/portfolio/mud-pottery.png",
+            url: "https://mud-potter.machive.in",
+            image: "/portfolio/mud-potter.png",
             alt: "Mud Pottery - Artisan ceramics e-commerce platform",
         },
         {

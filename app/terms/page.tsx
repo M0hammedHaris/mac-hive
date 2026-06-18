@@ -4,6 +4,8 @@ export const metadata: Metadata = {
     title: "Terms of Service | Machive",
     description:
         "The terms that govern working with Machive. Written in plain language.",
+    robots: { index: false, follow: false },
+    alternates: { canonical: "https://machive.in/terms" },
 };
 
 export default function TermsPage() {
