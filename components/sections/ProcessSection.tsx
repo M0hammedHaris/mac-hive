@@ -1,41 +1,41 @@
 const steps = [
     {
         number: "01",
-        title: "Discover",
+        title: "Observe",
         description:
-            "We ask the right questions before writing a single line of code. Most problems become clearer once you understand what the business actually needs.",
+            "Start with the workflow pain already showing up in public or inside the business. We do not begin with random feature ideas.",
         color: "text-primary",
         bg: "bg-accent dark:bg-primary/10",
     },
     {
         number: "02",
-        title: "Design",
+        title: "Audit",
         description:
-            "Figure out the right solution before building anything. Architecture, user flow, system design: all of it shaped around how your business actually works.",
+            "Map the current process, identify the real bottleneck, and define the smallest fix with the highest business value.",
         color: "text-emerald-600",
         bg: "bg-secondary dark:bg-emerald-900/20",
     },
     {
         number: "03",
-        title: "Build",
+        title: "Sprint",
         description:
-            "You see progress, not a black box. Regular check-ins, transparent milestones, and a working product at each stage.",
+            "Ship the focused automation, dashboard, or internal tool that removes the bottleneck without turning it into a huge project.",
         color: "text-orange-500",
         bg: "bg-orange-50 dark:bg-orange-500/10",
     },
     {
         number: "04",
-        title: "Deploy",
+        title: "Systemize",
         description:
-            "Go live on solid infrastructure: hosting, monitoring, and support included. Not a handoff and goodbye.",
+            "Once the fix proves useful, we tighten the workflow, improve reliability, and make it easier to repeat.",
         color: "text-purple-600",
         bg: "bg-purple-50 dark:bg-purple-500/10",
     },
     {
         number: "05",
-        title: "Scale",
+        title: "Expand",
         description:
-            "Growth creates new problems. We stay on to automate more, add features, and keep the system growing with the business.",
+            "Once the first win proves value, we improve the system, add the next workflow layer, and define the right ongoing support path.",
         color: "text-rose-500",
         bg: "bg-rose-50 dark:bg-rose-500/10",
     },
@@ -49,10 +49,11 @@ export function ProcessSection() {
                     The Process
                 </span>
                 <h2 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-4xl">
-                    How We Work
+                    How the MacHive Process Works
                 </h2>
                 <p className="max-w-xl text-slate-600 dark:text-slate-400">
-                    No surprises. You know where the project is and what&apos;s coming next at every step.
+                    We move from pain signal to scoped fix to a system that can
+                    keep improving without turning into a bloated project.
                 </p>
             </div>
 

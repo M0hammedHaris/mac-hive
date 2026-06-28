@@ -2,7 +2,7 @@ const SITE_URL = "https://machive.in";
 const BRAND_NAME = "Machive";
 const FOUNDER_NAME = "Mohammed Haris";
 const DESCRIPTION =
-  "Machive builds lead-generation websites, custom business software, automation systems, and AI-powered solutions that help businesses reduce manual work and scale efficiently.";
+  "Machive helps founders and operations teams worldwide fix manual workflows with workflow audits, automation sprints, internal tools, dashboards, and ongoing optimization.";
 
 export function OrganizationSchema() {
   const schema = {
@@ -31,7 +31,7 @@ export function OrganizationSchema() {
       "https://linkedin.com/in/mohammed-haris-k",
       "https://github.com/M0hammedHaris",
     ],
-    areaServed: ["India", "Worldwide"],
+    areaServed: ["Worldwide"],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Coimbatore",
@@ -39,16 +39,16 @@ export function OrganizationSchema() {
       addressCountry: "IN",
     },
     knowsAbout: [
-      "Business Software Development",
-      "Lead Generation Websites",
+      "Workflow Automation",
+      "Internal Tools",
       "Business Process Automation",
-      "WhatsApp Automation",
-      "CRM Integration",
-      "AI-Powered Solutions",
-      "Custom Software India",
-      "Web Development Coimbatore",
+      "Reporting Dashboards",
+      "Admin Panel Development",
+      "Workflow Audits",
+      "Customer Operations Systems",
+      "Lead Capture Systems",
     ],
-    priceRange: "₹₹",
+    priceRange: "$$-$$$",
   };
 
   return (
@@ -116,6 +116,8 @@ export function PersonSchema() {
       "Cloud Infrastructure",
       "Product Engineering",
       "Business Software",
+      "Internal Tools",
+      "Workflow Systems",
     ],
   };
 

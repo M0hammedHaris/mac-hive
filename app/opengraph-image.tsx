@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Machive – Business Software & Automation That Helps You Grow";
+export const alt = "Machive – Workflow Audits, Automation Sprints & Internal Tools";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -63,7 +63,7 @@ export default async function Image() {
               textTransform: "uppercase",
             }}
           >
-            Business Software &amp; Automation
+            Global Founder-Direct Delivery
           </span>
         </div>
 
@@ -79,9 +79,9 @@ export default async function Image() {
             maxWidth: "800px",
           }}
         >
-          Grow Faster with{" "}
-          <span style={{ color: "#818cf8" }}>Custom Software</span>
-          {" & Automation"}
+          Fix Broken Workflows with{" "}
+          <span style={{ color: "#818cf8" }}>Automation</span>
+          {" & Internal Tools"}
         </div>
 
         {/* Subtext */}
@@ -94,16 +94,16 @@ export default async function Image() {
             marginBottom: "48px",
           }}
         >
-          Lead-generation websites, business software, automation systems, and
-          AI solutions. Built end-to-end by a senior engineer.
+          Workflow audits, automation sprints, internal tools, and dashboards
+          for founders and operations teams worldwide.
         </div>
 
         {/* Stats row */}
         <div style={{ display: "flex", gap: "48px" }}>
           {[
             { stat: "6+", label: "Years Building" },
-            { stat: "300+", label: "Sites Powered" },
-            { stat: "10x", label: "Faster Operations" },
+            { stat: "300+", label: "Live Environments" },
+            { stat: "3h → <10m", label: "Provisioning automation win" },
           ].map((item) => (
             <div
               key={item.stat}

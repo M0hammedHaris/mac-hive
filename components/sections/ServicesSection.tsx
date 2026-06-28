@@ -1,18 +1,18 @@
-import { Globe, Wrench, Bot, Smartphone, CheckCircle2 } from "lucide-react";
+import { Globe, Wrench, Bot, Layers, CheckCircle2 } from "lucide-react";
 
 const services = [
     {
         icon: Globe,
-        title: "Lead Generation Systems",
-        tagline: "Convert visitors into customers.",
+        title: "Workflow Audits",
+        tagline: "Turn pain into a scoped plan.",
         description:
-            "We build digital front doors that capture every lead and route them to the right place, automatically.",
+            "Start with the workflow that is already wasting time. We map the current process, identify the real bottleneck, and turn it into a focused execution plan.",
         includes: [
-            "Business Websites",
-            "Landing Pages",
-            "Lead Capture Forms",
-            "WhatsApp Integration",
-            "CRM Integration",
+            "Workflow Mapping",
+            "Bottleneck Diagnosis",
+            "Tooling Review",
+            "Fix Options",
+            "Implementation Scope",
         ],
         color: "text-primary",
         bg: "bg-accent dark:bg-primary/10",
@@ -20,16 +20,16 @@ const services = [
     },
     {
         icon: Wrench,
-        title: "Business Software",
-        tagline: "Custom systems built around your workflow.",
+        title: "Internal Tools",
+        tagline: "Operator surfaces that make work easier.",
         description:
-            "Stop bending your operations to fit generic software. We build systems that match the way your business actually runs.",
+            "Admin panels, dashboards, approval flows, onboarding systems, and internal consoles built around how your team actually works.",
         includes: [
             "Dashboards",
             "Internal Tools",
             "Admin Panels",
-            "Portals",
-            "Workflow Management",
+            "Approval Workflows",
+            "Ops Consoles",
         ],
         color: "text-emerald-600",
         bg: "bg-secondary dark:bg-emerald-900/20",
@@ -37,15 +37,15 @@ const services = [
     },
     {
         icon: Bot,
-        title: "Automation & AI",
-        tagline: "Reduce repetitive work.",
+        title: "Automation Sprints",
+        tagline: "Remove repeated manual work.",
         description:
-            "Every hour your team spends on repetitive tasks is an hour not spent growing the business. We automate the routine so your team's time goes toward actual work.",
+            "We connect the tools you already use and remove repetitive work around reporting, routing, reminders, exports, and handoffs.",
         includes: [
             "Report Automation",
-            "WhatsApp Automation",
-            "Lead Routing",
-            "AI Assistants",
+            "Routing & Reminders",
+            "Spreadsheet Cleanup",
+            "Ops Integrations",
             "Process Automation",
         ],
         color: "text-orange-500",
@@ -53,16 +53,16 @@ const services = [
         border: "border-orange-200 hover:border-orange-400/50",
     },
     {
-        icon: Smartphone,
-        title: "Mobile & Web Applications",
-        tagline: "Modern applications built for scale.",
+        icon: Layers,
+        title: "Ongoing Optimization",
+        tagline: "Keep the system sharp after launch.",
         description:
-            "Customer portals, SaaS platforms, mobile apps. We build software that works reliably at any scale.",
+            "After the first workflow win lands, we stay involved to improve reliability, expand the system, refine reporting, and support the next high-value fix.",
         includes: [
-            "Customer Portals",
-            "Mobile Apps",
-            "SaaS Platforms",
-            "Enterprise Applications",
+            "Monthly Support",
+            "Workflow Expansion",
+            "Reporting Improvements",
+            "Next-Step Roadmaps",
         ],
         color: "text-purple-600",
         bg: "bg-purple-50 dark:bg-purple-500/10",
@@ -82,11 +82,12 @@ export function ServicesSection() {
                         What We Build
                     </span>
                     <h2 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-4xl">
-                        Solutions Built Around Business Outcomes
+                        Global Offers Built Around Real Workflow Pain
                     </h2>
                     <p className="max-w-xl text-slate-600 dark:text-slate-400">
-                        Every engagement starts with understanding your business
-                        goal, not picking a technology stack.
+                        MacHive does not start with random app ideas. We start
+                        with a workflow that is already costing time, visibility,
+                        revenue, or lead follow-up quality.
                     </p>
                 </div>
 

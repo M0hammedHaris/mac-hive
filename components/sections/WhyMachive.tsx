@@ -4,27 +4,27 @@ const points = [
     {
         title: "Senior Engineering Expertise",
         description:
-            "You work directly with a senior engineer, not outsourced to a junior team.",
+            "You work directly with a senior engineer, not an account layer or outsourced junior team.",
     },
     {
         title: "Full Ownership from Idea to Deployment",
         description:
-            "One partner owns the entire delivery: design, code, infrastructure, and launch.",
+            "One partner owns the audit, build, infrastructure, launch, and follow-through.",
     },
     {
         title: "Automation-First Approach",
         description:
-            "Every system we build is designed with automation in mind from the ground up.",
+            "Every engagement starts with the manual work, handoff, reporting gap, or revenue leak that needs to disappear.",
     },
     {
-        title: "Modern Cloud Infrastructure",
+        title: "Proof from Real Production Systems",
         description:
-            "AWS-powered, production-grade infrastructure. Scalable, monitored, and secure.",
+            "The work is grounded in shipped systems across 300+ live client environments, not just mockups and prototypes.",
     },
     {
-        title: "Long-Term Technical Partner",
+        title: "Async-Friendly Global Delivery",
         description:
-            "We stick around after launch. Ongoing support, improvements, and new features.",
+            "Machive is based in India and built to work smoothly with global teams through scoped milestones and clear communication.",
     },
     {
         title: "Focused on Business Results",
@@ -43,10 +43,12 @@ export function WhyMachive() {
                         Why Machive
                     </span>
                     <h2 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-4xl leading-tight">
-                        Why Businesses Choose Machive
+                        Why Global Teams Choose Machive
                     </h2>
                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                        No account managers, no subcontracting, no revolving door of juniors. You talk directly to the engineer writing your code.
+                        No account managers, no subcontracting, no generic
+                        “agency” process. You work directly with the engineer
+                        diagnosing the workflow and building the system.
                     </p>
                 </div>
 

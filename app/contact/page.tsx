@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
-    title: "Contact Machive — Book a Free Consultation",
-    description: "Book a free consultation with Machive. Discuss your business goals and identify opportunities for lead generation, automation, and custom software.",
+    title: "Contact Machive — Book a Discovery Call",
+    description: "Book a discovery call with Machive to discuss broken workflows, automation opportunities, dashboards, internal tools, and ongoing optimization.",
     openGraph: {
-        title: "Contact Machive — Book a Free Consultation",
-        description: "Let's discuss your business goals. Book a free consultation to explore lead generation, automation, and custom software opportunities.",
+        title: "Contact Machive — Book a Discovery Call",
+        description: "Let's discuss your workflow pain and the right next step: audit, automation sprint, internal tool, dashboard, or support plan.",
     },
     alternates: {
         canonical: "https://machive.in/contact",

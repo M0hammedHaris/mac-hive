@@ -23,21 +23,22 @@ const siteUrl = "https://machive.in";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Machive | Business Software & Automation That Helps You Grow",
+    default: "Machive | Workflow Audits, Automation Sprints & Internal Tools",
     template: "%s | Machive",
   },
   description:
-    "Machive builds lead-generation websites, custom business software, automation systems, and AI-powered solutions that help businesses reduce manual work and scale efficiently.",
+    "Machive helps founders and operations teams worldwide fix manual workflows with workflow audits, automation sprints, internal tools, dashboards, and ongoing optimization.",
   keywords: [
-    "business software development",
-    "lead generation website",
-    "business automation",
-    "custom software India",
-    "CRM integration",
-    "WhatsApp automation",
-    "AI business solutions",
-    "web development Coimbatore",
-    "process automation",
+    "workflow automation",
+    "internal tools",
+    "workflow consultant",
+    "operations dashboard",
+    "automation sprint",
+    "workflow audit",
+    "lead capture systems",
+    "admin panel development",
+    "reporting automation",
+    "founder operations systems",
     "Machive",
   ],
   authors: [{ name: "Mohammed Haris", url: siteUrl }],
@@ -63,15 +64,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: "Machive",
-    title: "Machive | Business Software & Automation That Helps You Grow",
+    title: "Machive | Workflow Audits, Automation Sprints & Internal Tools",
     description:
-      "Lead generation, business software, automation, and AI solutions for growing businesses. Built by a senior engineer who owns every project end-to-end.",
+      "Workflow audits, automation sprints, internal tools, dashboards, and ongoing optimization for founders and operations teams worldwide. Built end-to-end by a senior engineer.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Machive | Business Software & Automation That Helps You Grow",
+    title: "Machive | Workflow Audits, Automation Sprints & Internal Tools",
     description:
-      "Lead generation, business software, automation, and AI solutions for growing businesses.",
+      "Workflow audits, automation sprints, internal tools, dashboards, and ongoing optimization for growing teams.",
   },
   alternates: {
     canonical: siteUrl,

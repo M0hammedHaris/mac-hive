@@ -2,52 +2,48 @@ import { CheckCircle2 } from "lucide-react";
 
 const solutions = [
     {
-        badge: "Construction",
+        badge: "Onboarding",
         badgeColor: "text-orange-600 bg-orange-500/10",
-        title: "Construction Lead Management System",
+        title: "Customer Onboarding Ops System",
         description:
-            "A full lead pipeline for construction businesses, from first inquiry to signed contract. No lead goes untracked.",
+            "Replace Notion docs, email follow-ups, and manual checklists with a clear onboarding tracker, reminders, and status visibility.",
         features: [
-            "Lead Capture",
-            "Site Inquiry Forms",
-            "WhatsApp Notifications",
-            "Admin Dashboard",
+            "Status Tracking",
+            "Reminder Flows",
+            "Admin Visibility",
+            "Customer Ops",
         ],
         color: "text-orange-500",
     },
     {
-        badge: "Manufacturing",
+        badge: "Reporting",
         badgeColor: "text-blue-600 bg-blue-500/10",
-        title: "Manufacturing Workflow System",
+        title: "Reporting & Export Workflow Layer",
         description:
-            "End-to-end production visibility. Track jobs, generate reports, and manage teams across your factory floor.",
-        features: ["Job Tracking", "Reporting", "Team Management"],
+            "Turn one-by-one exports, spreadsheet cleanup, and weekly manual summaries into a cleaner reporting system operators can actually use.",
+        features: ["Bulk Export", "Dashboards", "Scheduled Summaries"],
         color: "text-primary",
     },
     {
-        badge: "Marketing / AI",
+        badge: "Support",
         badgeColor: "text-purple-600 bg-purple-500/10",
-        title: "AI Marketing Platform",
+        title: "Support Triage Console",
         description:
-            "Generate ad creatives, manage campaigns, and track performance. All powered by AI. Based on our live Ad Hive product.",
+            "Consolidate messy support queues, manual routing, and missing visibility into a lightweight internal console.",
         features: [
-            "Creative Generation",
-            "Campaign Management",
-            "Analytics",
+            "Routing Rules",
+            "Prioritization",
+            "Ops Reporting",
         ],
         color: "text-purple-600",
     },
     {
-        badge: "Finance",
+        badge: "Pipeline",
         badgeColor: "text-emerald-600 bg-emerald-500/10",
-        title: "Finance Tracking Platform",
+        title: "Lead Capture & Follow-up System",
         description:
-            "Give your team full visibility into spend, budgets, and financial health. Based on our live Salary Man product.",
-        features: [
-            "Expense Tracking",
-            "Budget Management",
-            "Reporting",
-        ],
+            "Turn inbound leads, form fills, inbox replies, and spreadsheets into one cleaner follow-up workflow with routing, reminders, and status visibility.",
+        features: ["Lead Routing", "Follow-up Tasks", "Status Visibility"],
         color: "text-emerald-600",
     },
 ];
@@ -67,7 +63,9 @@ export function FeaturedSolutions() {
                         Real Business Problems, Solved
                     </h2>
                     <p className="max-w-xl text-slate-600 dark:text-slate-400">
-                        No tech demos. These are real problems businesses hired us to solve.
+                        No vanity features. These are the kinds of workflow
+                        problems MacHive is designed to solve for global clients
+                        right now.
                     </p>
                 </div>
 

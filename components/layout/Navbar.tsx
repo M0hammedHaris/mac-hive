@@ -60,7 +60,7 @@ export function Navbar() {
                     </Link>
                     <Link href="/contact">
                         <Button className="rounded-xl shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
-                            Book a Consultation
+                            Book a Discovery Call
                         </Button>
                     </Link>
                 </nav>

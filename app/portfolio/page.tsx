@@ -1,18 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink, Globe, Layout, Smartphone, Code, Database, CheckCircle, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Portfolio | Machive — Business Software & Automation Projects",
-    description: "Explore Machive's portfolio of business websites, custom software, automation systems, and mobile apps built for growing businesses across India.",
+    title: "Portfolio | Machive — Workflow Systems & Automation Projects",
+    description: "Explore Machive's portfolio of business software, automation systems, internal tools, and product builds delivered for growing teams worldwide.",
     alternates: {
         canonical: "https://machive.in/portfolio",
     },
     openGraph: {
         title: "Portfolio | Machive — Our Work",
-        description: "Business software, lead-generation websites, and automation systems built for growing businesses.",
+        description: "Business software, internal tools, automation systems, and workflow-focused product builds for growing teams.",
     },
 };
 
@@ -84,7 +84,7 @@ export default function PortfolioPage() {
                         Deployed with <span className="text-primary">Speed.</span>
                     </h1>
                     <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                        Explore our portfolio of high-performance applications, SaaS products, and digital experiences delivered for our clients and internal ventures.
+                        Explore selected builds across internal tools, automation systems, SaaS products, and digital experiences delivered for clients and internal ventures.
                     </p>
                 </div>
             </section>
@@ -145,13 +145,13 @@ export default function PortfolioPage() {
             {/* CTA */}
             <section className="px-6 lg:px-40 py-24 bg-gray-50 dark:bg-gray-900/50">
                 <div className="max-w-[800px] mx-auto text-center">
-                    <h2 className="text-3xl font-black mb-6">Have an idea? Let's build it.</h2>
+                    <h2 className="text-3xl font-black mb-6">Have a workflow bottleneck? Let&apos;s fix it.</h2>
                     <p className="text-gray-600 dark:text-gray-400 mb-10 text-lg">
-                        We transform concepts into production-ready software. Whether you need a simple MVP or a complex enterprise platform, we have the expertise to deliver.
+                        Whether you need a focused automation sprint, a clearer dashboard, or a larger internal tool, Machive can help scope the right next step.
                     </p>
                     <Link href="/contact">
                         <Button className="h-14 px-8 text-lg rounded-xl shadow-xl shadow-primary/20">
-                            Start Your Project <ArrowRight className="ml-2" size={20} />
+                            Book a Discovery Call <ArrowRight className="ml-2" size={20} />
                         </Button>
                     </Link>
                 </div>

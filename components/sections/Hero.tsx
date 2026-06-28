@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
     Globe,
     LayoutDashboard,
-    Smartphone,
+    Workflow,
     GitBranch,
     ArrowRight,
     TrendingUp,
@@ -23,8 +23,8 @@ const visualCards = [
         bg: "bg-secondary dark:bg-emerald-900/20",
     },
     {
-        icon: Smartphone,
-        label: "Mobile App",
+        icon: Workflow,
+        label: "Ops Flow",
         color: "text-orange-500",
         bg: "bg-orange-50 dark:bg-orange-500/10",
     },
@@ -46,19 +46,20 @@ export function Hero() {
                     <div className="inline-flex w-fit items-center gap-2 rounded-full bg-accent dark:bg-primary/20 px-4 py-1.5">
                         <TrendingUp className="h-3.5 w-3.5 text-primary" />
                         <span className="text-xs font-bold uppercase tracking-widest text-primary">
-                            Business Software & Automation
+                            Global Founder-Direct Delivery
                         </span>
                     </div>
 
                     <h1 className="text-5xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white md:text-6xl xl:text-7xl">
-                        Business Software &amp; Automation That Helps You{" "}
-                        <span className="text-gradient">Grow Faster</span>
+                        Fix the Bottleneck. Build{" "}
+                        <span className="text-gradient">the Right System</span>
                     </h1>
 
                     <p className="max-w-xl text-lg font-normal leading-relaxed text-slate-600 dark:text-slate-400">
-                        We build lead-generation websites, custom business
-                        software, automation systems, and AI-powered solutions
-                        that cut manual work so businesses can actually grow.
+                        Machive helps founders and operations teams worldwide
+                        remove manual work with workflow audits, automation
+                        sprints, dashboards, and internal tools that create
+                        leverage fast.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">
@@ -67,7 +68,7 @@ export function Hero() {
                                 size="lg"
                                 className="h-14 text-base gap-2 shadow-lg shadow-primary/20"
                             >
-                                Book a Free Consultation
+                                Book a Discovery Call
                                 <ArrowRight className="h-4 w-4" />
                             </Button>
                         </Link>
@@ -77,7 +78,7 @@ export function Hero() {
                                 size="lg"
                                 className="h-14 text-base bg-transparent border-2 border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800"
                             >
-                                View Our Work
+                                Explore Solutions
                             </Button>
                         </Link>
                     </div>
@@ -141,7 +142,7 @@ export function Hero() {
                             </div>
                             <div>
                                 <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                                    All connected. All delivering results.
+                                    Audit → sprint → system → expansion
                                 </p>
                             </div>
                         </div>

@@ -13,7 +13,7 @@ const problems = [
         icon: RefreshCw,
         title: "Manual Operations",
         description:
-            "Teams spend hours on data entry, report generation, and status updates. All of it can be fully automated.",
+            "Teams spend hours on onboarding, reporting, handoffs, exports, and status updates that should not be manual anymore.",
         color: "text-orange-500",
         bg: "bg-orange-50 dark:bg-orange-500/10",
     },
@@ -21,7 +21,7 @@ const problems = [
         icon: Network,
         title: "Disconnected Systems",
         description:
-            "Data lives across WhatsApp, Excel sheets, emails, and multiple tools. No single source of truth. Decisions take too long.",
+            "Data lives across spreadsheets, inboxes, Slack, Notion, and multiple tools. No clean operator view. Decisions take too long.",
         color: "text-yellow-600",
         bg: "bg-yellow-50 dark:bg-yellow-500/10",
     },

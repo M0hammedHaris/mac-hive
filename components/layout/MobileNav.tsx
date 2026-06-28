@@ -57,7 +57,7 @@ export function MobileNav() {
                         </Link>
                         <Link href="/contact" onClick={() => setIsOpen(false)}>
                             <Button className="w-full rounded-xl shadow-lg shadow-primary/20">
-                                Start Your Build
+                                Book a Discovery Call
                             </Button>
                         </Link>
                     </nav>

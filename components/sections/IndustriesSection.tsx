@@ -1,10 +1,10 @@
 const industries = [
-    { emoji: "🏗", label: "Construction" },
-    { emoji: "🏭", label: "Manufacturing" },
-    { emoji: "🏥", label: "Healthcare" },
-    { emoji: "🏪", label: "Retail & Commerce" },
-    { emoji: "🏠", label: "Real Estate" },
-    { emoji: "🚀", label: "Startups" },
+    { emoji: "🚀", label: "Founder-Led SaaS" },
+    { emoji: "🧭", label: "Operations Teams" },
+    { emoji: "🎧", label: "Customer Success" },
+    { emoji: "🛒", label: "Ecommerce & Marketplaces" },
+    { emoji: "🧩", label: "Agencies" },
+    { emoji: "📊", label: "Product Teams" },
 ];
 
 export function IndustriesSection() {
@@ -15,15 +15,15 @@ export function IndustriesSection() {
         >
             <div className="mb-12 flex flex-col gap-4 text-center items-center">
                 <span className="text-sm font-bold uppercase tracking-widest text-primary">
-                    Industries
+                    Best-Fit Teams
                 </span>
                 <h2 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-4xl">
-                    Built for Growing Businesses
+                    Best-Fit Buyers for This Offer
                 </h2>
                 <p className="max-w-xl text-slate-600 dark:text-slate-400">
-                    We&apos;ve delivered software for businesses across industries.
-                    Each solution is built around your specific operational
-                    challenges.
+                    MacHive is global by default and problem-specific by design.
+                    We care more about real operational pain than pretending one
+                    narrow niche is the answer to everything.
                 </p>
             </div>
 

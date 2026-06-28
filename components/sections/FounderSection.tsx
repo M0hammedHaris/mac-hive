@@ -28,7 +28,7 @@ export function FounderSection() {
                             <span className="text-xl">🇮🇳</span>
                             <div>
                                 <p className="text-xs font-bold text-slate-900 dark:text-white">
-                                    Coimbatore, India
+                                    Based in India · Working Worldwide
                                 </p>
                                 <p className="text-xs text-slate-500">
                                     6+ Years Experience
@@ -47,10 +47,18 @@ export function FounderSection() {
                         Meet Mohammed Haris
                     </h2>
                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                        I&apos;ve been building production software for six years. SaaS platforms, automation tools, cloud systems, mobile apps. Before starting Machive, I helped ship software that now runs across 300+ live client environments.
+                        I&apos;ve been building production software for six years:
+                        automation tools, cloud systems, dashboards, internal
+                        tools, SaaS platforms, and operator-facing products.
+                        Before starting Machive, I helped ship software that now
+                        runs across 300+ live client environments.
                     </p>
                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                        Most agencies hide who's actually doing the work. At Machive, it's just me. I own every project from the first call to production, and I stay on as your technical partner after launch.
+                        Most agencies hide who&apos;s actually doing the work. At
+                        Machive, it&apos;s just me. I own the audit, the build, and
+                        the rollout. I care most about shipping focused systems
+                        that save time, improve visibility, and create a clear
+                        ROI path before the scope gets bigger.
                     </p>
 
                     <div className="flex flex-wrap gap-2 pt-1">
@@ -71,7 +79,7 @@ export function FounderSection() {
                     <div className="flex flex-col sm:flex-row gap-3 pt-2">
                         <Link href="/contact">
                             <Button className="gap-2">
-                                Work With Me
+                                Book a Discovery Call
                                 <ArrowRight className="h-4 w-4" />
                             </Button>
                         </Link>

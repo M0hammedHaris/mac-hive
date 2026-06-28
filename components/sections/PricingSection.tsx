@@ -4,36 +4,36 @@ import { ArrowRight } from "lucide-react";
 
 const tiers = [
     {
-        name: "Business Website",
-        price: "Starting at ₹35,000",
+        name: "Workflow Audit",
+        price: "$500–$1,000",
         description:
-            "Professional website with lead capture. A clean, fast site that starts capturing leads from day one.",
+            "A paid diagnosis of the workflow, bottleneck map, solution options, and scoped recommendation.",
         highlight: false,
-        cta: "Get a Quote",
+        cta: "Start Here",
     },
     {
-        name: "Growth System",
-        price: "Starting at ₹75,000",
+        name: "Automation Sprint",
+        price: "$1,500–$4,000",
         description:
-            "Website + CRM + Automation. A complete lead-generation and follow-up engine.",
+            "Focused implementation for a painful workflow: routing, reminders, reporting, exports, or admin fixes.",
         highlight: true,
         cta: "Most Popular",
     },
     {
-        name: "Business Software",
-        price: "Starting at ₹1.5 Lakh",
+        name: "Internal Tool System",
+        price: "$4,000–$8,000",
         description:
-            "Custom workflows and operational systems built around your business processes.",
+            "Dashboards, admin panels, onboarding systems, approval flows, and operator tools built around how your team works.",
         highlight: false,
         cta: "Get a Quote",
     },
     {
-        name: "Custom Product",
-        price: "Custom Quote",
+        name: "Monthly Optimization",
+        price: "$500–$1,500 / month",
         description:
-            "SaaS platforms, mobile apps, enterprise applications. Scope determines pricing.",
+            "For teams that want post-launch support, reporting improvements, workflow expansion, and a clear next-step roadmap.",
         highlight: false,
-        cta: "Let's Talk",
+        cta: "Discuss Support",
     },
 ];
 
@@ -48,11 +48,12 @@ export function PricingSection() {
                     Investment
                 </span>
                 <h2 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-4xl">
-                    Transparent Pricing Ranges
+                    Global Pricing for Focused Workflow Work
                 </h2>
                 <p className="max-w-xl text-slate-600 dark:text-slate-400">
-                    Final pricing depends on scope and complexity. Every project
-                    gets a custom estimate after a free consultation.
+                    Start with the smallest high-value fix. Bigger systems and
+                    ongoing retainers come after the first workflow win proves
+                    value.
                 </p>
             </div>
 
@@ -118,8 +119,8 @@ export function PricingSection() {
             </div>
 
             <p className="text-center text-sm text-slate-400 mt-8">
-                All projects come with a free discovery consultation. No
-                commitments until we agree on scope and budget.
+                Most clients start with an audit or sprint. Bigger systems and
+                monthly support usually follow after the first workflow win.
             </p>
         </section>
     );

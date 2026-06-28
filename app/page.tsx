@@ -14,24 +14,24 @@ import { FAQSchema } from "@/components/seo/JsonLd";
 
 const faqItems = [
     {
-        question: "How much does a project cost?",
-        answer: "It depends on what you need. Most projects land somewhere between ₹35,000 and ₹5,00,000+. A 30-minute call is usually enough to give you a rough number.",
+        question: "What kind of work is the best fit for Machive?",
+        answer: "The best fit is a workflow that is already painful: manual onboarding, reporting bottlenecks, approvals, support triage, exports, dashboards, or messy handoffs between tools.",
     },
     {
-        question: "Do you provide hosting?",
-        answer: "Yes. I handle hosting, domain setup, SSL, and AWS infrastructure. You own everything. I just set it up and keep it running.",
+        question: "How do projects usually start?",
+        answer: "Most engagements start with a workflow audit or a focused automation sprint. We define the smallest high-value fix before talking about bigger systems or product ideas.",
+    },
+    {
+        question: "Do you work only with local clients?",
+        answer: "No. Machive is based in India and works worldwide. The delivery model is async-friendly, milestone-based, and built for global founder and operations teams.",
+    },
+    {
+        question: "Do you only take large projects?",
+        answer: "No. Many engagements start with a focused workflow audit or automation sprint. The goal is to fix the highest-value bottleneck first, then expand only if the result proves worth it.",
     },
     {
         question: "Do you provide maintenance and support?",
-        answer: "Yes. Ongoing support plans are available after launch. Bug fixes, new features, performance. I stay on as your technical partner.",
-    },
-    {
-        question: "Can you automate my existing business processes?",
-        answer: "It's what I work on most often, honestly. Tell me what your team does manually and I'll tell you what can be automated and roughly what you'd save.",
-    },
-    {
-        question: "Can you build mobile apps?",
-        answer: "Yes. Android and iOS, native or cross-platform. I'll recommend the right approach based on what you're building and your budget.",
+        answer: "Yes. Ongoing support plans are available after launch. Bug fixes, iteration, reporting improvements, and workflow expansion are all possible after the first delivery.",
     },
 ];
 
