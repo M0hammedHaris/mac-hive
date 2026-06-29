@@ -40,26 +40,24 @@ export function Hero() {
     return (
         <section className="w-full px-6 py-16 md:py-28 lg:px-20 max-w-[1440px]">
             <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12">
-                {/* Left content */}
                 <div className="lg:col-span-7 flex flex-col gap-8">
-                    {/* Badge */}
                     <div className="inline-flex w-fit items-center gap-2 rounded-full bg-accent dark:bg-primary/20 px-4 py-1.5">
                         <TrendingUp className="h-3.5 w-3.5 text-primary" />
                         <span className="text-xs font-bold uppercase tracking-widest text-primary">
-                            Global Founder-Direct Delivery
+                            Founder-Direct Global Delivery
                         </span>
                     </div>
 
                     <h1 className="text-5xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white md:text-6xl xl:text-7xl">
-                        Fix the Bottleneck. Build{" "}
-                        <span className="text-gradient">the Right System</span>
+                        Websites, Dashboards, Automation &amp; Software That Move
+                        the Business Forward.
                     </h1>
 
                     <p className="max-w-xl text-lg font-normal leading-relaxed text-slate-600 dark:text-slate-400">
-                        Machive helps founders and operations teams worldwide
-                        remove manual work with workflow audits, automation
-                        sprints, dashboards, and internal tools that create
-                        leverage fast.
+                        Machive helps growing businesses worldwide improve lead
+                        generation, operations, and internal workflows with
+                        websites, dashboards, automation, and business software
+                        built end-to-end by a senior engineer.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">
@@ -68,7 +66,7 @@ export function Hero() {
                                 size="lg"
                                 className="h-14 text-base gap-2 shadow-lg shadow-primary/20"
                             >
-                                Book a Discovery Call
+                                Request a Discovery Call
                                 <ArrowRight className="h-4 w-4" />
                             </Button>
                         </Link>
@@ -78,16 +76,14 @@ export function Hero() {
                                 size="lg"
                                 className="h-14 text-base bg-transparent border-2 border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800"
                             >
-                                Explore Solutions
+                                See What We Build
                             </Button>
                         </Link>
                     </div>
                 </div>
 
-                {/* Right visual — 4 connected product cards */}
                 <div className="lg:col-span-5 relative">
                     <div className="relative rounded-3xl bg-gradient-to-br from-accent via-white to-secondary dark:from-primary/10 dark:via-slate-900 dark:to-emerald-900/10 p-6 border border-slate-100 dark:border-slate-800 shadow-2xl">
-                        {/* Connection lines (decorative SVG) */}
                         <svg
                             className="absolute inset-0 w-full h-full pointer-events-none opacity-20 dark:opacity-10"
                             aria-hidden="true"
@@ -135,14 +131,13 @@ export function Hero() {
                             })}
                         </div>
 
-                        {/* Floating outcome badge */}
                         <div className="mt-4 flex items-center justify-center gap-3 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 p-4 shadow-md">
                             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600">
                                 <TrendingUp className="h-4 w-4" />
                             </div>
                             <div>
                                 <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                                    Audit → sprint → system → expansion
+                                    Website → dashboard → automation → expansion
                                 </p>
                             </div>
                         </div>

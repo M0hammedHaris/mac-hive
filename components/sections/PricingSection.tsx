@@ -4,36 +4,36 @@ import { ArrowRight } from "lucide-react";
 
 const tiers = [
     {
-        name: "Workflow Audit",
-        price: "$500–$1,000",
+        name: "Lead-Generation Website",
+        price: "$2,000+",
         description:
-            "A paid diagnosis of the workflow, bottleneck map, solution options, and scoped recommendation.",
+            "A stronger website with better mobile UX, clearer trust signals, and a cleaner inquiry or quote-request flow.",
         highlight: false,
-        cta: "Start Here",
+        cta: "Discuss Website Project",
     },
     {
-        name: "Automation Sprint",
-        price: "$1,500–$4,000",
+        name: "Internal Automation",
+        price: "$3,000+",
         description:
-            "Focused implementation for a painful workflow: routing, reminders, reporting, exports, or admin fixes.",
+            "A focused system to reduce repetitive ops work around routing, reminders, follow-up, reporting, exports, or admin tasks.",
         highlight: true,
         cta: "Most Popular",
     },
     {
-        name: "Internal Tool System",
-        price: "$4,000–$8,000",
+        name: "Dashboard / Admin System",
+        price: "$4,000+",
         description:
-            "Dashboards, admin panels, onboarding systems, approval flows, and operator tools built around how your team works.",
+            "A clearer operating surface for reporting, admin visibility, approvals, internal workflows, and day-to-day decision-making.",
         highlight: false,
-        cta: "Get a Quote",
+        cta: "Discuss Dashboard Project",
     },
     {
-        name: "Monthly Optimization",
-        price: "$500–$1,500 / month",
+        name: "SaaS MVP / Business Software",
+        price: "$6,000+",
         description:
-            "For teams that want post-launch support, reporting improvements, workflow expansion, and a clear next-step roadmap.",
+            "A scoped MVP or business tool for founders and teams that need real product delivery without overbuilding too early.",
         highlight: false,
-        cta: "Discuss Support",
+        cta: "Scope the Build",
     },
 ];
 
@@ -48,12 +48,12 @@ export function PricingSection() {
                     Investment
                 </span>
                 <h2 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-4xl">
-                    Global Pricing for Focused Workflow Work
+                    Global Project Anchors for the Work MacHive Sells
                 </h2>
                 <p className="max-w-xl text-slate-600 dark:text-slate-400">
-                    Start with the smallest high-value fix. Bigger systems and
-                    ongoing retainers come after the first workflow win proves
-                    value.
+                    These are practical starting points from the current
+                    playbook. Final pricing depends on scope, urgency,
+                    complexity, and how much of the system needs to be built.
                 </p>
             </div>
 
@@ -119,8 +119,8 @@ export function PricingSection() {
             </div>
 
             <p className="text-center text-sm text-slate-400 mt-8">
-                Most clients start with an audit or sprint. Bigger systems and
-                monthly support usually follow after the first workflow win.
+                The goal is not to chase many tiny projects. One or two strong
+                projects per month can be enough to hit the revenue target.
             </p>
         </section>
     );

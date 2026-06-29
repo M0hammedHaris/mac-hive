@@ -10,7 +10,6 @@ export function MobileNav() {
 
     return (
         <>
-            {/* Mobile Menu Button */}
             <button
                 className="md:hidden p-2 text-slate-900 dark:text-white"
                 onClick={() => setIsOpen(!isOpen)}
@@ -23,16 +22,13 @@ export function MobileNav() {
                 )}
             </button>
 
-            {/* Mobile Menu Overlay */}
             {isOpen && (
                 <div className="fixed inset-0 top-[72px] z-40 md:hidden">
-                    {/* Backdrop */}
                     <div
                         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
                         onClick={() => setIsOpen(false)}
                     />
 
-                    {/* Menu Panel */}
                     <nav className="relative bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-6 py-8 flex flex-col gap-6 animate-in slide-in-from-top-2 duration-200">
                         <Link
                             href="/services"
@@ -57,7 +53,7 @@ export function MobileNav() {
                         </Link>
                         <Link href="/contact" onClick={() => setIsOpen(false)}>
                             <Button className="w-full rounded-xl shadow-lg shadow-primary/20">
-                                Book a Discovery Call
+                                Request a Discovery Call
                             </Button>
                         </Link>
                     </nav>

@@ -3,16 +3,16 @@ import { Globe, Wrench, Bot, Layers, CheckCircle2 } from "lucide-react";
 const services = [
     {
         icon: Globe,
-        title: "Workflow Audits",
-        tagline: "Turn pain into a scoped plan.",
+        title: "Lead-Generation Websites",
+        tagline: "Turn traffic into real inquiries.",
         description:
-            "Start with the workflow that is already wasting time. We map the current process, identify the real bottleneck, and turn it into a focused execution plan.",
+            "For service businesses that need a stronger website, better mobile UX, clearer trust signals, and a cleaner way for customers to request quotes or get in touch.",
         includes: [
-            "Workflow Mapping",
-            "Bottleneck Diagnosis",
-            "Tooling Review",
-            "Fix Options",
-            "Implementation Scope",
+            "Website Refresh or Rebuild",
+            "Lead Forms & Quote Flows",
+            "Mobile UX Improvements",
+            "Trust & Proof Sections",
+            "Conversion-Focused CTAs",
         ],
         color: "text-primary",
         bg: "bg-accent dark:bg-primary/10",
@@ -20,10 +20,10 @@ const services = [
     },
     {
         icon: Wrench,
-        title: "Internal Tools",
-        tagline: "Operator surfaces that make work easier.",
+        title: "Dashboards & Internal Tools",
+        tagline: "Give the team a cleaner operating surface.",
         description:
-            "Admin panels, dashboards, approval flows, onboarding systems, and internal consoles built around how your team actually works.",
+            "Admin panels, dashboards, approval flows, onboarding systems, and internal consoles built around how your business actually runs every day.",
         includes: [
             "Dashboards",
             "Internal Tools",
@@ -37,10 +37,10 @@ const services = [
     },
     {
         icon: Bot,
-        title: "Automation Sprints",
+        title: "Automation & Implementation",
         tagline: "Remove repeated manual work.",
         description:
-            "We connect the tools you already use and remove repetitive work around reporting, routing, reminders, exports, and handoffs.",
+            "We connect the tools you already use and reduce repetitive work around reporting, routing, reminders, exports, lead follow-up, and handoffs.",
         includes: [
             "Report Automation",
             "Routing & Reminders",
@@ -54,15 +54,15 @@ const services = [
     },
     {
         icon: Layers,
-        title: "Ongoing Optimization",
-        tagline: "Keep the system sharp after launch.",
+        title: "Business Software & MVPs",
+        tagline: "Ship the right product without overbuilding.",
         description:
-            "After the first workflow win lands, we stay involved to improve reliability, expand the system, refine reporting, and support the next high-value fix.",
+            "For founders and teams who need a scoped business tool or SaaS MVP built directly, with clear milestones and practical delivery from planning through launch.",
         includes: [
-            "Monthly Support",
-            "Workflow Expansion",
-            "Reporting Improvements",
-            "Next-Step Roadmaps",
+            "Scoped MVP Delivery",
+            "Business Software Builds",
+            "Admin & User Workflows",
+            "Milestone-Based Delivery",
         ],
         color: "text-purple-600",
         bg: "bg-purple-50 dark:bg-purple-500/10",
@@ -82,12 +82,12 @@ export function ServicesSection() {
                         What We Build
                     </span>
                     <h2 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-4xl">
-                        Global Offers Built Around Real Workflow Pain
+                        What MacHive Sells to Global Clients
                     </h2>
                     <p className="max-w-xl text-slate-600 dark:text-slate-400">
-                        MacHive does not start with random app ideas. We start
-                        with a workflow that is already costing time, visibility,
-                        revenue, or lead follow-up quality.
+                        The current offer mix is simple: stronger websites,
+                        clearer dashboards, practical automation, and scoped
+                        business software that solves a real business problem.
                     </p>
                 </div>
 

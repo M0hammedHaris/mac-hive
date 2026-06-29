@@ -1,7 +1,7 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { MobileNav } from "./MobileNav"
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { MobileNav } from "./MobileNav";
 
 export function Navbar() {
     return (
@@ -60,14 +60,13 @@ export function Navbar() {
                     </Link>
                     <Link href="/contact">
                         <Button className="rounded-xl shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
-                            Book a Discovery Call
+                            Request a Discovery Call
                         </Button>
                     </Link>
                 </nav>
 
-                {/* Mobile navigation */}
                 <MobileNav />
             </div>
         </header>
-    )
+    );
 }

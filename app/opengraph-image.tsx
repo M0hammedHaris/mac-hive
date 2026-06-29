@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Machive – Workflow Audits, Automation Sprints & Internal Tools";
+export const alt = "Machive – Websites, Dashboards, Automation & Business Software";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -21,7 +21,6 @@ export default async function Image() {
           fontFamily: "sans-serif",
         }}
       >
-        {/* Top accent bar */}
         <div
           style={{
             position: "absolute",
@@ -33,7 +32,6 @@ export default async function Image() {
           }}
         />
 
-        {/* Badge */}
         <div
           style={{
             display: "flex",
@@ -63,47 +61,43 @@ export default async function Image() {
               textTransform: "uppercase",
             }}
           >
-            Global Founder-Direct Delivery
+            Founder-Direct Global Delivery
           </span>
         </div>
 
-        {/* Main heading */}
         <div
           style={{
-            fontSize: "64px",
+            fontSize: "62px",
             fontWeight: "900",
             color: "#f8fafc",
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
             marginBottom: "24px",
-            maxWidth: "800px",
+            maxWidth: "880px",
           }}
         >
-          Fix Broken Workflows with{" "}
-          <span style={{ color: "#818cf8" }}>Automation</span>
-          {" & Internal Tools"}
+          Websites, Dashboards, Automation & Business Software
         </div>
 
-        {/* Subtext */}
         <div
           style={{
             fontSize: "22px",
             color: "#94a3b8",
-            maxWidth: "700px",
+            maxWidth: "760px",
             lineHeight: 1.5,
             marginBottom: "48px",
           }}
         >
-          Workflow audits, automation sprints, internal tools, and dashboards
-          for founders and operations teams worldwide.
+          Machive helps growing businesses worldwide improve lead generation,
+          operations, and internal workflows with practical systems built
+          end-to-end by a senior engineer.
         </div>
 
-        {/* Stats row */}
         <div style={{ display: "flex", gap: "48px" }}>
           {[
             { stat: "6+", label: "Years Building" },
             { stat: "300+", label: "Live Environments" },
-            { stat: "3h → <10m", label: "Provisioning automation win" },
+            { stat: "Global", label: "Founder-Direct Delivery" },
           ].map((item) => (
             <div
               key={item.stat}
@@ -125,7 +119,6 @@ export default async function Image() {
           ))}
         </div>
 
-        {/* Domain watermark */}
         <div
           style={{
             position: "absolute",
@@ -141,6 +134,6 @@ export default async function Image() {
         </div>
       </div>
     ),
-    { width: 1200, height: 630 }
+    { width: 1200, height: 630 },
   );
 }

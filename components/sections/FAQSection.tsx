@@ -6,23 +6,23 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
     {
         q: "What kind of work is the best fit for Machive?",
-        a: "The best fit is a workflow that is already painful: manual onboarding, reporting bottlenecks, approval chaos, support triage, exports, dashboards, or messy handoffs between tools.",
+        a: "Machive is a strong fit for businesses that need a better website, stronger lead capture, a reporting dashboard, internal automation, admin tooling, or a scoped software build tied to a clear business problem.",
     },
     {
         q: "How do projects usually start?",
-        a: "Most engagements start with a workflow audit or a focused automation sprint. We define the smallest high-value fix before talking about bigger systems or product ideas.",
+        a: "Most projects start with a discovery conversation and a scoped recommendation. The goal is to define the clearest high-value next step before building anything bigger.",
     },
     {
         q: "Do you work only with local clients?",
-        a: "No. Machive is based in India and works worldwide. The delivery model is async-friendly, milestone-based, and built for global founder and operations teams.",
+        a: "No. Machive is based in India and works worldwide. The delivery model is async-friendly, milestone-based, and built for global founder and business teams.",
     },
     {
         q: "Do you only take large projects?",
-        a: "No. Many engagements start with a focused workflow audit or automation sprint. The goal is to fix the highest-value bottleneck first, then expand only if the result proves worth it.",
+        a: "No. Some clients start with a website or focused automation build, while others come in with dashboards, internal tools, or a broader software project. The key is having a clear problem and a realistic scope.",
     },
     {
         q: "Do you provide maintenance and support?",
-        a: "Yes. Ongoing support plans are available after launch. Bug fixes, iteration, reporting improvements, and workflow expansion are all possible after the first delivery.",
+        a: "Yes. Ongoing support is available after launch for iteration, reporting improvements, system expansion, and follow-through once the first delivery is live.",
     },
 ];
 
@@ -49,9 +49,7 @@ export function FAQSection() {
                         >
                             <button
                                 className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
-                                onClick={() =>
-                                    setOpen(open === i ? null : i)
-                                }
+                                onClick={() => setOpen(open === i ? null : i)}
                                 aria-expanded={open === i}
                             >
                                 <span className="font-bold text-slate-900 dark:text-white">

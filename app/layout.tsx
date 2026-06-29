@@ -3,7 +3,11 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { OrganizationSchema, WebSiteSchema, PersonSchema } from "@/components/seo/JsonLd";
+import {
+  OrganizationSchema,
+  WebSiteSchema,
+  PersonSchema,
+} from "@/components/seo/JsonLd";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const alfaSlabOne = localFont({
@@ -23,22 +27,23 @@ const siteUrl = "https://machive.in";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Machive | Workflow Audits, Automation Sprints & Internal Tools",
+    default: "Machive | Websites, Dashboards, Automation & Business Software",
     template: "%s | Machive",
   },
   description:
-    "Machive helps founders and operations teams worldwide fix manual workflows with workflow audits, automation sprints, internal tools, dashboards, and ongoing optimization.",
+    "Machive helps growing businesses worldwide improve lead generation, operations, and internal workflows with websites, dashboards, automation, and business software built end-to-end by a senior engineer.",
   keywords: [
+    "business software",
+    "lead generation website",
+    "construction website",
+    "dashboard development",
     "workflow automation",
     "internal tools",
-    "workflow consultant",
     "operations dashboard",
-    "automation sprint",
-    "workflow audit",
-    "lead capture systems",
+    "internal automation",
+    "SaaS MVP development",
     "admin panel development",
     "reporting automation",
-    "founder operations systems",
     "Machive",
   ],
   authors: [{ name: "Mohammed Haris", url: siteUrl }],
@@ -64,15 +69,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: "Machive",
-    title: "Machive | Workflow Audits, Automation Sprints & Internal Tools",
+    title: "Machive | Websites, Dashboards, Automation & Business Software",
     description:
-      "Workflow audits, automation sprints, internal tools, dashboards, and ongoing optimization for founders and operations teams worldwide. Built end-to-end by a senior engineer.",
+      "Lead-generation websites, dashboards, automation, and business software for growing businesses worldwide. Founder-direct delivery from strategy through launch.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Machive | Workflow Audits, Automation Sprints & Internal Tools",
+    title: "Machive | Websites, Dashboards, Automation & Business Software",
     description:
-      "Workflow audits, automation sprints, internal tools, dashboards, and ongoing optimization for growing teams.",
+      "Lead-generation websites, dashboards, automation, and business software for growing teams.",
   },
   alternates: {
     canonical: siteUrl,
@@ -80,14 +85,16 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${alfaSlabOne.variable} ${anticSlab.variable} antialiased scroll-smooth`}>
+    <html
+      lang="en"
+      className={`${alfaSlabOne.variable} ${anticSlab.variable} antialiased scroll-smooth`}
+    >
       <head>
         <OrganizationSchema />
         <WebSiteSchema />

@@ -2,7 +2,7 @@ const SITE_URL = "https://machive.in";
 const BRAND_NAME = "Machive";
 const FOUNDER_NAME = "Mohammed Haris";
 const DESCRIPTION =
-  "Machive helps founders and operations teams worldwide fix manual workflows with workflow audits, automation sprints, internal tools, dashboards, and ongoing optimization.";
+  "Machive helps growing businesses worldwide improve lead generation, operations, and internal workflows with websites, dashboards, automation, and business software built end-to-end by a senior engineer.";
 
 export function OrganizationSchema() {
   const schema = {
@@ -39,13 +39,13 @@ export function OrganizationSchema() {
       addressCountry: "IN",
     },
     knowsAbout: [
+      "Business Software",
+      "Lead-Generation Websites",
+      "Dashboard Development",
       "Workflow Automation",
       "Internal Tools",
-      "Business Process Automation",
       "Reporting Dashboards",
-      "Admin Panel Development",
-      "Workflow Audits",
-      "Customer Operations Systems",
+      "SaaS MVP Development",
       "Lead Capture Systems",
     ],
     priceRange: "$$-$$$",
@@ -116,8 +116,8 @@ export function PersonSchema() {
       "Cloud Infrastructure",
       "Product Engineering",
       "Business Software",
-      "Internal Tools",
-      "Workflow Systems",
+      "Lead-Generation Websites",
+      "Dashboards",
     ],
   };
 

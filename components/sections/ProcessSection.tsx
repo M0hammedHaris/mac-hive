@@ -1,33 +1,33 @@
 const steps = [
     {
         number: "01",
-        title: "Observe",
+        title: "Discover",
         description:
-            "Start with the workflow pain already showing up in public or inside the business. We do not begin with random feature ideas.",
+            "Start by understanding the business problem clearly: website conversion, weak lead capture, reporting friction, manual ops, or a missing internal tool.",
         color: "text-primary",
         bg: "bg-accent dark:bg-primary/10",
     },
     {
         number: "02",
-        title: "Audit",
+        title: "Scope",
         description:
-            "Map the current process, identify the real bottleneck, and define the smallest fix with the highest business value.",
+            "Define the clearest high-value next step with practical scope, milestones, and the smallest build that can create real business value.",
         color: "text-emerald-600",
         bg: "bg-secondary dark:bg-emerald-900/20",
     },
     {
         number: "03",
-        title: "Sprint",
+        title: "Build",
         description:
-            "Ship the focused automation, dashboard, or internal tool that removes the bottleneck without turning it into a huge project.",
+            "Ship the website, dashboard, automation, or software layer that solves the problem without turning it into a bloated project.",
         color: "text-orange-500",
         bg: "bg-orange-50 dark:bg-orange-500/10",
     },
     {
         number: "04",
-        title: "Systemize",
+        title: "Launch",
         description:
-            "Once the fix proves useful, we tighten the workflow, improve reliability, and make it easier to repeat.",
+            "Deploy cleanly, validate the result, and make sure the new system is actually usable by the team or customers it was built for.",
         color: "text-purple-600",
         bg: "bg-purple-50 dark:bg-purple-500/10",
     },
@@ -35,7 +35,7 @@ const steps = [
         number: "05",
         title: "Expand",
         description:
-            "Once the first win proves value, we improve the system, add the next workflow layer, and define the right ongoing support path.",
+            "Once the first result proves useful, improve the system, add the next workflow layer, and define the right long-term support path.",
         color: "text-rose-500",
         bg: "bg-rose-50 dark:bg-rose-500/10",
     },
@@ -52,13 +52,13 @@ export function ProcessSection() {
                     How the MacHive Process Works
                 </h2>
                 <p className="max-w-xl text-slate-600 dark:text-slate-400">
-                    We move from pain signal to scoped fix to a system that can
-                    keep improving without turning into a bloated project.
+                    We move from a clear business problem to a scoped build and
+                    then to a cleaner system that can keep improving without
+                    unnecessary complexity.
                 </p>
             </div>
 
             <div className="relative">
-                {/* Connecting line — desktop */}
                 <div className="hidden lg:block absolute top-11 left-0 right-0 h-px bg-slate-100 dark:bg-slate-800 z-0" />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">

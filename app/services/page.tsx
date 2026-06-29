@@ -14,16 +14,16 @@ import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Services | Machive — Workflow Audits, Internal Tools & Dashboards",
+    title: "Services | Machive — Websites, Dashboards, Automation & Software",
     description:
-        "Machive helps founders and operations teams worldwide fix manual workflows with workflow audits, automation sprints, internal tools, dashboards, and ongoing optimization.",
+        "Machive helps growing businesses worldwide improve lead generation, operations, and internal workflows with websites, dashboards, automation, and business software.",
     alternates: {
         canonical: "https://machive.in/services",
     },
     openGraph: {
-        title: "Services | Machive — Workflow Audits, Internal Tools & Dashboards",
+        title: "Services | Machive — Websites, Dashboards, Automation & Software",
         description:
-            "Workflow audits, automation sprints, internal tools, dashboards, and ongoing optimization built end-to-end by a senior engineer.",
+            "Lead-generation websites, dashboards, automation, and business software built end-to-end by a senior engineer.",
     },
 };
 
@@ -31,22 +31,22 @@ const serviceSections = [
     {
         icon: Search,
         eyebrow: "Start here",
-        title: "Workflow Audits",
+        title: "Lead-Generation Websites",
         description:
-            "We begin by understanding the workflow that is already breaking: manual onboarding, messy reporting, approval chaos, support triage, exports, or scattered admin work.",
+            "For businesses that need a stronger website, better mobile experience, clearer proof, and a cleaner path for leads to request quotes or get in touch.",
         bullets: [
-            "Current-process mapping",
-            "Bottleneck diagnosis",
-            "Tooling and handoff review",
-            "Fix options with scope and priorities",
+            "Website refresh or rebuild",
+            "Lead forms and quote flows",
+            "Trust and conversion sections",
+            "Mobile UX improvements",
         ],
     },
     {
         icon: Bot,
         eyebrow: "Fastest win",
-        title: "Automation Sprints",
+        title: "Automation & Implementation",
         description:
-            "Focused delivery for a painful operational step. We connect tools, clean up routing, automate reminders, improve reporting, and remove repeated manual work.",
+            "Focused delivery for repetitive operational work. We connect tools, clean up routing, automate reminders, improve reporting, and reduce manual follow-up.",
         bullets: [
             "Reporting automation",
             "Routing and reminder flows",
@@ -57,7 +57,7 @@ const serviceSections = [
     {
         icon: Wrench,
         eyebrow: "Operator leverage",
-        title: "Internal Tools & Dashboards",
+        title: "Dashboards & Internal Tools",
         description:
             "When teams need a better operating surface, we build admin panels, dashboards, onboarding systems, approval flows, and internal consoles around how the team actually works.",
         bullets: [
@@ -69,15 +69,15 @@ const serviceSections = [
     },
     {
         icon: Layers,
-        eyebrow: "After launch",
-        title: "Ongoing Optimization",
+        eyebrow: "Product delivery",
+        title: "Business Software & SaaS MVPs",
         description:
-            "After the first win lands, we help improve reliability, refine reporting, add the next workflow layer, and stay involved where ongoing support is useful.",
+            "For founders and teams who need a scoped product or internal business system built directly, with clear milestones and practical delivery.",
         bullets: [
-            "Support and iteration",
-            "Workflow expansion",
-            "Reporting refinements",
-            "Next-step roadmap",
+            "Scoped MVP delivery",
+            "Admin and user workflows",
+            "Milestone-based delivery",
+            "Launch-ready software",
         ],
     },
 ];
@@ -87,9 +87,9 @@ const fitExamples = [
         icon: Workflow,
         title: "What fits best",
         points: [
-            "Manual onboarding and customer ops",
+            "Outdated service-business websites",
+            "Weak lead capture and quote-request flows",
             "Reporting, exports, and status visibility",
-            "Approval bottlenecks and handoff chaos",
             "Internal admin tools teams keep delaying",
         ],
     },
@@ -97,10 +97,10 @@ const fitExamples = [
         icon: Database,
         title: "What we build around",
         points: [
-            "Spreadsheets, Notion, Slack, email, CRMs",
+            "Websites, CRMs, spreadsheets, Slack, email",
             "Existing tools your team already uses",
             "Operator workflows that need one clean surface",
-            "Repeated problems that may become reusable systems later",
+            "Business problems that need a practical scoped build",
         ],
     },
 ];
@@ -115,28 +115,33 @@ export default function ServicesPage() {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                         </span>
-                        Global problem-led delivery
+                        Founder-direct global delivery
                     </div>
                     <h1 className="text-5xl lg:text-7xl font-black tracking-tighter mb-8 leading-[1.1]">
-                        Fix the workflow. <br />
-                        <span className="text-primary italic">Then scale the system.</span>
+                        Build the right website, dashboard, <br />
+                        <span className="text-primary italic">
+                            automation, or software system.
+                        </span>
                     </h1>
                     <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-                        Machive helps founders and operations teams worldwide remove
-                        manual work with workflow audits, automation sprints,
-                        internal tools, dashboards, and ongoing optimization —
-                        all owned end-to-end by a senior engineer.
+                        Machive helps growing businesses worldwide improve lead
+                        generation, operations, and internal workflows with
+                        websites, dashboards, automation, and business software
+                        — all owned end-to-end by a senior engineer.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link href="/contact">
                             <Button className="h-14 px-10 text-lg shadow-xl shadow-primary/30 gap-2">
-                                Book a Discovery Call
+                                Request a Discovery Call
                                 <ArrowRight className="h-4 w-4" />
                             </Button>
                         </Link>
                         <Link href="/portfolio">
-                            <Button variant="outline" className="h-14 px-10 text-lg bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
-                                Explore Solutions
+                            <Button
+                                variant="outline"
+                                className="h-14 px-10 text-lg bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+                            >
+                                Explore Deliverables
                             </Button>
                         </Link>
                     </div>
@@ -183,12 +188,13 @@ export default function ServicesPage() {
                             Service ladder
                         </div>
                         <h2 className="text-4xl lg:text-5xl font-black tracking-tight mb-6">
-                            Start small. Prove the fix. Expand only when it pays.
+                            Start with the clearest business problem and scope the right build.
                         </h2>
                         <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                            This is how Macive works best for growing teams: find the
-                            painful workflow, ship the right fix, and only move toward a
-                            bigger system or support plan once the result is proven.
+                            This is how Machive works best for growing businesses:
+                            identify the highest-value problem, ship the right
+                            website, dashboard, automation, or software layer,
+                            and expand only when the result is proven.
                         </p>
                     </div>
 
@@ -235,19 +241,19 @@ export default function ServicesPage() {
                             Good fit examples
                         </div>
                         <h2 className="text-3xl lg:text-5xl font-black tracking-tight mb-6">
-                            Bring the broken workflow — not a vague app idea.
+                            Bring the business problem — not a vague app idea.
                         </h2>
                         <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-2xl">
-                            The best projects start when the problem is already visible:
-                            a founder still doing onboarding manually, an ops team buried in
-                            exports, support triage with no clear queue, or a reporting flow
-                            that wastes half a day every week.
+                            The best projects start when the need is already clear:
+                            a website that does not convert, lead follow-up that breaks,
+                            a reporting flow that wastes half a day every week, or an
+                            internal workflow that still depends on manual coordination.
                         </p>
                         <div className="grid sm:grid-cols-2 gap-4 text-sm text-slate-300">
-                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">Manual onboarding and activation ops</div>
-                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">Reporting, exports, and admin visibility</div>
-                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">Approval workflows and messy handoffs</div>
-                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">Support queues and internal operator tools</div>
+                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">Lead-generation websites and quote flows</div>
+                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">Reporting dashboards and admin visibility</div>
+                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">Automation and follow-up workflows</div>
+                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">Internal tools and scoped software builds</div>
                         </div>
                     </div>
                     <div className="relative z-10 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
@@ -256,10 +262,10 @@ export default function ServicesPage() {
                         </div>
                         <div className="space-y-4">
                             {[
-                                "Workflow audit",
-                                "Automation sprint",
-                                "Internal tool or ops dashboard",
-                                "Optimization or next workflow module",
+                                "Discovery and scope",
+                                "Website / dashboard / automation build",
+                                "Launch and refinement",
+                                "Expansion or next system layer",
                             ].map((step, index) => (
                                 <div key={step} className="flex items-start gap-4">
                                     <div className="h-8 w-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold text-sm">
@@ -268,10 +274,10 @@ export default function ServicesPage() {
                                     <div>
                                         <div className="font-semibold">{step}</div>
                                         <div className="text-sm text-slate-400">
-                                            {index === 0 && "Scope the real problem before building."}
-                                            {index === 1 && "Ship the smallest high-value fix first."}
-                                            {index === 2 && "Add a cleaner operating surface for the team."}
-                                            {index === 3 && "Only when repeated demand proves it should exist."}
+                                            {index === 0 && "Define the real business problem before building."}
+                                            {index === 1 && "Ship the clearest high-value fix first."}
+                                            {index === 2 && "Tighten the result and remove the obvious friction."}
+                                            {index === 3 && "Expand only once the first outcome is proven."}
                                         </div>
                                     </div>
                                 </div>
