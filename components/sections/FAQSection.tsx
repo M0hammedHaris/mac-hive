@@ -3,72 +3,58 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-const faqs = [
-    {
-        q: "What kind of work is the best fit for Machive?",
-        a: "Machive is a strong fit for businesses that need a better website, stronger lead capture, a reporting dashboard, internal automation, admin tooling, or a scoped software build tied to a clear business problem.",
-    },
-    {
-        q: "How do projects usually start?",
-        a: "Most projects start with a discovery conversation and a scoped recommendation. The goal is to define the clearest high-value next step before building anything bigger.",
-    },
-    {
-        q: "Do you work only with local clients?",
-        a: "No. Machive is based in India and works worldwide. The delivery model is async-friendly, milestone-based, and built for global founder and business teams.",
-    },
-    {
-        q: "Do you only take large projects?",
-        a: "No. Some clients start with a website or focused automation build, while others come in with dashboards, internal tools, or a broader software project. The key is having a clear problem and a realistic scope.",
-    },
-    {
-        q: "Do you provide maintenance and support?",
-        a: "Yes. Ongoing support is available after launch for iteration, reporting improvements, system expansion, and follow-through once the first delivery is live.",
-    },
-];
+export type FAQItem = { question: string; answer: string };
 
-export function FAQSection() {
+export function FAQSection({ items }: { items: FAQItem[] }) {
     const [open, setOpen] = useState<number | null>(null);
 
     return (
-        <section className="w-full py-24 px-6 lg:px-20 max-w-[1440px]">
-            <div className="mx-auto max-w-3xl">
-                <div className="mb-14 flex flex-col gap-4 text-center items-center">
-                    <span className="text-sm font-bold uppercase tracking-widest text-primary">
-                        FAQ
-                    </span>
-                    <h2 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-4xl">
-                        Common Questions
-                    </h2>
-                </div>
+        <section
+            aria-labelledby="faq-title"
+            className="w-full max-w-[1440px] px-6 py-18 md:py-24 lg:px-20"
+        >
+            <div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-12">
+                <h2
+                    id="faq-title"
+                    className="text-3xl leading-tight font-bold tracking-[-0.015em] text-ink [font-stretch:85%] text-balance md:text-4xl lg:col-span-4"
+                >
+                    Common questions
+                </h2>
 
-                <div className="flex flex-col gap-3">
-                    {faqs.map((faq, i) => (
-                        <div
-                            key={i}
-                            className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900/30 overflow-hidden transition-all duration-200"
-                        >
-                            <button
-                                className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
-                                onClick={() => setOpen(open === i ? null : i)}
-                                aria-expanded={open === i}
-                            >
-                                <span className="font-bold text-slate-900 dark:text-white">
-                                    {faq.q}
-                                </span>
-                                <ChevronDown
-                                    className={`h-5 w-5 shrink-0 text-slate-400 transition-transform duration-300 ${
-                                        open === i ? "rotate-180" : ""
-                                    }`}
-                                />
-                            </button>
-                            {open === i && (
-                                <div className="px-6 pb-5 text-slate-600 dark:text-slate-400 leading-relaxed text-sm border-t border-slate-100 dark:border-slate-800 pt-4">
-                                    {faq.a}
+                <ul className="border-t border-ink lg:col-span-8">
+                    {items.map((item, i) => {
+                        const isOpen = open === i;
+                        const panelId = `faq-panel-${i}`;
+                        return (
+                            <li key={item.question} className="border-b border-rule">
+                                <h3>
+                                    <button
+                                        type="button"
+                                        className="flex min-h-12 w-full items-center justify-between gap-6 py-4 text-left text-lg font-semibold text-ink transition-colors hover:text-pencil active:text-pencil"
+                                        onClick={() => setOpen(isOpen ? null : i)}
+                                        aria-expanded={isOpen}
+                                        aria-controls={panelId}
+                                    >
+                                        <span className="text-pretty">{item.question}</span>
+                                        <ChevronDown
+                                            aria-hidden="true"
+                                            className={`h-5 w-5 shrink-0 text-ink-soft transition-transform duration-200 motion-reduce:transition-none ${
+                                                isOpen ? "rotate-180" : ""
+                                            }`}
+                                        />
+                                    </button>
+                                </h3>
+                                <div
+                                    id={panelId}
+                                    hidden={!isOpen}
+                                    className="max-w-[42rem] pb-6 text-base leading-relaxed text-ink-soft text-pretty"
+                                >
+                                    {item.answer}
                                 </div>
-                            )}
-                        </div>
-                    ))}
-                </div>
+                            </li>
+                        );
+                    })}
+                </ul>
             </div>
         </section>
     );

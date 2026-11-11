@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     },
 };
 
-// Data from components/sections/Portfolio.tsx
+// Machive's own products (also shown on the home page, components/sections/ProofSection.tsx)
 const PORTFOLIO_ITEMS = [
     {
         title: "Snapchat Organizer",
@@ -25,7 +25,7 @@ const PORTFOLIO_ITEMS = [
         description:
             "A powerful tool for organizing and managing your Snapchat content efficiently.",
         url: "https://snapchat-organizer.machive.in",
-        image: "/portfolio/snapchat-organizer.png",
+        image: "/portfolio/snapchat-organizer.jpg",
         alt: "Snapchat Organizer - Social media content management tool",
     },
     {
@@ -35,7 +35,7 @@ const PORTFOLIO_ITEMS = [
         description:
             "Personal finance management app to track income, expenses, and achieve your financial goals.",
         url: "https://salary-man.machive.in",
-        image: "/portfolio/salaryman.png",
+        image: "/portfolio/salaryman.jpg",
         alt: "SalaryMan - Personal finance management dashboard",
     },
     {
@@ -45,7 +45,7 @@ const PORTFOLIO_ITEMS = [
         description:
             "Artisan pottery e-commerce platform showcasing handcrafted ceramic pieces.",
         url: "https://mud-potter.machive.in",
-        image: "/portfolio/mud-potter.png",
+        image: "/portfolio/mud-pottery.jpg",
         alt: "Mud Pottery - Artisan ceramics e-commerce platform",
     },
     {
@@ -55,7 +55,7 @@ const PORTFOLIO_ITEMS = [
         description:
             "AI-powered ad poster generator for creating stunning marketing visuals instantly.",
         url: "https://ad.machive.in",
-        image: "/portfolio/ad-manager.png",
+        image: "/portfolio/ad-manager.jpg",
         alt: "Ad Manager - AI-powered marketing poster generator",
     },
     {
@@ -65,7 +65,7 @@ const PORTFOLIO_ITEMS = [
         description:
             "Mobile billing and invoicing application for small businesses and freelancers.",
         url: "https://bill.machive.in",
-        image: "/portfolio/billhive.png",
+        image: "/portfolio/billhive.jpg",
         alt: "BillHive - Mobile billing and invoicing application",
     },
 ];

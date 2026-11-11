@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Archivo, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -16,9 +17,19 @@ const alfaSlabOne = localFont({
   display: "swap",
 });
 
-const anticSlab = localFont({
-  src: "../public/fonts/AnticSlab-Regular.ttf",
-  variable: "--font-antic",
+// Archivo: words (variable weight + width axes, so bold is real, not synthetic).
+const archivo = Archivo({
+  subsets: ["latin"],
+  axes: ["wdth"],
+  variable: "--font-archivo",
+  display: "swap",
+});
+
+// JetBrains Mono: figures and measurements only.
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-jetbrains",
   display: "swap",
 });
 
@@ -93,14 +104,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${alfaSlabOne.variable} ${anticSlab.variable} antialiased scroll-smooth`}
+      className={`${alfaSlabOne.variable} ${archivo.variable} ${jetbrainsMono.variable} antialiased scroll-smooth`}
     >
       <head>
         <OrganizationSchema />
         <WebSiteSchema />
         <PersonSchema />
       </head>
-      <body className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-sans">
+      <body className="bg-background text-foreground min-h-screen flex flex-col font-sans">
         <Navbar />
         <main className="flex-1 mt-20 flex flex-col items-center w-full">
           {children}

@@ -1,17 +1,13 @@
 import { FAQSchema } from "@/components/seo/JsonLd";
 import { FAQSection } from "@/components/sections/FAQSection";
-import { FeaturedSolutions } from "@/components/sections/FeaturedSolutions";
 import { FinalCTA } from "@/components/sections/FinalCTA";
-import { FounderSection } from "@/components/sections/FounderSection";
 import { Hero } from "@/components/sections/Hero";
-import { IndustriesSection } from "@/components/sections/IndustriesSection";
-import { PricingSection } from "@/components/sections/PricingSection";
+import { OfferSection } from "@/components/sections/OfferSection";
 import { ProblemsWeSolve } from "@/components/sections/ProblemsWeSolve";
-import { ProcessSection } from "@/components/sections/ProcessSection";
-import { ServicesSection } from "@/components/sections/ServicesSection";
-import { TrustStats } from "@/components/sections/TrustStats";
-import { WhyMachive } from "@/components/sections/WhyMachive";
+import { ProofSection } from "@/components/sections/ProofSection";
+import { WorkingTogether } from "@/components/sections/WorkingTogether";
 
+// One list feeds both the visible FAQ and the FAQPage JSON-LD.
 const faqItems = [
     {
         question: "What kind of work is the best fit for Machive?",
@@ -42,19 +38,14 @@ const faqItems = [
 
 export default function Home() {
     return (
-        <div className="flex flex-col items-center w-full">
+        <div className="flex w-full flex-col items-center">
             <FAQSchema items={faqItems} />
             <Hero />
-            <TrustStats />
             <ProblemsWeSolve />
-            <ServicesSection />
-            <IndustriesSection />
-            <FeaturedSolutions />
-            <ProcessSection />
-            <WhyMachive />
-            <PricingSection />
-            <FounderSection />
-            <FAQSection />
+            <ProofSection />
+            <OfferSection />
+            <WorkingTogether />
+            <FAQSection items={faqItems} />
             <FinalCTA />
         </div>
     );

@@ -44,3 +44,11 @@ next-env.d.ts
 package-lock.json
 
 /look-ups
+
+# brag launch videos
+/brag-output
+
+# claude code: local settings + impeccable engine binary (re-downloaded on demand)
+.claude/settings.local.json
+.claude/skills/impeccable/scripts/bin/
+.kiro/skills/impeccable/scripts/bin/
