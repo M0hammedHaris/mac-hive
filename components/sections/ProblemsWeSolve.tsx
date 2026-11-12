@@ -1,81 +1,63 @@
-import { UserMinus, RefreshCw, Network, TrendingDown } from "lucide-react";
-
+// Written the way a buyer says it, in short sentences.
 const problems = [
     {
-        icon: UserMinus,
-        title: "Losing Leads",
+        title: "“We lose leads”",
         description:
-            "Potential customers visit your website but never get tracked or followed up. Revenue slips through the cracks silently.",
-        color: "text-red-500",
-        bg: "bg-red-50 dark:bg-red-900/10",
+            "People visit the website or send a message, and nobody follows up. We only notice when the customer has gone somewhere else.",
     },
     {
-        icon: RefreshCw,
-        title: "Manual Operations",
+        title: "“Too much is done by hand”",
         description:
-            "Teams spend hours on onboarding, reporting, handoffs, exports, and status updates that should not be manual anymore.",
-        color: "text-orange-500",
-        bg: "bg-orange-50 dark:bg-orange-500/10",
+            "Our team spends hours on onboarding, reports, exports, handoffs and status updates. Most of it should not be manual any more.",
     },
     {
-        icon: Network,
-        title: "Disconnected Systems",
+        title: "“Our information is everywhere”",
         description:
-            "Data lives across spreadsheets, inboxes, Slack, Notion, and multiple tools. No clean operator view. Decisions take too long.",
-        color: "text-yellow-600",
-        bg: "bg-yellow-50 dark:bg-yellow-500/10",
+            "Our data is in spreadsheets, inboxes, Slack, Notion and other tools. Nobody has one clear view, so decisions take too long.",
     },
     {
-        icon: TrendingDown,
-        title: "Growth Bottlenecks",
+        title: "“What worked before is breaking”",
         description:
-            "Processes that worked for 10 customers break at 100. Operations don't scale, and the business stalls.",
-        color: "text-purple-600",
-        bg: "bg-purple-50 dark:bg-purple-500/10",
+            "Our processes worked with 10 customers. With 100, they break, and growth slows down.",
     },
 ];
 
 export function ProblemsWeSolve() {
     return (
-        <section className="w-full py-24 px-6 lg:px-20 max-w-[1440px]">
-            <div className="mb-14 flex flex-col gap-4 text-center items-center">
-                <span className="text-sm font-bold uppercase tracking-widest text-primary">
-                    Sound Familiar?
-                </span>
-                <h2 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-4xl max-w-2xl">
-                    Your Business Shouldn&apos;t Run on Spreadsheets and Manual
-                    Work
-                </h2>
-                <p className="max-w-xl text-slate-600 dark:text-slate-400">
-                    These are the problems we solve every day for growing
-                    businesses. If any of this sounds familiar, let&apos;s talk.
-                </p>
-            </div>
+        <section
+            aria-labelledby="problems-title"
+            className="w-full max-w-[1440px] px-6 py-18 md:py-24 lg:px-20"
+        >
+            <div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-12">
+                <div className="flex flex-col gap-6 lg:col-span-4">
+                    <h2
+                        id="problems-title"
+                        className="text-3xl leading-tight font-bold tracking-[-0.015em] text-ink [font-stretch:85%] text-balance md:text-4xl"
+                    >
+                        Your business shouldn&apos;t run on spreadsheets and
+                        manual work
+                    </h2>
+                    <p className="max-w-[34rem] text-lg leading-relaxed text-ink-soft text-pretty">
+                        These are the problems I fix. If one of them sounds like
+                        your business, let&apos;s talk.
+                    </p>
+                </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {problems.map((problem) => {
-                    const Icon = problem.icon;
-                    return (
-                        <div
+                <ul className="border-t border-ink lg:col-span-8">
+                    {problems.map((problem) => (
+                        <li
                             key={problem.title}
-                            className="group flex flex-col gap-5 rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900/30 p-7 hover:border-primary/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                            className="grid grid-cols-1 gap-x-12 gap-y-2 border-b border-rule py-6 md:grid-cols-[14rem_1fr]"
                         >
-                            <div
-                                className={`flex h-12 w-12 items-center justify-center rounded-xl ${problem.bg} ${problem.color}`}
-                            >
-                                <Icon className="h-6 w-6" />
-                            </div>
-                            <div>
-                                <h3 className="mb-2 text-lg font-bold text-slate-900 dark:text-white">
-                                    {problem.title}
-                                </h3>
-                                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                                    {problem.description}
-                                </p>
-                            </div>
-                        </div>
-                    );
-                })}
+                            <h3 className="text-xl font-semibold text-ink text-balance">
+                                {problem.title}
+                            </h3>
+                            <p className="max-w-[40rem] text-base leading-relaxed text-ink-soft text-pretty">
+                                {problem.description}
+                            </p>
+                        </li>
+                    ))}
+                </ul>
             </div>
         </section>
     );

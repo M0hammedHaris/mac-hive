@@ -22,11 +22,11 @@ export async function sendLeadNotification(data: LeadNotificationData) {
         await resend.emails.send({
             from: 'Mac Hive <noreply@marketing.machive.in>',
             to: notificationEmail,
-            subject: `🚀 New Lead: ${data.fullName} - ${data.budgetRange}`,
+            subject: `New Lead: ${data.fullName} - ${data.budgetRange}`,
             html: `
                 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
                     <div style="background: linear-gradient(135deg, #1c4b82 0%, #2563eb 100%); padding: 30px; border-radius: 12px 12px 0 0;">
-                        <h1 style="color: white; margin: 0; font-size: 24px;">🐝 New Lead Received</h1>
+                        <h1 style="color: white; margin: 0; font-size: 24px;">New Lead Received</h1>
                     </div>
                     
                     <div style="background: #f8fafc; padding: 30px; border: 1px solid #e2e8f0; border-top: none; border-radius: 0 0 12px 12px;">

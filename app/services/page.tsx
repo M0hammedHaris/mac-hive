@@ -1,16 +1,5 @@
-import React from "react";
-import Link from "next/link";
-import {
-    Search,
-    Wrench,
-    Bot,
-    Layers,
-    ArrowRight,
-    CheckCircle2,
-    Workflow,
-    Database,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { PageIntro } from "@/components/sections/PageIntro";
+import { PrimaryLink, TextLink } from "@/components/ui/action-link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -29,8 +18,7 @@ export const metadata: Metadata = {
 
 const serviceSections = [
     {
-        icon: Search,
-        eyebrow: "Start here",
+        note: "Start here",
         title: "Lead-Generation Websites",
         description:
             "For businesses that need a stronger website, better mobile experience, clearer proof, and a cleaner path for leads to request quotes or get in touch.",
@@ -42,8 +30,7 @@ const serviceSections = [
         ],
     },
     {
-        icon: Bot,
-        eyebrow: "Fastest win",
+        note: "Fastest win",
         title: "Automation & Implementation",
         description:
             "Focused delivery for repetitive operational work. We connect tools, clean up routing, automate reminders, improve reporting, and reduce manual follow-up.",
@@ -55,11 +42,10 @@ const serviceSections = [
         ],
     },
     {
-        icon: Wrench,
-        eyebrow: "Operator leverage",
+        note: "Operator leverage",
         title: "Dashboards & Internal Tools",
         description:
-            "When teams need a better operating surface, we build admin panels, dashboards, onboarding systems, approval flows, and internal consoles around how the team actually works.",
+            "When teams need one clear screen to work from, we build admin panels, dashboards, onboarding systems, approval flows, and internal consoles around how the team actually works.",
         bullets: [
             "Admin panels",
             "Ops dashboards",
@@ -68,15 +54,14 @@ const serviceSections = [
         ],
     },
     {
-        icon: Layers,
-        eyebrow: "Product delivery",
+        note: "Product delivery",
         title: "Business Software & SaaS MVPs",
         description:
             "For founders and teams who need a scoped product or internal business system built directly, with clear milestones and practical delivery.",
         bullets: [
-            "Scoped MVP delivery",
+            "A first working version",
             "Admin and user workflows",
-            "Milestone-based delivery",
+            "Delivery in agreed stages",
             "Launch-ready software",
         ],
     },
@@ -84,17 +69,17 @@ const serviceSections = [
 
 const fitExamples = [
     {
-        icon: Workflow,
+        id: "fit-best-title",
         title: "What fits best",
         points: [
             "Outdated service-business websites",
             "Weak lead capture and quote-request flows",
-            "Reporting, exports, and status visibility",
+            "Reporting, exports, and seeing where work stands",
             "Internal admin tools teams keep delaying",
         ],
     },
     {
-        icon: Database,
+        id: "fit-around-title",
         title: "What we build around",
         points: [
             "Websites, CRMs, spreadsheets, Slack, email",
@@ -105,184 +90,185 @@ const fitExamples = [
     },
 ];
 
+const goodFits = [
+    "Lead-generation websites and quote flows",
+    "Reporting dashboards and admin visibility",
+    "Automation and follow-up workflows",
+    "Internal tools and scoped software builds",
+];
+
+const typicalPath = [
+    {
+        step: "Discovery and scope",
+        description: "Define the real business problem before building.",
+    },
+    {
+        step: "Website / dashboard / automation build",
+        description: "Ship the clearest high-value fix first.",
+    },
+    {
+        step: "Launch and refinement",
+        description: "Tighten the result and remove the obvious friction.",
+    },
+    {
+        step: "Expansion or next system layer",
+        description: "Expand only once the first outcome is proven.",
+    },
+];
+
 export default function ServicesPage() {
     return (
-        <div className="flex flex-col text-slate-900 dark:text-gray-100">
-            <section className="relative px-6 lg:px-40 py-20 lg:py-32 overflow-hidden">
-                <div className="max-w-[1200px] mx-auto text-center relative z-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-8">
-                        <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                        </span>
-                        Founder-direct global delivery
-                    </div>
-                    <h1 className="text-5xl lg:text-7xl font-black tracking-tighter mb-8 leading-[1.1]">
-                        Build the right website, dashboard, <br />
-                        <span className="text-primary italic">
-                            automation, or software system.
-                        </span>
-                    </h1>
-                    <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-                        Machive helps growing businesses worldwide improve lead
-                        generation, operations, and internal workflows with
-                        websites, dashboards, automation, and business software
-                        — all owned end-to-end by a senior engineer.
+        <div className="flex w-full flex-col items-center">
+            <PageIntro
+                title="Build the right website, dashboard, automation, or software system."
+                lead="Machive helps growing businesses worldwide improve lead generation, operations, and internal workflows with websites, dashboards, automation, and business software — all owned end-to-end by a senior engineer."
+            >
+                <PrimaryLink href="/contact">Request a Discovery Call</PrimaryLink>
+                <TextLink href="/portfolio">Explore Deliverables</TextLink>
+            </PageIntro>
+
+            <div className="mt-12 w-full border-y border-ink bg-pad-deep">
+                <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-x-12 gap-y-12 px-6 py-18 md:py-24 lg:grid-cols-2 lg:px-20">
+                    {fitExamples.map((group) => (
+                        <section
+                            key={group.title}
+                            aria-labelledby={group.id}
+                            className="flex flex-col gap-6"
+                        >
+                            <h2
+                                id={group.id}
+                                className="text-3xl leading-tight font-bold tracking-[-0.015em] text-ink [font-stretch:85%] text-balance md:text-4xl"
+                            >
+                                {group.title}
+                            </h2>
+                            <ul className="border-t border-ink">
+                                {group.points.map((point) => (
+                                    <li
+                                        key={point}
+                                        className="border-b border-rule py-3 text-base leading-relaxed text-ink-soft text-pretty"
+                                    >
+                                        {point}
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
+                    ))}
+                </div>
+            </div>
+
+            <section
+                aria-labelledby="ladder-title"
+                className="w-full max-w-[1440px] px-6 py-18 md:py-24 lg:px-20"
+            >
+                <div className="flex flex-col gap-6 md:max-w-[44rem]">
+                    <h2
+                        id="ladder-title"
+                        className="text-3xl leading-tight font-bold tracking-[-0.015em] text-ink [font-stretch:85%] text-balance md:text-4xl"
+                    >
+                        Start with the clearest business problem and scope the
+                        right build.
+                    </h2>
+                    <p className="text-lg leading-relaxed text-ink-soft text-pretty">
+                        This is how Machive works best for growing businesses:
+                        identify the highest-value problem, ship the right
+                        website, dashboard, automation, or software layer, and
+                        expand only when the result is proven.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="/contact">
-                            <Button className="h-14 px-10 text-lg shadow-xl shadow-primary/30 gap-2">
-                                Request a Discovery Call
-                                <ArrowRight className="h-4 w-4" />
-                            </Button>
-                        </Link>
-                        <Link href="/portfolio">
-                            <Button
-                                variant="outline"
-                                className="h-14 px-10 text-lg bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
-                            >
-                                Explore Deliverables
-                            </Button>
-                        </Link>
-                    </div>
                 </div>
-                <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]"></div>
-                <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-blue-400/5 rounded-full blur-[100px]"></div>
-            </section>
 
-            <section className="px-6 lg:px-40 py-24 bg-white dark:bg-background-dark/50">
-                <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {fitExamples.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <div
-                                key={item.title}
-                                className="rounded-3xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-8 shadow-sm"
-                            >
-                                <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-6">
-                                    <Icon size={28} />
-                                </div>
-                                <h2 className="text-2xl font-black tracking-tight mb-4">
-                                    {item.title}
-                                </h2>
-                                <div className="space-y-3">
-                                    {item.points.map((point) => (
-                                        <div key={point} className="flex items-start gap-3">
-                                            <CheckCircle2 className="h-5 w-5 text-emerald-500 mt-0.5" />
-                                            <p className="text-gray-600 dark:text-gray-400">
-                                                {point}
-                                            </p>
-                                        </div>
-                                    ))}
-                                </div>
+                <ol className="mt-12 border-t border-ink">
+                    {serviceSections.map((section) => (
+                        <li
+                            key={section.title}
+                            className="grid grid-cols-1 gap-x-12 gap-y-4 border-b border-rule py-6 md:grid-cols-[14rem_1fr] lg:grid-cols-12"
+                        >
+                            <div className="flex flex-col gap-2 lg:col-span-4">
+                                <h3 className="text-xl font-semibold text-ink text-balance md:text-2xl">
+                                    {section.title}
+                                </h3>
+                                <p className="text-sm text-ink-soft">
+                                    {section.note}
+                                </p>
                             </div>
-                        );
-                    })}
-                </div>
+                            <div className="flex max-w-[42rem] flex-col gap-4 lg:col-span-8">
+                                <p className="text-base leading-relaxed text-ink-soft text-pretty">
+                                    {section.description}
+                                </p>
+                                <ul className="list-disc space-y-1 pl-5 text-base leading-relaxed text-ink-soft marker:text-ink">
+                                    {section.bullets.map((bullet) => (
+                                        <li key={bullet}>{bullet}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </li>
+                    ))}
+                </ol>
             </section>
 
-            <section className="px-6 lg:px-40 py-24">
-                <div className="max-w-[1200px] mx-auto">
-                    <div className="text-center max-w-3xl mx-auto mb-16">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">
-                            Service ladder
-                        </div>
-                        <h2 className="text-4xl lg:text-5xl font-black tracking-tight mb-6">
-                            Start with the clearest business problem and scope the right build.
-                        </h2>
-                        <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                            This is how Machive works best for growing businesses:
-                            identify the highest-value problem, ship the right
-                            website, dashboard, automation, or software layer,
-                            and expand only when the result is proven.
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {serviceSections.map((section) => {
-                            const Icon = section.icon;
-                            return (
-                                <div
-                                    key={section.title}
-                                    className="rounded-3xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-8 shadow-sm hover:shadow-xl transition-shadow"
-                                >
-                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">
-                                        <Icon size={14} />
-                                        {section.eyebrow}
-                                    </div>
-                                    <h3 className="text-3xl font-black tracking-tight mb-4">
-                                        {section.title}
-                                    </h3>
-                                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
-                                        {section.description}
-                                    </p>
-                                    <div className="space-y-3">
-                                        {section.bullets.map((bullet) => (
-                                            <div key={bullet} className="flex items-start gap-3">
-                                                <CheckCircle2 className="h-5 w-5 text-primary mt-0.5" />
-                                                <p className="text-sm text-gray-600 dark:text-gray-400">
-                                                    {bullet}
-                                                </p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
-
-            <section className="px-6 lg:px-40 py-24 bg-white dark:bg-background-dark/50">
-                <div className="max-w-[1200px] mx-auto rounded-[32px] bg-slate-950 text-white p-10 lg:p-14 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 overflow-hidden relative">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(99,102,241,0.2),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(34,197,94,0.16),transparent_30%)]"></div>
-                    <div className="relative z-10">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold uppercase tracking-wider mb-6">
-                            Good fit examples
-                        </div>
-                        <h2 className="text-3xl lg:text-5xl font-black tracking-tight mb-6">
+            <section
+                aria-labelledby="good-fit-title"
+                className="w-full bg-ink text-pad"
+            >
+                <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-x-12 gap-y-12 px-6 py-18 md:py-24 lg:grid-cols-12 lg:px-20">
+                    <div className="flex flex-col gap-6 lg:col-span-7">
+                        <h2
+                            id="good-fit-title"
+                            className="text-3xl leading-tight font-bold tracking-[-0.015em] [font-stretch:85%] text-balance md:text-5xl"
+                        >
                             Bring the business problem — not a vague app idea.
                         </h2>
-                        <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-2xl">
-                            The best projects start when the need is already clear:
-                            a website that does not convert, lead follow-up that breaks,
-                            a reporting flow that wastes half a day every week, or an
-                            internal workflow that still depends on manual coordination.
+                        <p className="max-w-[40rem] text-lg leading-relaxed text-pad-soft text-pretty">
+                            The best projects start when the need is already
+                            clear: a website that does not convert, lead
+                            follow-up that breaks, a reporting flow that wastes
+                            half a day every week, or an internal workflow that
+                            still depends on manual coordination.
                         </p>
-                        <div className="grid sm:grid-cols-2 gap-4 text-sm text-slate-300">
-                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">Lead-generation websites and quote flows</div>
-                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">Reporting dashboards and admin visibility</div>
-                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">Automation and follow-up workflows</div>
-                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">Internal tools and scoped software builds</div>
-                        </div>
                     </div>
-                    <div className="relative z-10 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-                        <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">
-                            Typical path
-                        </div>
-                        <div className="space-y-4">
-                            {[
-                                "Discovery and scope",
-                                "Website / dashboard / automation build",
-                                "Launch and refinement",
-                                "Expansion or next system layer",
-                            ].map((step, index) => (
-                                <div key={step} className="flex items-start gap-4">
-                                    <div className="h-8 w-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold text-sm">
-                                        {index + 1}
-                                    </div>
-                                    <div>
-                                        <div className="font-semibold">{step}</div>
-                                        <div className="text-sm text-slate-400">
-                                            {index === 0 && "Define the real business problem before building."}
-                                            {index === 1 && "Ship the clearest high-value fix first."}
-                                            {index === 2 && "Tighten the result and remove the obvious friction."}
-                                            {index === 3 && "Expand only once the first outcome is proven."}
-                                        </div>
-                                    </div>
-                                </div>
+
+                    <div className="flex flex-col gap-6 lg:col-span-5 lg:col-start-1 lg:row-start-2">
+                        <h3 className="text-xl font-semibold">
+                            Good fit examples
+                        </h3>
+                        <ul className="border-t border-rule">
+                            {goodFits.map((item) => (
+                                <li
+                                    key={item}
+                                    className="border-b border-rule py-3 text-base leading-relaxed text-pad-soft text-pretty"
+                                >
+                                    {item}
+                                </li>
                             ))}
-                        </div>
+                        </ul>
+                    </div>
+
+                    <div className="flex flex-col gap-6 lg:col-span-7 lg:row-start-2">
+                        <h3 className="text-xl font-semibold">Typical path</h3>
+                        <ol className="border-t border-rule">
+                            {typicalPath.map((item, i) => (
+                                <li
+                                    key={item.step}
+                                    className="grid grid-cols-[3rem_1fr] gap-x-6 gap-y-1 border-b border-rule py-6 md:grid-cols-[4rem_1fr]"
+                                >
+                                    <span className="row-span-2 font-mono text-2xl font-semibold tabular-nums">
+                                        <span className="sr-only">Step </span>
+                                        {String(i + 1).padStart(2, "0")}
+                                    </span>
+                                    <span className="text-lg font-semibold">
+                                        {item.step}
+                                    </span>
+                                    <span className="max-w-[36rem] text-base leading-relaxed text-pad-soft text-pretty">
+                                        {item.description}
+                                    </span>
+                                </li>
+                            ))}
+                        </ol>
+                    </div>
+
+                    <div className="lg:col-span-12">
+                        <PrimaryLink href="/contact" tone="ink">
+                            Request a Discovery Call
+                        </PrimaryLink>
                     </div>
                 </div>
             </section>

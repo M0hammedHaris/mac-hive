@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored agent skill scripts and Impeccable artifacts, not app code.
+    ".claude/**",
+    ".kiro/**",
+    ".impeccable/**",
   ]),
 ]);
 

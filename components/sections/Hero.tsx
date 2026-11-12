@@ -1,149 +1,82 @@
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import {
-    Globe,
-    LayoutDashboard,
-    Workflow,
-    GitBranch,
-    ArrowRight,
-    TrendingUp,
-} from "lucide-react";
-
-const visualCards = [
-    {
-        icon: Globe,
-        label: "Website",
-        color: "text-primary",
-        bg: "bg-accent dark:bg-primary/10",
-    },
-    {
-        icon: LayoutDashboard,
-        label: "Dashboard",
-        color: "text-emerald-600",
-        bg: "bg-secondary dark:bg-emerald-900/20",
-    },
-    {
-        icon: Workflow,
-        label: "Ops Flow",
-        color: "text-orange-500",
-        bg: "bg-orange-50 dark:bg-orange-500/10",
-    },
-    {
-        icon: GitBranch,
-        label: "Automation",
-        color: "text-purple-600",
-        bg: "bg-purple-50 dark:bg-purple-500/10",
-    },
-];
+import { ArrowRight } from "lucide-react";
 
 export function Hero() {
     return (
-        <section className="w-full px-6 py-16 md:py-28 lg:px-20 max-w-[1440px]">
-            <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12">
-                <div className="lg:col-span-7 flex flex-col gap-8">
-                    <div className="inline-flex w-fit items-center gap-2 rounded-full bg-accent dark:bg-primary/20 px-4 py-1.5">
-                        <TrendingUp className="h-3.5 w-3.5 text-primary" />
-                        <span className="text-xs font-bold uppercase tracking-widest text-primary">
-                            Founder-Direct Global Delivery
-                        </span>
-                    </div>
+        <section
+            aria-labelledby="hero-title"
+            className="w-full max-w-[1440px] px-6 pt-12 pb-6 md:pt-18 lg:px-20"
+        >
+            <div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-12">
+                <h1
+                    id="hero-title"
+                    className="text-[2.5rem] leading-[1.02] font-bold tracking-[-0.02em] text-ink [font-stretch:80%] text-balance md:text-6xl lg:col-span-11 lg:text-[5.5rem]"
+                >
+                    Lost leads, manual hours, scattered tools. Fixed.
+                </h1>
 
-                    <h1 className="text-5xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white md:text-6xl xl:text-7xl">
-                        Websites, Dashboards, Automation &amp; Software That Move
-                        the Business Forward.
-                    </h1>
-
-                    <p className="max-w-xl text-lg font-normal leading-relaxed text-slate-600 dark:text-slate-400">
-                        Machive helps growing businesses worldwide improve lead
-                        generation, operations, and internal workflows with
-                        websites, dashboards, automation, and business software
-                        built end-to-end by a senior engineer.
+                <div className="flex flex-col gap-6 lg:col-span-6 lg:col-start-1">
+                    <p className="max-w-[36rem] text-lg leading-relaxed text-ink-soft text-pretty md:text-xl">
+                        I&apos;m Mohammed Haris, a senior engineer. I build the
+                        website, dashboard or automation that fixes it, from
+                        the first call to deployment, and you work with me
+                        directly.
                     </p>
-
-                    <div className="flex flex-col sm:flex-row gap-4">
-                        <Link href="/contact">
-                            <Button
-                                size="lg"
-                                className="h-14 text-base gap-2 shadow-lg shadow-primary/20"
-                            >
-                                Request a Discovery Call
-                                <ArrowRight className="h-4 w-4" />
-                            </Button>
-                        </Link>
-                        <Link href="/portfolio">
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                className="h-14 text-base bg-transparent border-2 border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800"
-                            >
-                                See What We Build
-                            </Button>
-                        </Link>
-                    </div>
-                </div>
-
-                <div className="lg:col-span-5 relative">
-                    <div className="relative rounded-3xl bg-gradient-to-br from-accent via-white to-secondary dark:from-primary/10 dark:via-slate-900 dark:to-emerald-900/10 p-6 border border-slate-100 dark:border-slate-800 shadow-2xl">
-                        <svg
-                            className="absolute inset-0 w-full h-full pointer-events-none opacity-20 dark:opacity-10"
-                            aria-hidden="true"
+                    <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                        <Link
+                            id="hero-cta"
+                            href="/contact"
+                            className="inline-flex min-h-12 items-center gap-2 bg-ink px-6 text-base font-semibold text-pad transition-colors hover:bg-pencil active:bg-pencil"
                         >
-                            <line
-                                x1="50%"
-                                y1="30%"
-                                x2="50%"
-                                y2="70%"
-                                stroke="currentColor"
-                                strokeWidth="1"
-                                strokeDasharray="4 4"
-                                className="text-primary"
-                            />
-                            <line
-                                x1="25%"
-                                y1="50%"
-                                x2="75%"
-                                y2="50%"
-                                stroke="currentColor"
-                                strokeWidth="1"
-                                strokeDasharray="4 4"
-                                className="text-primary"
-                            />
-                        </svg>
-
-                        <div className="grid grid-cols-2 gap-4">
-                            {visualCards.map((card) => {
-                                const Icon = card.icon;
-                                return (
-                                    <div
-                                        key={card.label}
-                                        className={`flex flex-col items-center gap-3 rounded-2xl ${card.bg} p-5 border border-white/60 dark:border-white/5 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5`}
-                                    >
-                                        <div
-                                            className={`flex h-12 w-12 items-center justify-center rounded-xl bg-white dark:bg-slate-800 shadow-sm ${card.color}`}
-                                        >
-                                            <Icon className="h-6 w-6" />
-                                        </div>
-                                        <span className="text-sm font-bold text-slate-700 dark:text-slate-200">
-                                            {card.label}
-                                        </span>
-                                    </div>
-                                );
-                            })}
-                        </div>
-
-                        <div className="mt-4 flex items-center justify-center gap-3 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 p-4 shadow-md">
-                            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600">
-                                <TrendingUp className="h-4 w-4" />
-                            </div>
-                            <div>
-                                <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                                    Website → dashboard → automation → expansion
-                                </p>
-                            </div>
-                        </div>
+                            Request a Discovery Call
+                            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                        </Link>
+                        <Link
+                            href="#work"
+                            className="inline-flex min-h-12 items-center text-base font-semibold text-ink underline decoration-rule transition-colors hover:decoration-ink active:text-pencil"
+                        >
+                            See what I have shipped
+                        </Link>
                     </div>
                 </div>
             </div>
+
+            <figure className="mt-12 border-y border-ink md:mt-18">
+                <figcaption className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-rule py-3 text-sm text-ink-soft">
+                    <span className="font-semibold text-ink">
+                        Provisioning a new client environment
+                    </span>
+                    <span>Time per run, before and after I automated it</span>
+                </figcaption>
+                <dl className="divide-y divide-rule">
+                    <div className="grid grid-cols-[4.5rem_1fr] items-center gap-x-4 py-3 md:grid-cols-[6rem_1fr_13rem]">
+                        <dt className="text-sm text-ink-soft">Before</dt>
+                        <dd className="col-start-2 row-start-1 md:col-start-3 md:text-right">
+                            <span className="whitespace-nowrap font-mono text-2xl font-semibold tabular-nums text-ink md:text-3xl">
+                                3 h 00 min
+                            </span>
+                        </dd>
+                        <dd
+                            aria-hidden="true"
+                            className="measure-long col-span-2 mt-3 h-3 bg-ink md:col-span-1 md:col-start-2 md:row-start-1 md:mt-0"
+                        />
+                    </div>
+                    <div className="grid grid-cols-[4.5rem_1fr] items-center gap-x-4 py-3 md:grid-cols-[6rem_1fr_13rem]">
+                        <dt className="text-sm text-ink-soft">After</dt>
+                        <dd className="col-start-2 row-start-1 md:col-start-3 md:text-right">
+                            <span className="whitespace-nowrap font-mono text-2xl font-semibold tabular-nums text-pencil md:text-3xl">
+                                &lt; 10 min
+                            </span>
+                        </dd>
+                        <dd
+                            aria-hidden="true"
+                            className="col-span-2 mt-3 h-3 md:col-span-1 md:col-start-2 md:row-start-1 md:mt-0"
+                        >
+                            <div className="measure-short h-full w-[5.6%] min-w-2 bg-pencil" />
+                        </dd>
+                    </div>
+                </dl>
+            </figure>
         </section>
     );
 }

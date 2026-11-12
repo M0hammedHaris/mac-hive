@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T17:41:35.693483+00:00",
+  "title": "Design System: Machive",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Graphite Ink",
+        "tonalRamp": [
+          "#0b140f",
+          "#14231b",
+          "#22362a",
+          "#33493b",
+          "#4a5f50",
+          "#6f8a74",
+          "#9db39a",
+          "#cfdcc6"
+        ]
+      },
+      "pencil": {
+        "role": "secondary",
+        "displayName": "Red Pencil",
+        "tonalRamp": [
+          "#4d0f0a",
+          "#7a1912",
+          "#b42318",
+          "#d0402f",
+          "#e3685a",
+          "#ef8a7c",
+          "#f6b8ae",
+          "#fbe1dc"
+        ]
+      },
+      "pad": {
+        "role": "neutral",
+        "displayName": "Computation Pad",
+        "tonalRamp": [
+          "#2c3a30",
+          "#4a5f50",
+          "#7d957f",
+          "#a9bcaa",
+          "#cbd9c2",
+          "#dde8d5",
+          "#e7efe0",
+          "#f3f7ef"
+        ]
+      },
+      "pad-deep": {
+        "role": "neutral",
+        "displayName": "Deep Pad"
+      },
+      "pad-soft": {
+        "role": "neutral",
+        "displayName": "Soft Pad"
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Pencil Rule"
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Faded Ink"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero h1 only (40px phone / 60px tablet / 88px desktop); at most 3 lines at 375px."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2s, and the h1 of every inner page at the grown 30px / 48px step."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Row headings, FAQ questions, product names."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Lead paragraphs (18px) and row text (16px)."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Captions, step text, 'from'."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Measured times, counts, prices, hostnames."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "The Machive name in nav and footer; never bold."
+      },
+      "name": {
+        "displayName": "Name",
+        "purpose": "The founder's name in the About title block; one line."
+      },
+      "display-phone": {
+        "displayName": "Display (phone)",
+        "purpose": "The hero h1 below 768px; 3 lines at 375px."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "measure-long",
+        "value": "1400ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The 'before' bar measuring out across the page on load."
+      },
+      {
+        "name": "measure-short",
+        "value": "240ms cubic-bezier(0.16, 1, 0.3, 1) 1500ms delay",
+        "purpose": "The 'after' bar landing once the long one finishes."
+      },
+      {
+        "name": "state",
+        "value": "150ms ease (Tailwind transition-colors)",
+        "purpose": "Button fill and link underline changes."
+      },
+      {
+        "name": "strip",
+        "value": "150ms ease-out opacity",
+        "purpose": "Bottom action strip appearing and hiding below 1024px; none under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "max",
+        "value": "1440px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one action: Request a Discovery Call, to /contact.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Request a Discovery Call <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 24px;background:var(--ink,#14231b);color:var(--pad,#e7efe0);font-family:Archivo,ui-sans-serif,system-ui,sans-serif;font-size:16px;font-weight:600;text-decoration:none;border-radius:0;transition:background-color 150ms ease}.ds-btn-primary:hover{background:var(--pencil,#b42318)}.ds-btn-primary:focus-visible{outline:2px solid var(--pencil,#b42318);outline-offset:3px}"
+    },
+    {
+      "name": "Button on Ink",
+      "kind": "button",
+      "refersTo": "button-on-ink",
+      "description": "Primary action inside the ink closing band.",
+      "html": "<div class=\"ds-ink-band\"><a class=\"ds-btn-on-ink\" href=\"#\">Request a Discovery Call</a></div>",
+      "css": ".ds-ink-band{background:var(--ink,#14231b);padding:24px}.ds-btn-on-ink{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;background:var(--pad,#e7efe0);color:var(--ink,#14231b);font-family:Archivo,ui-sans-serif,system-ui,sans-serif;font-size:16px;font-weight:600;text-decoration:none;transition:background-color 150ms ease,color 150ms ease}.ds-btn-on-ink:hover{background:var(--pencil,#b42318);color:var(--pad,#e7efe0)}.ds-btn-on-ink:focus-visible{outline:2px solid var(--pad,#e7efe0);outline-offset:3px}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "Secondary actions instead of a second button.",
+      "html": "<a class=\"ds-link\" href=\"#\">See what I have shipped</a>",
+      "css": ".ds-link{display:inline-flex;align-items:center;min-height:48px;color:var(--ink,#14231b);font-family:Archivo,ui-sans-serif,system-ui,sans-serif;font-weight:600;text-decoration:underline;text-decoration-color:var(--rule,#9db39a);text-decoration-thickness:1px;text-underline-offset:0.2em;transition:text-decoration-color 150ms ease}.ds-link:hover{text-decoration-color:var(--ink,#14231b)}.ds-link:focus-visible{outline:2px solid var(--pencil,#b42318);outline-offset:3px}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "band",
+      "description": "Solid pad strip on a 1px rule with the wordmark and primary action.",
+      "html": "<header class=\"ds-nav\"><span class=\"ds-wordmark\">Machive</span><nav><a href=\"#\">Services</a><a href=\"#\">Shipped work</a><a href=\"#\">Contact</a></nav></header>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;background:var(--pad,#e7efe0);border-bottom:1px solid var(--rule,#9db39a)}.ds-wordmark{font-family:'Alfa Slab One',Georgia,serif;font-weight:400;font-size:20px;color:var(--ink,#14231b)}.ds-nav nav{display:flex;gap:32px}.ds-nav a{font-family:Archivo,ui-sans-serif,system-ui,sans-serif;font-size:14px;font-weight:600;color:var(--ink-soft,#3f5446);text-decoration:none}.ds-nav a:hover{color:var(--ink,#14231b)}"
+    },
+    {
+      "name": "Ruled Rows",
+      "kind": "custom",
+      "refersTo": "ruled-row",
+      "description": "Content as rows on rules, opened by a 1px ink rule; replaces cards.",
+      "html": "<ul class=\"ds-rows\"><li><h3>Losing Leads</h3><p>Potential customers visit your website but never get tracked or followed up.</p></li><li><h3>Manual Operations</h3><p>Teams spend hours on onboarding, reporting and handoffs.</p></li></ul>",
+      "css": ".ds-rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink,#14231b);font-family:Archivo,ui-sans-serif,system-ui,sans-serif}.ds-rows li{display:grid;grid-template-columns:14rem 1fr;gap:8px 48px;padding:24px 0;border-bottom:1px solid var(--rule,#9db39a)}.ds-rows h3{margin:0;font-size:20px;font-weight:600;color:var(--ink,#14231b)}.ds-rows p{margin:0;font-size:16px;line-height:1.625;color:var(--ink-soft,#3f5446)}"
+    },
+    {
+      "name": "Time-Study Figure",
+      "kind": "custom",
+      "refersTo": "ruled-row",
+      "description": "Before/after measurement with proportional bars; the signature component.",
+      "html": "<figure class=\"ds-study\"><figcaption>Provisioning a new client environment</figcaption><div class=\"ds-row\"><span>Before</span><i class=\"ds-bar\"></i><b>3 h 00 min</b></div><div class=\"ds-row\"><span>After</span><i class=\"ds-bar ds-after\"></i><b class=\"ds-pencil\">&lt; 10 min</b></div></figure>",
+      "css": ".ds-study{margin:0;border-top:1px solid var(--ink,#14231b);border-bottom:1px solid var(--ink,#14231b);font-family:Archivo,ui-sans-serif,system-ui,sans-serif}.ds-study figcaption{padding:12px 0;font-size:14px;font-weight:600;color:var(--ink,#14231b);border-bottom:1px solid var(--rule,#9db39a)}.ds-row{display:grid;grid-template-columns:6rem 1fr 10rem;align-items:center;gap:16px;padding:16px 0}.ds-row+.ds-row{border-top:1px solid var(--rule,#9db39a)}.ds-row span{font-size:14px;color:var(--ink-soft,#3f5446)}.ds-bar{display:block;height:12px;background:var(--ink,#14231b)}.ds-after{width:5.6%;background:var(--pencil,#b42318)}.ds-row b{text-align:right;white-space:nowrap;font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:600;font-size:28px;font-variant-numeric:tabular-nums;color:var(--ink,#14231b)}.ds-row b.ds-pencil{color:var(--pencil,#b42318)}"
+    },
+    {
+      "name": "Product Figure",
+      "kind": "card",
+      "refersTo": "band",
+      "description": "Lead products (two): real product image in a square 1px ink frame with name, one line, a 'What it shows:' line drawn from the product's own description, and the live hostname. Other products use Product List Row.",
+      "html": "<figure class=\"ds-product\"><div class=\"ds-frame\"></div><figcaption><strong>BillHive</strong><span>Billing and invoicing for small businesses.</span><a href=\"#\">bill.machive.in</a></figcaption></figure>",
+      "css": ".ds-product{margin:0;display:flex;flex-direction:column;gap:12px;max-width:240px;font-family:Archivo,ui-sans-serif,system-ui,sans-serif}.ds-frame{aspect-ratio:1;border:1px solid var(--ink,#14231b);background:var(--pad-deep,#dde8d5)}.ds-product figcaption{display:flex;flex-direction:column;gap:4px}.ds-product strong{font-size:18px;font-weight:600;color:var(--ink,#14231b)}.ds-product span{font-size:14px;color:var(--ink-soft,#3f5446)}.ds-product a{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:var(--ink,#14231b);text-decoration:underline;text-decoration-color:var(--rule,#9db39a);text-underline-offset:0.2em}.ds-product a:hover{text-decoration-color:var(--ink,#14231b)}"
+    },
+    {
+      "name": "Bottom Action Strip",
+      "kind": "custom",
+      "refersTo": "bottom-action-strip",
+      "description": "Phones and tablets (<1024px), home page: fixed pad strip on a 1px ink rule with the full-width primary button. Shows after the hero CTA scrolls away, hides while the closing band or footer is on screen. Reserves its height as scroll-padding-bottom via html[data-sticky-cta]. Opacity 150ms, none under reduced motion; shows while focused.",
+      "html": "<div class=\"ds-strip\"><a class=\"ds-strip-btn\" href=\"#\">Request a Discovery Call <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></div>",
+      "css": ".ds-strip{background:var(--pad,#e7efe0);border-top:1px solid var(--ink,#14231b);padding:12px 24px max(12px,env(safe-area-inset-bottom))}.ds-strip-btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;background:var(--ink,#14231b);color:var(--pad,#e7efe0);font-family:Archivo,ui-sans-serif,system-ui,sans-serif;font-size:16px;font-weight:600;text-decoration:none;transition:background-color 150ms ease}.ds-strip-btn:hover,.ds-strip-btn:active{background:var(--pencil,#b42318)}.ds-strip-btn:focus-visible{outline:2px solid var(--pencil,#b42318);outline-offset:3px}"
+    },
+    {
+      "name": "Process Sheet",
+      "kind": "custom",
+      "refersTo": "ruled-row",
+      "description": "Project steps as ruled worksheet rows: mono step number, stage, what happens, who. No durations or dates.",
+      "html": "<div class=\"ds-sheet\"><div class=\"ds-sheet-head\"><span>Step</span><span>Stage</span><span>What happens</span><span>Who</span></div><ol><li><b>01</b><strong>Discover</strong><span>We find the real business problem.</span><span>You and me</span></li><li><b>02</b><strong>Scope</strong><span>We agree on the smallest build that is worth doing.</span><span>You and me</span></li></ol></div>",
+      "css": ".ds-sheet{border-top:1px solid var(--ink,#14231b);font-family:Archivo,ui-sans-serif,system-ui,sans-serif}.ds-sheet ol{list-style:none;margin:0;padding:0}.ds-sheet-head,.ds-sheet li{display:grid;grid-template-columns:4rem 10rem 1fr 8rem;gap:4px 24px;align-items:baseline;border-bottom:1px solid var(--rule,#9db39a)}.ds-sheet-head{padding:12px 0;font-size:14px;color:var(--ink-soft,#3f5446)}.ds-sheet li{padding:24px 0;color:var(--ink-soft,#3f5446)}.ds-sheet b{font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:600;font-size:24px;font-variant-numeric:tabular-nums;color:var(--ink,#14231b)}.ds-sheet strong{font-size:18px;font-weight:600;color:var(--ink,#14231b)}"
+    },
+    {
+      "name": "Product List Row",
+      "kind": "custom",
+      "refersTo": "ruled-row",
+      "description": "Quieter list for the products after the two lead figures: 72px framed thumbnail, name, one line, mono hostname link.",
+      "html": "<ul class=\"ds-plist\"><li><i class=\"ds-thumb\"></i><strong>Ad Manager</strong><span>Generates ad posters for marketing campaigns.</span><a href=\"#\">ad.machive.in</a></li></ul>",
+      "css": ".ds-plist{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink,#14231b);font-family:Archivo,ui-sans-serif,system-ui,sans-serif}.ds-plist li{display:grid;grid-template-columns:4.5rem 12rem 1fr auto;gap:0 24px;align-items:center;padding:12px 0;border-bottom:1px solid var(--rule,#9db39a)}.ds-thumb{display:block;width:72px;height:72px;border:1px solid var(--ink,#14231b);background:var(--pad,#e7efe0)}.ds-plist strong{font-size:18px;font-weight:600;color:var(--ink,#14231b)}.ds-plist span{color:var(--ink-soft,#3f5446)}.ds-plist a{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;color:var(--ink,#14231b);text-decoration:underline;text-decoration-color:var(--rule,#9db39a);padding:12px 0}"
+    },
+    {
+      "name": "Page Intro",
+      "kind": "custom",
+      "refersTo": "ruled-row",
+      "description": "Opening block of an inner page: h1 at the grown Headline step, optional 18px lead, optional meta line, action row. No kicker, no figure.",
+      "html": "<header class=\"ds-intro\"><h1>Privacy Policy</h1><p>Last updated: June 2025</p></header>",
+      "css": ".ds-intro{display:flex;flex-direction:column;gap:24px;font-family:Archivo,ui-sans-serif,system-ui,sans-serif;padding:48px 0 24px}.ds-intro h1{margin:0;font-size:48px;line-height:1.25;font-weight:700;letter-spacing:-0.015em;font-stretch:85%;color:var(--ink,#14231b)}.ds-intro p{margin:0;font-size:14px;color:var(--ink-soft,#3f5446)}"
+    },
+    {
+      "name": "Form Field",
+      "kind": "input",
+      "refersTo": "ruled-row",
+      "description": "Square 48px field on the pad with a 1px ink border, visible 14px 600 label above, pencil border and pencil message tied by aria-describedby when in error. Selects and textareas share it.",
+      "html": "<div class=\"ds-field\"><label for=\"e\">Work Email</label><input id=\"e\" aria-invalid=\"true\" aria-describedby=\"e-error\" value=\"john@\"><p id=\"e-error\">Please enter a valid email address</p></div>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:8px;max-width:320px;font-family:Archivo,ui-sans-serif,system-ui,sans-serif}.ds-field label{font-size:14px;font-weight:600;color:var(--ink,#14231b)}.ds-field input{min-height:48px;padding:12px 16px;border:1px solid var(--pencil,#b42318);border-radius:0;background:var(--pad,#e7efe0);color:var(--ink,#14231b);font:inherit;font-size:16px}.ds-field input:focus-visible{outline:2px solid var(--pencil,#b42318);outline-offset:3px}.ds-field p{margin:0;font-size:14px;color:var(--pencil,#b42318)}"
+    },
+    {
+      "name": "Legal Row",
+      "kind": "custom",
+      "refersTo": "ruled-row",
+      "description": "A legal section as a ruled row: 20px 600 heading left, plain 16px text right at 60ch, opened by the section's 1px ink rule.",
+      "html": "<div class=\"ds-legal\"><h2>Cookies</h2><p>This website uses minimal cookies.</p></div>",
+      "css": ".ds-legal{display:grid;grid-template-columns:14rem 1fr;gap:12px 48px;padding:24px 0;border-top:1px solid var(--ink,#14231b);border-bottom:1px solid var(--rule,#9db39a);font-family:Archivo,ui-sans-serif,system-ui,sans-serif}.ds-legal h2{margin:0;font-size:20px;font-weight:600;color:var(--ink,#14231b)}.ds-legal p{margin:0;max-width:60ch;font-size:16px;line-height:1.625;color:var(--ink-soft,#3f5446)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Time-Study Sheet",
+    "overview": "The site is written the way an engineer fills in a computation pad: pale green paper, graphite-green ink, ruled lines, measured figures. Content sits in rows on rules, never in cards. The page proves things by showing measurements (3 h 00 min against < 10 min) and live products, not by decorating claims.\n\nDensity is moderate and even. Sections alternate between the plain pad and a slightly deeper pad band, each opened by a 1px ink rule, so the scroll reads as sheets in one pad. The one strong colour, red pencil, is kept for measured results and for the hover state of actions; it is never a fill for whole regions.\n\nThe look rejects the generic agency template it replaced: kicker label over heading, pastel icon tiles in equal card grids, gradient glows, emoji as icons.",
+    "keyCharacteristics": [
+      "Pale green pad ground across the whole surface; one ink-dark closing band.",
+      "Rows on 1px rules instead of cards; square corners everywhere.",
+      "Archivo, semi-condensed and bold for headings; mono only for figures.",
+      "Red pencil reserved for measured results and action hover.",
+      "Spacing on a 24px cell (24, 48, 72, 96)."
+    ],
+    "rules": [
+      {
+        "name": "The One Pencil Rule",
+        "body": "Red pencil marks a measured result, an action under the pointer, keyboard focus, or an error the reader must fix. It never fills a section, a badge or a decorative shape.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Opens the Sheet Rule",
+        "body": "Every section group starts on a 1px ink rule; rows inside it are separated by 1px pencil rules. Two weights of line, no more.",
+        "section": "colors"
+      },
+      {
+        "name": "The Real Weight Rule",
+        "body": "Only request weights a face ships: Archivo 400 to 900, JetBrains Mono 400 and 600, Alfa Slab One 400. Never `font-bold` on the wordmark.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono Means Measured Rule",
+        "body": "Mono is for figures and hostnames. Never for headings, labels or decoration.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Paper Rule",
+        "body": "Surfaces never lift. State shows as colour (pencil fill, underline darkening), not as shadow or movement.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do put content in rows on rules; let the 1px ink rule open each section.",
+      "Do show proof as a measurement or a live product with its URL.",
+      "Do keep red pencil (#b42318) for measured results, hover and focus.",
+      "Do keep every space on the 24px cell (24, 48, 72, 96).",
+      "Do set figures in JetBrains Mono with tabular numerals."
+    ],
+    "donts": [
+      "Don't add a small uppercase label above a heading.",
+      "Don't use icon tiles, card grids, gradient text, glows, glass or shadows.",
+      "Don't use emoji as icons.",
+      "Don't round corners.",
+      "Don't request a weight a face does not ship (the wordmark is never bold).",
+      "Don't draw a decorative grid over the pad; the detector flags it and the rows already carry the sheet."
+    ]
+  }
+}
