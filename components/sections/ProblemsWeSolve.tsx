@@ -1,23 +1,24 @@
+// Written the way a buyer says it, in short sentences.
 const problems = [
     {
-        title: "Losing Leads",
+        title: "“We lose leads”",
         description:
-            "Potential customers visit your website but never get tracked or followed up. Revenue slips through the cracks silently.",
+            "People visit the website or send a message, and nobody follows up. We only notice when the customer has gone somewhere else.",
     },
     {
-        title: "Manual Operations",
+        title: "“Too much is done by hand”",
         description:
-            "Teams spend hours on onboarding, reporting, handoffs, exports, and status updates that should not be manual anymore.",
+            "Our team spends hours on onboarding, reports, exports, handoffs and status updates. Most of it should not be manual any more.",
     },
     {
-        title: "Disconnected Systems",
+        title: "“Our information is everywhere”",
         description:
-            "Data lives across spreadsheets, inboxes, Slack, Notion, and multiple tools. No clean operator view. Decisions take too long.",
+            "Our data is in spreadsheets, inboxes, Slack, Notion and other tools. Nobody has one clear view, so decisions take too long.",
     },
     {
-        title: "Growth Bottlenecks",
+        title: "“What worked before is breaking”",
         description:
-            "Processes that worked for 10 customers break at 100. Operations don't scale, and the business stalls.",
+            "Our processes worked with 10 customers. With 100, they break, and growth slows down.",
     },
 ];
 
@@ -37,9 +38,8 @@ export function ProblemsWeSolve() {
                         manual work
                     </h2>
                     <p className="max-w-[34rem] text-lg leading-relaxed text-ink-soft text-pretty">
-                        These are the problems I solve every day for growing
-                        businesses. If any of this sounds familiar, let&apos;s
-                        talk.
+                        These are the problems I fix. If one of them sounds like
+                        your business, let&apos;s talk.
                     </p>
                 </div>
 
@@ -49,7 +49,7 @@ export function ProblemsWeSolve() {
                             key={problem.title}
                             className="grid grid-cols-1 gap-x-12 gap-y-2 border-b border-rule py-6 md:grid-cols-[14rem_1fr]"
                         >
-                            <h3 className="text-xl font-semibold text-ink">
+                            <h3 className="text-xl font-semibold text-ink text-balance">
                                 {problem.title}
                             </h3>
                             <p className="max-w-[40rem] text-base leading-relaxed text-ink-soft text-pretty">

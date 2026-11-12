@@ -6,7 +6,8 @@ import { ChevronDown } from "lucide-react";
 export type FAQItem = { question: string; answer: string };
 
 export function FAQSection({ items }: { items: FAQItem[] }) {
-    const [open, setOpen] = useState<number | null>(null);
+    // The first answer starts open so the format is clear at a glance.
+    const [open, setOpen] = useState<number | null>(0);
 
     return (
         <section
@@ -47,7 +48,7 @@ export function FAQSection({ items }: { items: FAQItem[] }) {
                                 <div
                                     id={panelId}
                                     hidden={!isOpen}
-                                    className="max-w-[42rem] pb-6 text-base leading-relaxed text-ink-soft text-pretty"
+                                    className="max-w-[36rem] pb-6 text-base leading-relaxed text-ink-soft text-pretty"
                                 >
                                     {item.answer}
                                 </div>

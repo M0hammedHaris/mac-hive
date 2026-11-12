@@ -9,9 +9,11 @@ export function MobileNav() {
     const [isOpen, setIsOpen] = useState(false);
     const toggleRef = useRef<HTMLButtonElement>(null);
 
-    // Escape closes the menu and hands focus back to the menu button.
+    // While open: Escape closes the menu and hands focus back to the menu
+    // button, and the page behind the scrim does not scroll.
     useEffect(() => {
         if (!isOpen) return;
+
         const onKeyDown = (event: KeyboardEvent) => {
             if (event.key === 'Escape') {
                 setIsOpen(false);
@@ -19,10 +21,33 @@ export function MobileNav() {
             }
         };
         document.addEventListener('keydown', onKeyDown);
-        return () => document.removeEventListener('keydown', onKeyDown);
+
+        // Scroll lock on <html> (works in iOS Safari, unlike body alone). Pad
+        // the right edge by the scrollbar width so the page does not shift.
+        const root = document.documentElement;
+        const scrollbar = window.innerWidth - root.clientWidth;
+        const previous = {
+            overflow: root.style.overflow,
+            paddingRight: root.style.paddingRight,
+        };
+        root.style.overflow = 'hidden';
+        if (scrollbar > 0) root.style.paddingRight = `${scrollbar}px`;
+
+        return () => {
+            document.removeEventListener('keydown', onKeyDown);
+            root.style.overflow = previous.overflow;
+            root.style.paddingRight = previous.paddingRight;
+        };
     }, [isOpen]);
 
+    // A link tap moves on to the new page; nothing to refocus.
     const close = () => setIsOpen(false);
+
+    // A tap on the scrim stays on this page, so focus goes back to the button.
+    const dismiss = () => {
+        setIsOpen(false);
+        toggleRef.current?.focus();
+    };
 
     return (
         <>
@@ -44,16 +69,17 @@ export function MobileNav() {
 
             {isOpen && (
                 <div className="fixed inset-0 top-[73px] z-40 lg:hidden">
+                    {/* Scrim: dims the page and closes the menu on tap. */}
                     <div
                         className="absolute inset-0 bg-ink/50"
                         aria-hidden="true"
-                        onClick={close}
+                        onClick={dismiss}
                     />
 
                     <nav
                         id="mobile-menu"
                         aria-label="Main"
-                        className="relative flex flex-col border-b border-rule bg-pad px-6 pt-3 pb-6"
+                        className="relative flex max-h-full flex-col overflow-y-auto overscroll-contain border-b border-rule bg-pad px-6 pt-3 pb-6"
                     >
                         {navLinks.map((link) => (
                             <Link

@@ -6,33 +6,34 @@ import { OfferSection } from "@/components/sections/OfferSection";
 import { ProblemsWeSolve } from "@/components/sections/ProblemsWeSolve";
 import { ProofSection } from "@/components/sections/ProofSection";
 import { WorkingTogether } from "@/components/sections/WorkingTogether";
+import { StickyCta } from "@/components/layout/StickyCta";
 
 // One list feeds both the visible FAQ and the FAQPage JSON-LD.
 const faqItems = [
     {
         question: "What kind of work is the best fit for Machive?",
         answer:
-            "Machive is a strong fit for businesses that need a better website, stronger lead capture, a reporting dashboard, internal automation, admin tooling, or a scoped software build tied to a clear business problem.",
+            "Work that fixes a clear business problem. For example: a better website that captures more leads, a reporting dashboard, automation of repeated tasks, admin tools, or a focused piece of software.",
     },
     {
         question: "How do projects usually start?",
         answer:
-            "Most projects start with a discovery conversation and a scoped recommendation. The goal is to define the clearest high-value next step before building anything bigger.",
+            "Most projects start with a discovery call. After it, I suggest the most useful first step and send a written quote. Nothing bigger is built until that first step is clear.",
     },
     {
         question: "Do you work only with local clients?",
         answer:
-            "No. Machive is based in India and works worldwide. The delivery model is async-friendly, milestone-based, and built for global founder and business teams.",
+            "No. Machive is based in India and works with clients worldwide. You do not need to share a time zone: most updates happen in writing, and the work is delivered in agreed stages.",
     },
     {
         question: "Do you only take large projects?",
         answer:
-            "No. Some clients start with a website or focused automation build, while others come in with dashboards, internal tools, or a broader software project. The key is having a clear problem and a realistic scope.",
+            "No. Some clients start with a website or one automation. Others start with a dashboard, an internal tool or a larger software project. What matters is a clear problem and a realistic plan.",
     },
     {
         question: "Do you provide maintenance and support?",
         answer:
-            "Yes. Ongoing support is available after launch for iteration, reporting improvements, system expansion, and follow-through once the first delivery is live.",
+            "Yes. Support continues after launch if you want it: changes and improvements, better reports, and new parts added as the business grows.",
     },
 ];
 
@@ -47,6 +48,7 @@ export default function Home() {
             <WorkingTogether />
             <FAQSection items={faqItems} />
             <FinalCTA />
+            <StickyCta />
         </div>
     );
 }

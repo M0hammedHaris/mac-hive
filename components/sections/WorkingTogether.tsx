@@ -1,32 +1,42 @@
 import { FounderBlock } from "./FounderBlock";
 
+// The process, set as a worksheet: one ruled row per step, the step number in
+// mono, and who does the work (taken from each step's own "we" or "I").
 const steps = [
     {
         title: "Discover",
+        who: "You and me",
         description:
-            "We pin down the business problem: weak lead capture, reporting friction, manual ops, or a missing internal tool.",
+            "We find the real business problem: weak lead capture, slow reporting, manual work, or a missing internal tool.",
     },
     {
         title: "Scope",
+        who: "You and me",
         description:
-            "We agree the smallest build that creates real value, with clear milestones.",
+            "We agree on the smallest build that is worth doing, in clear stages.",
     },
     {
         title: "Build",
+        who: "Me",
         description:
-            "I ship the website, dashboard, automation, or software that solves it.",
+            "I build the website, dashboard, automation or software that fixes it.",
     },
     {
         title: "Launch",
+        who: "Me",
         description:
-            "I deploy it, check the result, and make sure your team can use it.",
+            "I put it live, check that it works, and make sure your team can use it.",
     },
     {
         title: "Expand",
+        who: "You and me",
         description:
-            "Once the first result proves useful, we add the next workflow.",
+            "When the first part is working well, we add the next one.",
     },
 ];
+
+const rowGrid =
+    "grid grid-cols-[3rem_1fr] gap-x-6 md:grid-cols-[4rem_10rem_1fr_8rem] lg:grid-cols-[6rem_12rem_1fr_10rem]";
 
 export function WorkingTogether() {
     return (
@@ -42,22 +52,43 @@ export function WorkingTogether() {
                     <h3 className="text-xl font-semibold text-ink">
                         How a project goes
                     </h3>
-                    <ol className="relative grid grid-cols-1 gap-y-6 border-l border-ink pl-6 lg:grid-cols-5 lg:gap-x-6 lg:border-t lg:border-l-0 lg:pt-6 lg:pl-0">
-                        {steps.map((step) => (
-                            <li key={step.title} className="relative flex max-w-[36rem] flex-col gap-2 lg:max-w-none">
-                                <span
-                                    aria-hidden="true"
-                                    className="absolute top-2 -left-6 h-px w-3 bg-ink lg:-top-6 lg:left-0 lg:h-3 lg:w-px"
-                                />
-                                <span className="font-semibold text-ink">
-                                    {step.title}
-                                </span>
-                                <span className="text-sm leading-relaxed text-ink-soft text-pretty">
-                                    {step.description}
-                                </span>
-                            </li>
-                        ))}
-                    </ol>
+
+                    <div className="border-t border-ink">
+                        {/* Column heads of the sheet; the rows below carry the same words for screen readers. */}
+                        <div
+                            aria-hidden="true"
+                            className={`${rowGrid} hidden border-b border-rule py-3 text-sm text-ink-soft md:grid`}
+                        >
+                            <span>Step</span>
+                            <span>Stage</span>
+                            <span>What happens</span>
+                            <span>Who</span>
+                        </div>
+
+                        <ol>
+                            {steps.map((step, i) => (
+                                <li
+                                    key={step.title}
+                                    className={`${rowGrid} items-baseline gap-y-1 border-b border-rule py-6`}
+                                >
+                                    <span className="row-span-3 font-mono text-2xl font-semibold tabular-nums text-ink md:row-span-1">
+                                        <span className="sr-only">Step </span>
+                                        {String(i + 1).padStart(2, "0")}
+                                    </span>
+                                    <span className="text-lg font-semibold text-ink">
+                                        {step.title}
+                                    </span>
+                                    <span className="col-start-2 max-w-[36rem] text-base leading-relaxed text-ink-soft text-pretty md:col-start-auto">
+                                        {step.description}
+                                    </span>
+                                    <span className="col-start-2 text-sm text-ink-soft md:col-start-auto md:text-base md:text-ink">
+                                        <span className="md:sr-only">Who: </span>
+                                        {step.who}
+                                    </span>
+                                </li>
+                            ))}
+                        </ol>
+                    </div>
                 </div>
             </div>
         </section>

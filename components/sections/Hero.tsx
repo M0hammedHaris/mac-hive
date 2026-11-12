@@ -24,6 +24,7 @@ export function Hero() {
                     </p>
                     <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
                         <Link
+                            id="hero-cta"
                             href="/contact"
                             className="inline-flex min-h-12 items-center gap-2 bg-ink px-6 text-base font-semibold text-pad transition-colors hover:bg-pencil active:bg-pencil"
                         >

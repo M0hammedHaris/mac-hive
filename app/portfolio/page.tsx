@@ -1,7 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
-import { ExternalLink, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { FinalCTA } from "@/components/sections/FinalCTA";
+import { LeadProduct, type Product } from "@/components/sections/ProofSection";
+import { PageIntro } from "@/components/sections/PageIntro";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,146 +15,86 @@ export const metadata: Metadata = {
     },
 };
 
-// Machive's own products (also shown on the home page, components/sections/ProofSection.tsx)
-const PORTFOLIO_ITEMS = [
+// Machive's own products (also shown on the home page, components/sections/ProofSection.tsx).
+// Same order and screenshots as the home page; the descriptions are this page's own.
+const PORTFOLIO_ITEMS: Product[] = [
     {
-        title: "Snapchat Organizer",
-        tag: "Social Media",
-        tagColor: "text-yellow-600 bg-yellow-500/10",
-        description:
-            "A powerful tool for organizing and managing your Snapchat content efficiently.",
-        url: "https://snapchat-organizer.machive.in",
-        image: "/portfolio/snapchat-organizer.jpg",
-        alt: "Snapchat Organizer - Social media content management tool",
-    },
-    {
-        title: "SalaryMan",
-        tag: "Finance",
-        tagColor: "text-emerald-600 bg-emerald-500/10",
-        description:
-            "Personal finance management app to track income, expenses, and achieve your financial goals.",
-        url: "https://salary-man.machive.in",
-        image: "/portfolio/salaryman.jpg",
-        alt: "SalaryMan - Personal finance management dashboard",
-    },
-    {
-        title: "Mud Pottery",
-        tag: "E-commerce",
-        tagColor: "text-orange-600 bg-orange-500/10",
-        description:
-            "Artisan pottery e-commerce platform showcasing handcrafted ceramic pieces.",
-        url: "https://mud-potter.machive.in",
-        image: "/portfolio/mud-pottery.jpg",
-        alt: "Mud Pottery - Artisan ceramics e-commerce platform",
-    },
-    {
-        title: "Ad Manager",
-        tag: "Marketing",
-        tagColor: "text-purple-600 bg-purple-500/10",
-        description:
-            "AI-powered ad poster generator for creating stunning marketing visuals instantly.",
-        url: "https://ad.machive.in",
-        image: "/portfolio/ad-manager.jpg",
-        alt: "Ad Manager - AI-powered marketing poster generator",
-    },
-    {
-        title: "BillHive",
-        tag: "Business",
-        tagColor: "text-primary bg-primary/10",
-        description:
-            "Mobile billing and invoicing application for small businesses and freelancers.",
+        name: "BillHive",
+        category: "Business",
+        what: "Mobile billing and invoicing application for small businesses and freelancers.",
         url: "https://bill.machive.in",
+        host: "bill.machive.in",
         image: "/portfolio/billhive.jpg",
-        alt: "BillHive - Mobile billing and invoicing application",
+        alt: "BillHive invoice list on a phone, showing paid, pending, overdue and draft invoices",
+    },
+    {
+        name: "SalaryMan",
+        category: "Finance",
+        what: "Personal finance management app to track income, expenses, and achieve your financial goals.",
+        url: "https://salary-man.machive.in",
+        host: "salary-man.machive.in",
+        image: "/portfolio/salaryman.jpg",
+        alt: "SalaryMan dashboard with an income versus expenses chart and recent transactions",
+    },
+    {
+        name: "Ad Manager",
+        category: "Marketing",
+        what: "AI-powered ad poster generator for creating stunning marketing visuals instantly.",
+        url: "https://ad.machive.in",
+        host: "ad.machive.in",
+        image: "/portfolio/ad-manager.jpg",
+        alt: "Ad Manager poster editor with generation controls and a layer panel",
+    },
+    {
+        name: "Mud Pottery",
+        category: "E-commerce",
+        what: "Artisan pottery e-commerce platform showcasing handcrafted ceramic pieces.",
+        url: "https://mud-potter.machive.in",
+        host: "mud-potter.machive.in",
+        image: "/portfolio/mud-pottery.jpg",
+        alt: "Mud Pottery storefront with a product grid of vases, bowls and planters",
+    },
+    {
+        name: "Snapchat Organizer",
+        category: "Social Media",
+        what: "A powerful tool for organizing and managing your Snapchat content efficiently.",
+        url: "https://snapchat-organizer.machive.in",
+        host: "snapchat-organizer.machive.in",
+        image: "/portfolio/snapchat-organizer.jpg",
+        alt: "Snapchat Organizer media library grid with select, download and tag controls",
     },
 ];
 
 export default function PortfolioPage() {
     return (
-        <div className="w-full">
-            {/* Header */}
-            <section className="px-6 lg:px-40 py-20 lg:py-32 bg-white dark:bg-background-dark border-b border-gray-100 dark:border-gray-800">
-                <div className="max-w-[1200px] mx-auto text-center">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-8">
-                        Our Work
-                    </div>
-                    <h1 className="text-4xl lg:text-6xl font-black tracking-tight mb-6">
-                        Built with <span className="text-primary">Precision.</span> <br />
-                        Deployed with <span className="text-primary">Speed.</span>
-                    </h1>
-                    <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                        Explore selected builds across internal tools, automation systems, SaaS products, and digital experiences delivered for clients and internal ventures.
-                    </p>
+        <div className="flex w-full flex-col items-center">
+            <PageIntro
+                title={
+                    <>
+                        Built with Precision. <br className="hidden md:block" />
+                        Deployed with Speed.
+                    </>
+                }
+                lead="Explore selected builds across internal tools, automation systems, SaaS products, and digital experiences delivered for clients and internal ventures."
+            />
+
+            <div className="mt-12 w-full border-y border-ink bg-pad-deep">
+                <div className="mx-auto w-full max-w-[1440px] px-6 py-18 md:py-24 lg:px-20">
+                    <ul className="grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+                        {PORTFOLIO_ITEMS.map((product) => (
+                            <li key={product.name}>
+                                <LeadProduct product={product} />
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-            </section>
+            </div>
 
-            {/* Portfolio Grid */}
-            <section className="px-6 lg:px-40 py-24">
-                <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    {PORTFOLIO_ITEMS.map((item, index) => (
-                        <div key={index} className="group relative bg-white dark:bg-gray-900 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
-                            <div className="aspect-video bg-gray-100 dark:bg-gray-800 relative overflow-hidden flex items-center justify-center group-hover:bg-gray-200 dark:group-hover:bg-gray-700 transition-colors">
-                                <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent z-10"></div>
-                                {/* Use next/image with unoptimized for external Google images */}
-                                <Image
-                                    src={item.image}
-                                    alt={item.alt}
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                    unoptimized
-                                />
-
-                                {/* Overlay Link */}
-                                <a
-                                    href={item.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/40 transition-opacity backdrop-blur-sm"
-                                >
-                                    <div className="bg-white text-slate-900 rounded-full p-3 font-bold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                                        Visit Site <ExternalLink size={16} />
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div className="p-6 flex-1 flex flex-col">
-                                <div className="flex items-center justify-between mb-3">
-                                    <span className="text-xs font-bold uppercase tracking-wider text-primary">{item.tag}</span>
-                                    <div className="flex gap-2">
-                                        <div className="size-2 rounded-full bg-red-400"></div>
-                                        <div className="size-2 rounded-full bg-yellow-400"></div>
-                                        <div className="size-2 rounded-full bg-green-400"></div>
-                                    </div>
-                                </div>
-                                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
-                                <p className="text-sm text-gray-500 dark:text-gray-400 mb-6 flex-1 leading-relaxed">
-                                    {item.description}
-                                </p>
-                                <div className="flex flex-wrap gap-2 mt-auto">
-                                    <span className={`px-2 py-1 text-[10px] font-bold uppercase rounded-md ${item.tagColor}`}>
-                                        {item.tag}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            {/* CTA */}
-            <section className="px-6 lg:px-40 py-24 bg-gray-50 dark:bg-gray-900/50">
-                <div className="max-w-[800px] mx-auto text-center">
-                    <h2 className="text-3xl font-black mb-6">Have a workflow bottleneck? Let&apos;s fix it.</h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-10 text-lg">
-                        Whether you need a focused automation sprint, a clearer dashboard, or a larger internal tool, Machive can help scope the right next step.
-                    </p>
-                    <Link href="/contact">
-                        <Button className="h-14 px-8 text-lg rounded-xl shadow-xl shadow-primary/20">
-                            Book a Discovery Call <ArrowRight className="ml-2" size={20} />
-                        </Button>
-                    </Link>
-                </div>
-            </section>
+            <FinalCTA
+                title="Have a workflow bottleneck? Let's fix it."
+                body="Whether you need a focused automation sprint, a clearer dashboard, or a larger internal tool, Machive can help scope the right next step."
+                label="Book a Discovery Call"
+            />
         </div>
     );
 }

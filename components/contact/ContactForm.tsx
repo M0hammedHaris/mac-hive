@@ -1,8 +1,14 @@
 "use client";
 
 import React, { useActionState } from "react";
-import { Rocket, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import {
+    AlertCircle,
+    ArrowRight,
+    CheckCircle2,
+    ChevronDown,
+    Loader2,
+} from "lucide-react";
+import { primaryActionBase } from "@/components/ui/action-link";
 import { submitContactForm, type FormState } from "@/app/actions";
 
 const initialState: FormState = {
@@ -11,6 +17,35 @@ const initialState: FormState = {
     errors: undefined,
 };
 
+// Square fields on the pad, 48px tall, 16px text (so phones do not zoom in).
+// The border is ink, not the pale rule colour, so the field edge stays visible
+// (the rule colour is 1.9:1 on the pad). Focus is the site-wide pencil outline.
+const labelClass = "text-sm font-semibold text-ink";
+const fieldBase =
+    "min-h-12 w-full rounded-none border bg-pad px-4 py-3 text-base text-ink placeholder:text-ink-soft";
+
+function fieldClass(hasError: boolean) {
+    return `${fieldBase} ${hasError ? "border-pencil" : "border-ink"}`;
+}
+
+// Ties a field to its message: aria-invalid plus aria-describedby on the field,
+// and the same id on the message below it.
+function describe(id: string, error?: string) {
+    return {
+        "aria-invalid": error ? (true as const) : undefined,
+        "aria-describedby": error ? `${id}-error` : undefined,
+    };
+}
+
+function FieldError({ id, message }: { id: string; message?: string }) {
+    if (!message) return null;
+    return (
+        <p id={`${id}-error`} role="alert" className="text-sm text-pencil">
+            {message}
+        </p>
+    );
+}
+
 export default function ContactForm() {
     const [state, formAction, isPending] = useActionState(
         submitContactForm,
@@ -18,35 +53,23 @@ export default function ContactForm() {
     );
 
     return (
-        <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-                <div className="lg:col-span-7">
-                    <div className="mb-10">
-                        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wider uppercase mb-4">
-                            Start the conversation
-                        </span>
-                        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-                            Tell Us What You Need to Build or Improve.
-                        </h1>
-                        <p className="text-lg text-slate-600 dark:text-slate-400">
-                            Whether you need a better website, stronger lead
-                            capture, a reporting dashboard, internal automation,
-                            or scoped business software, we&apos;ll reply with the
-                            clearest next step within 24 hours.
-                        </p>
-                    </div>
-
+        <div className="w-full max-w-[1440px] px-6 pt-12 pb-18 md:pb-24 lg:px-20">
+            <div className="grid grid-cols-1 gap-x-12 gap-y-12 lg:grid-cols-12">
+                <div className="flex flex-col gap-6 lg:col-span-7">
                     {state.success && (
-                        <div className="mb-8 p-6 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 flex items-start gap-4">
+                        <div
+                            role="status"
+                            className="flex items-start gap-4 border-t border-b border-t-ink border-b-rule py-6"
+                        >
                             <CheckCircle2
-                                className="text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5"
-                                size={24}
+                                className="mt-0.5 h-6 w-6 shrink-0 text-ink"
+                                aria-hidden="true"
                             />
-                            <div>
-                                <h3 className="font-bold text-green-800 dark:text-green-200 mb-1">
+                            <div className="flex flex-col gap-2">
+                                <h2 className="text-xl font-semibold text-ink">
                                     Message Sent!
-                                </h3>
-                                <p className="text-green-700 dark:text-green-300 text-sm">
+                                </h2>
+                                <p className="text-base leading-relaxed text-ink-soft text-pretty">
                                     {state.message}
                                 </p>
                             </div>
@@ -54,16 +77,19 @@ export default function ContactForm() {
                     )}
 
                     {!state.success && state.message && !state.errors && (
-                        <div className="mb-8 p-6 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 flex items-start gap-4">
+                        <div
+                            role="alert"
+                            className="flex items-start gap-4 border-t border-b border-t-ink border-b-rule py-6"
+                        >
                             <AlertCircle
-                                className="text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5"
-                                size={24}
+                                className="mt-0.5 h-6 w-6 shrink-0 text-pencil"
+                                aria-hidden="true"
                             />
-                            <div>
-                                <h3 className="font-bold text-red-800 dark:text-red-200 mb-1">
+                            <div className="flex flex-col gap-2">
+                                <h2 className="text-xl font-semibold text-ink">
                                     Error
-                                </h3>
-                                <p className="text-red-700 dark:text-red-300 text-sm">
+                                </h2>
+                                <p className="text-base leading-relaxed text-ink-soft text-pretty">
                                     {state.message}
                                 </p>
                             </div>
@@ -71,115 +97,121 @@ export default function ContactForm() {
                     )}
 
                     {!state.success && (
-                        <form action={formAction} className="space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <form
+                            action={formAction}
+                            aria-busy={isPending}
+                            className="flex flex-col gap-6 border-t border-ink pt-6"
+                        >
+                            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                                 <div className="flex flex-col gap-2">
-                                    <label
-                                        htmlFor="fullName"
-                                        className="text-sm font-semibold text-slate-700 dark:text-slate-300"
-                                    >
+                                    <label htmlFor="fullName" className={labelClass}>
                                         Full Name
                                     </label>
                                     <input
                                         id="fullName"
                                         name="fullName"
                                         type="text"
+                                        autoComplete="name"
                                         placeholder="John Doe"
-                                        className={`w-full bg-white dark:bg-slate-900 border rounded-lg p-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all ${state.errors?.fullName ? "border-red-500" : "border-slate-200 dark:border-slate-800"}`}
+                                        className={fieldClass(!!state.errors?.fullName)}
+                                        {...describe("fullName", state.errors?.fullName?.[0])}
                                     />
-                                    {state.errors?.fullName && (
-                                        <p className="text-red-500 text-xs mt-1">
-                                            {state.errors.fullName[0]}
-                                        </p>
-                                    )}
+                                    <FieldError
+                                        id="fullName"
+                                        message={state.errors?.fullName?.[0]}
+                                    />
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <label
-                                        htmlFor="email"
-                                        className="text-sm font-semibold text-slate-700 dark:text-slate-300"
-                                    >
+                                    <label htmlFor="email" className={labelClass}>
                                         Work Email
                                     </label>
                                     <input
                                         id="email"
                                         name="email"
                                         type="email"
+                                        autoComplete="email"
                                         placeholder="john@company.com"
-                                        className={`w-full bg-white dark:bg-slate-900 border rounded-lg p-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all ${state.errors?.email ? "border-red-500" : "border-slate-200 dark:border-slate-800"}`}
+                                        className={fieldClass(!!state.errors?.email)}
+                                        {...describe("email", state.errors?.email?.[0])}
                                     />
-                                    {state.errors?.email && (
-                                        <p className="text-red-500 text-xs mt-1">
-                                            {state.errors.email[0]}
-                                        </p>
-                                    )}
+                                    <FieldError
+                                        id="email"
+                                        message={state.errors?.email?.[0]}
+                                    />
                                 </div>
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                                 <div className="flex flex-col gap-2">
-                                    <label
-                                        htmlFor="budgetRange"
-                                        className="text-sm font-semibold text-slate-700 dark:text-slate-300"
-                                    >
+                                    <label htmlFor="budgetRange" className={labelClass}>
                                         Budget Range
                                     </label>
-                                    <select
+                                    <div className="relative">
+                                        <select
+                                            id="budgetRange"
+                                            name="budgetRange"
+                                            className={`${fieldClass(!!state.errors?.budgetRange)} appearance-none pr-12`}
+                                            {...describe(
+                                                "budgetRange",
+                                                state.errors?.budgetRange?.[0],
+                                            )}
+                                        >
+                                            <option value="">Select budget</option>
+                                            <option value="$2,000 - $3,000">
+                                                $2,000 - $3,000
+                                            </option>
+                                            <option value="$3,000 - $6,000">
+                                                $3,000 - $6,000
+                                            </option>
+                                            <option value="$6,000 - $10,000">
+                                                $6,000 - $10,000
+                                            </option>
+                                            <option value="$10,000+">
+                                                $10,000+
+                                            </option>
+                                        </select>
+                                        <ChevronDown
+                                            className="pointer-events-none absolute top-1/2 right-4 h-5 w-5 -translate-y-1/2 text-ink"
+                                            aria-hidden="true"
+                                        />
+                                    </div>
+                                    <FieldError
                                         id="budgetRange"
-                                        name="budgetRange"
-                                        className={`w-full bg-white dark:bg-slate-900 border rounded-lg p-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all ${state.errors?.budgetRange ? "border-red-500" : "border-slate-200 dark:border-slate-800"}`}
-                                    >
-                                        <option value="">Select budget</option>
-                                        <option value="$2,000 - $3,000">
-                                            $2,000 - $3,000
-                                        </option>
-                                        <option value="$3,000 - $6,000">
-                                            $3,000 - $6,000
-                                        </option>
-                                        <option value="$6,000 - $10,000">
-                                            $6,000 - $10,000
-                                        </option>
-                                        <option value="$10,000+">
-                                            $10,000+
-                                        </option>
-                                    </select>
-                                    {state.errors?.budgetRange && (
-                                        <p className="text-red-500 text-xs mt-1">
-                                            {state.errors.budgetRange[0]}
-                                        </p>
-                                    )}
+                                        message={state.errors?.budgetRange?.[0]}
+                                    />
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <label
-                                        htmlFor="timeline"
-                                        className="text-sm font-semibold text-slate-700 dark:text-slate-300"
-                                    >
+                                    <label htmlFor="timeline" className={labelClass}>
                                         Target Timeline
                                     </label>
-                                    <select
+                                    <div className="relative">
+                                        <select
+                                            id="timeline"
+                                            name="timeline"
+                                            className={`${fieldClass(!!state.errors?.timeline)} appearance-none pr-12`}
+                                            {...describe("timeline", state.errors?.timeline?.[0])}
+                                        >
+                                            <option value="">Select timeline</option>
+                                            <option value="Within 2 weeks">
+                                                Within 2 weeks
+                                            </option>
+                                            <option value="2 - 6 weeks">
+                                                2 - 6 weeks
+                                            </option>
+                                            <option value="6+ weeks">6+ weeks</option>
+                                        </select>
+                                        <ChevronDown
+                                            className="pointer-events-none absolute top-1/2 right-4 h-5 w-5 -translate-y-1/2 text-ink"
+                                            aria-hidden="true"
+                                        />
+                                    </div>
+                                    <FieldError
                                         id="timeline"
-                                        name="timeline"
-                                        className={`w-full bg-white dark:bg-slate-900 border rounded-lg p-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all ${state.errors?.timeline ? "border-red-500" : "border-slate-200 dark:border-slate-800"}`}
-                                    >
-                                        <option value="">Select timeline</option>
-                                        <option value="Within 2 weeks">
-                                            Within 2 weeks
-                                        </option>
-                                        <option value="2 - 6 weeks">
-                                            2 - 6 weeks
-                                        </option>
-                                        <option value="6+ weeks">6+ weeks</option>
-                                    </select>
-                                    {state.errors?.timeline && (
-                                        <p className="text-red-500 text-xs mt-1">
-                                            {state.errors.timeline[0]}
-                                        </p>
-                                    )}
+                                        message={state.errors?.timeline?.[0]}
+                                    />
                                 </div>
                             </div>
                             <div className="flex flex-col gap-2">
-                                <label
-                                    htmlFor="projectDetails"
-                                    className="text-sm font-semibold text-slate-700 dark:text-slate-300"
-                                >
+                                <label htmlFor="projectDetails" className={labelClass}>
                                     Project Details
                                 </label>
                                 <textarea
@@ -187,50 +219,51 @@ export default function ContactForm() {
                                     name="projectDetails"
                                     rows={5}
                                     placeholder="Tell us what you want to improve: website conversion, lead follow-up, dashboards, automation, internal workflows, or a software build..."
-                                    className={`w-full bg-white dark:bg-slate-900 border rounded-lg p-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none ${state.errors?.projectDetails ? "border-red-500" : "border-slate-200 dark:border-slate-800"}`}
+                                    className={`${fieldClass(!!state.errors?.projectDetails)} resize-none`}
+                                    {...describe(
+                                        "projectDetails",
+                                        state.errors?.projectDetails?.[0],
+                                    )}
                                 />
-                                {state.errors?.projectDetails && (
-                                    <p className="text-red-500 text-xs mt-1">
-                                        {state.errors.projectDetails[0]}
-                                    </p>
-                                )}
+                                <FieldError
+                                    id="projectDetails"
+                                    message={state.errors?.projectDetails?.[0]}
+                                />
                             </div>
-                            <Button
+                            <button
                                 type="submit"
                                 disabled={isPending}
-                                className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold text-lg transition-transform active:scale-95 shadow-lg shadow-primary/20 disabled:opacity-70 disabled:cursor-not-allowed"
+                                className={`${primaryActionBase} w-full justify-center md:w-fit disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:bg-ink`}
                             >
                                 {isPending ? (
                                     <>
-                                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                                        <Loader2
+                                            className="h-4 w-4 animate-spin motion-reduce:animate-none"
+                                            aria-hidden="true"
+                                        />
                                         Sending...
                                     </>
                                 ) : (
-                                    "Request a Discovery Call"
+                                    <>
+                                        Request a Discovery Call
+                                        <ArrowRight
+                                            className="h-4 w-4"
+                                            aria-hidden="true"
+                                        />
+                                    </>
                                 )}
-                            </Button>
+                            </button>
                         </form>
                     )}
                 </div>
 
-                <div className="lg:col-span-5 flex flex-col gap-8">
-                    <div className="relative overflow-hidden rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary/20 p-8">
-                        <div className="relative z-10">
-                            <h4 className="text-lg font-bold text-primary mb-2">
-                                Founder-Direct Global Delivery
-                            </h4>
-                            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                                You work directly with the engineer handling
-                                discovery, scoping, delivery, and launch — with
-                                clear milestones and async-friendly
-                                communication.
-                            </p>
-                        </div>
-                        <Rocket
-                            className="absolute -bottom-6 -right-6 text-primary/10"
-                            size={128}
-                        />
-                    </div>
+                <div className="border-t border-ink pt-6 lg:col-span-4 lg:col-start-9">
+                    <p className="max-w-[28rem] text-base leading-relaxed text-ink-soft text-pretty">
+                        You work directly with the engineer handling
+                        discovery, scoping, delivery, and launch — with work
+                        delivered in agreed stages and most updates in
+                        writing.
+                    </p>
                 </div>
             </div>
         </div>

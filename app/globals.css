@@ -170,11 +170,6 @@
   .glass-nav {
     @apply bg-pad border-b border-rule;
   }
-
-
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-mh-primary to-cyan-400;
-  }
 }
 
 body {
@@ -186,6 +181,15 @@ html {
   scrollbar-color: var(--rule) var(--pad);
   /* Anchor links land below the fixed 73px header (main starts at 80px). */
   scroll-padding-top: 5rem;
+}
+
+/* Below 1024px the home page carries a fixed bottom CTA strip (StickyCta,
+   73px: 1px rule + 12px + 48px button + 12px). StickyCta sets data-sticky-cta
+   on <html> while mounted; keep focused and anchored elements clear of it. */
+@media (max-width: 1023.98px) {
+  html[data-sticky-cta] {
+    scroll-padding-bottom: 6rem;
+  }
 }
 
 button:not(:disabled) {

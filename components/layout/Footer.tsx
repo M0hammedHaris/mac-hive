@@ -24,7 +24,7 @@ export function Footer() {
                     <ul className="flex flex-wrap gap-x-8 text-sm font-medium">
                         <li>
                             <Link
-                                href="https://linkedin.com/in/mohammed-haris-k"
+                                href="https://www.linkedin.com/in/mohammed-haris-k"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={linkClass}

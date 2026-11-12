@@ -52,3 +52,8 @@ package-lock.json
 .claude/settings.local.json
 .claude/skills/impeccable/scripts/bin/
 .kiro/skills/impeccable/scripts/bin/
+
+# local planning and agent run state
+/.hermes/
+/config/
+/.kiro-plans/
